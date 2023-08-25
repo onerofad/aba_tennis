@@ -2,27 +2,27 @@ import { Button, Container, Grid, Header, List, Segment } from "semantic-ui-reac
 
 const HeadingPage = () => {
     return(
-        <Segment vertical style={{backgroundColor: '#F4F6F6', paddingTop: '8em'}}>
+        <Segment vertical style={{backgroundColor: '#F4F6F6', padding: '1em', border: 0}}>
         <Container>
             <Grid>
                 <Grid.Row>
                     <Grid.Column width={3}>
                         <Segment>
-                            <List relaxed divided size="huge">
-                                <List.Item>Player Ratings</List.Item>
-                                <List.Item>Watch Videos</List.Item>
-                                <List.Item>Coming Up</List.Item>
-                                <List.Item>Player Profiles</List.Item>
-                                <List.Item>Image Gallary</List.Item>
-                                <List.Item>Results</List.Item>
+                            <List relaxed divided size="big">
+                                <List.Item as="a">Player Ratings</List.Item>
+                                <List.Item as="a">Watch Videos</List.Item>
+                                <List.Item as="a">Coming Up</List.Item>
+                                <List.Item as="a">Player Profiles</List.Item>
+                                <List.Item as="a">Image Gallary</List.Item>
+                                <List.Item as="a">Results</List.Item>
                             </List>
 
                         </Segment>
                        
 
                     </Grid.Column>
-                    <Grid.Column width={10}>
-                        <Segment>
+                    <Grid.Column width={12}>
+                        <Segment vertical>
                             <Grid>
                                 <Grid.Row>
                                     <Grid.Column textAlign="center">
@@ -32,7 +32,7 @@ const HeadingPage = () => {
                                             as="h1"
                                             style={{fontSize: '3em'}}
                                         />
-                                        <Segment vertical style={{minHeight: 200, backgroundColor: 'blue'}}>
+                                        <Segment  style={{minHeight: 200, backgroundColor: '#0047AB'}}>
                                             <Grid verticalAlign="middle">
                                                 <Grid.Row>
                                                     <Grid.Column>

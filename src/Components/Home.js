@@ -7,6 +7,7 @@ import About from './About'
 import AccessRanking from './AccessRanking'
 import GetFreePass from './GetFreePass'
 import PlayerTable from './PlayerTable'
+import Footer from './Footer'
 
 const Home = () => {
     return(
@@ -18,6 +19,7 @@ const Home = () => {
            <AccessRanking />
            <GetFreePass />
            <PlayerTable />
+           <Footer />
         </div>
     )
 }

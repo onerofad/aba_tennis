@@ -3,12 +3,11 @@ import "semantic-ui-css/semantic.min.css"
 
 const Headers = () => {
     return(
-        <Segment vertical>
+        <Segment vertical  style={{backgroundColor: '#f4f6f6',paddingBottom: '1em', border: 0}}>
                         <Menu
-                                fixed="top"
                                 size="huge"
                                 secondary
-                                style={{backgroundColor: '#fff'}}
+                                style={{backgroundColor: '#f4f6f6'}}
                                 
                         >
                             <Container>

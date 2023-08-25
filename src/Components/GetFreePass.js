@@ -2,7 +2,7 @@ import { Button, Container, Grid, Header, List, Segment } from "semantic-ui-reac
 
 const GetFreePass = () => {
     return(
-       <Segment>
+       <Segment vertical style={{backgroundColor: '#fff', border: 0, paddingTop: '2em'}}>
         <Container>
             <Grid>
                 <Grid.Row>

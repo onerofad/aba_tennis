@@ -2,7 +2,7 @@ import { Container, Segment, Grid, Image, Header, Button } from "semantic-ui-rea
 
 const About = () => {
     return(
-        <Segment vertical style={{backgroundColor: '#F4F6F6'}}>
+        <Segment vertical style={{backgroundColor: '#F4F6F6', border: 0}}>
             <Container>
                 <Grid>
                     <Grid.Row>

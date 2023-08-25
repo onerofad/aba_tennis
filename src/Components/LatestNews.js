@@ -7,7 +7,7 @@ const LatestNews = () => {
     const params = useParams()
 
     return(
-        <Segment vertical style={{backgroundColor: '#F4F6F6'}}>
+        <Segment vertical style={{backgroundColor: '#F4F6F6', border: 0}}>
             <Container>
             <Grid>
                 <Grid.Row>

@@ -1,13 +1,21 @@
 import { Button, Container, Grid, Header, Menu, Segment, Image } from "semantic-ui-react"
 import "semantic-ui-css/semantic.min.css"
+import '../style.css'
 
 const Headers = () => {
     return(
-        <Segment vertical  style={{backgroundColor: '#f4f6f6',paddingBottom: '1em', border: 0}}>
                         <Menu
                                 size="huge"
                                 secondary
-                                style={{backgroundColor: '#f4f6f6'}}
+                                style={{
+                                            fontFamily: 'Poppins', 
+                                            fontSize: '20px',
+                                            fontWeight: 'medium',
+                                            color:'#000000',
+                                            lineSpacing: '30px',
+                                            characterSpacing: '0px'
+                                            
+                                        }}
                                 
                         >
                             <Container>
@@ -20,15 +28,20 @@ const Headers = () => {
                                     <Menu.Item as="a">Competitions</Menu.Item>
                                     <Menu.Item as="a" position="right">Login</Menu.Item>
                                     <Menu.Item as="a">
-                                        <Button color="blue">
+                                        <Button style={{
+                                                            backgroundColor: '#193275', 
+                                                            fontSize: '20px',
+                                                            fontWeight: 'medium',
+                                                            fontFamily: 'Poppins',
+                                                            color: '#FFFFFF',
+                                                            lineSpacing: '30',
+                                                            characterSpacing: '0'
+                                                    }}>
                                             Register
                                         </Button>
                                     </Menu.Item>
                             </Container>
-                        </Menu>    
-       
-        </Segment>
-        
+                        </Menu>            
     )
 }
 export default Headers

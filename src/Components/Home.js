@@ -11,16 +11,25 @@ import Footer from './Footer'
 
 const Home = () => {
     return(
-        <div>
-           <Headers />
-           <HeadingPage />     
-           <LatestNews />
-           <About />
-           <AccessRanking />
-           <GetFreePass />
-           <PlayerTable />
-           <Footer />
-        </div>
+        <Segment vertical style={{backgroundColor: '#F6F6F6'}}>
+            <Container>
+            <Grid>
+                <Grid.Row>
+                    <Grid.Column>
+                        <Headers />
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column>
+                        <HeadingPage />
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
+            </Container>
+
+        </Segment>
+          
+         
     )
 }
 export default Home

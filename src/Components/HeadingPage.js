@@ -1,14 +1,13 @@
 import { Button, Container, Grid, Header, List, Segment } from "semantic-ui-react"
+import '../AGRESSIVE.otf'
 
 const HeadingPage = () => {
     return(
-        <Segment vertical style={{backgroundColor: '#F4F6F6', padding: '1em', border: 0}}>
-        <Container>
             <Grid>
                 <Grid.Row>
                     <Grid.Column width={3}>
                         <Segment>
-                            <List relaxed divided size="big">
+                            <List relaxed  size="big">
                                 <List.Item as="a">Player Ratings</List.Item>
                                 <List.Item as="a">Watch Videos</List.Item>
                                 <List.Item as="a">Coming Up</List.Item>
@@ -29,10 +28,22 @@ const HeadingPage = () => {
                                         <Header
                                             content="ABA PREMIER LEAGUE
                                                      TABLE TENNIS"
-                                            as="h1"
-                                            style={{fontSize: '3em'}}
+                                            style={{
+                                                    fontWeight: 'bold', 
+                                                    fontFamily: 'AGRESSIVE',
+                                                    fontSize: '50px',
+                                                    color: '#000000',
+                                                    characterSpacing: 20,
+                                                    lineSpacing: 80,
+                                                    transform: 'uppercase'
+
+                                                  }}
                                         />
-                                        <Segment  style={{minHeight: 200, backgroundColor: '#0047AB'}}>
+                                        <Segment id="bgSegment"  
+                                                            style={{
+                                                                minHeight: 200, 
+                                                            }}
+                                        >
                                             <Grid verticalAlign="middle">
                                                 <Grid.Row>
                                                     <Grid.Column>
@@ -67,10 +78,6 @@ const HeadingPage = () => {
                 </Grid.Row>
 
             </Grid>
-
-        </Container>
-           
-       </Segment>
     )
 }
 export default HeadingPage

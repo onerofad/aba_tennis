@@ -1,5 +1,6 @@
-import { Button, Container, Grid, Header, List, Segment } from "semantic-ui-react"
+import { Button, Container, Grid, Header, List, Segment, Image } from "semantic-ui-react"
 import '../AGRESSIVE.otf'
+import '../style.css'
 
 const HeadingPage = () => {
     return(
@@ -7,13 +8,23 @@ const HeadingPage = () => {
                 <Grid.Row>
                     <Grid.Column width={3}>
                         <Segment>
-                            <List relaxed  size="big">
-                                <List.Item as="a">Player Ratings</List.Item>
-                                <List.Item as="a">Watch Videos</List.Item>
-                                <List.Item as="a">Coming Up</List.Item>
-                                <List.Item as="a">Player Profiles</List.Item>
-                                <List.Item as="a">Image Gallary</List.Item>
-                                <List.Item as="a">Results</List.Item>
+                            <List 
+                                relaxed  size="big"
+                                style={{
+                                        fontSize: '20px',
+                                        fontWeight: 'Regular',
+                                        fontFamily: 'Poppins',
+                                        lineSpacing: 30,
+                                        characterSpacing: 0
+                  
+                                }}
+                            >
+                                <List.Item as="a" style={{color: '#000000'}}>Player Ratings</List.Item>
+                                <List.Item as="a" style={{color: '#000000', }}>Watch Videos</List.Item>
+                                <List.Item as="a" style={{color: '#000000', }}>Coming Up</List.Item>
+                                <List.Item as="a" style={{color: '#000000', }}>Player Profiles</List.Item>
+                                <List.Item as="a" style={{color: '#000000', }}>Image Gallary</List.Item>
+                                <List.Item as="a" style={{color: '#000000'}}>Results</List.Item>
                             </List>
 
                         </Segment>
@@ -41,7 +52,8 @@ const HeadingPage = () => {
                                         />
                                         <Segment id="bgSegment"  
                                                             style={{
-                                                                minHeight: 200, 
+                                                                maxHeight: 300,
+                                                                padding: '2em 0em' 
                                                             }}
                                         >
                                             <Grid verticalAlign="middle">
@@ -49,8 +61,14 @@ const HeadingPage = () => {
                                                     <Grid.Column>
                                                         <Header
                                                             content="2nd October to 5th November 2023"
-                                                            style={{color: '#fff'}}
-                                                            as="h1"
+                                                            style={{
+                                                            	fontFamily: "dharma-gothic-e",
+                                                                color: '#ffffff',
+                                                                fontWeight: 'Regular',
+                                                                fontSize: '50px',
+                                                                characterSpacing: 20,
+                                                                lineSpacing: 100
+                                                            }}
                                                         />
                                                     </Grid.Column>
                                                 </Grid.Row>
@@ -58,11 +76,24 @@ const HeadingPage = () => {
                                                     <Grid.Column>
                                                         <Button 
                                                         size="large"
-                                                        style={{color: '#000', backgroundColor: '#FFF'}}
+                                                        style={{
+                                                            color: '#193275', 
+                                                            fontSize: '20px',
+                                                            fontWeight: 'Regular',
+                                                            fontFamily: 'Poppins',
+                                                            lineSpacing: 30,
+                                                            characterSpacing: 0,
+                                      
+                                                        }}
                                                         
                                                         >
-                                                            Learn more
+                                                            Register
                                                         </Button>
+                                                    </Grid.Column>
+                                                </Grid.Row>
+                                                <Grid.Row style={{marginTop: 0}}>
+                                                    <Grid.Column verticalAlign="bottom">
+                                                        <Image style={{margin: '0em 0em'}} size="small" src="/images/tennispat.svg" />
                                                     </Grid.Column>
                                                 </Grid.Row>
                                             </Grid>

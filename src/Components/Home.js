@@ -2,12 +2,11 @@ import 'semantic-ui-css/semantic.min.css'
 import Headers from "./Headers"
 import HeadingPage from './HeadingPage'
 import LatestNews from './LatestNews'
-import { Container, Grid, Segment } from 'semantic-ui-react'
 import About from './About'
 import AccessRanking from './AccessRanking'
-import GetFreePass from './GetFreePass'
-import PlayerTable from './PlayerTable'
-import Footer from './Footer'
+import { Container, Grid, Segment } from 'semantic-ui-react'
+import '../style.css'
+
 
 const Home = () => {
     return(
@@ -22,6 +21,21 @@ const Home = () => {
                 <Grid.Row>
                     <Grid.Column>
                         <HeadingPage />
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column>
+                        <LatestNews />
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column>
+                        <About />
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column>
+                        <AccessRanking />
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

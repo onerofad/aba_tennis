@@ -3,6 +3,7 @@ import { Grid, Pagination } from "semantic-ui-react"
 import getProducts from "./Db"
 import { useNavigate, useParams } from "react-router-dom"
 import getNews from "./Db"
+import '../style.css'
 
 const PaginationComponent = () => {
     const [activePage, setactivePage] = useState()
@@ -33,7 +34,16 @@ const PaginationComponent = () => {
                     <Pagination
                         onPageChange={(e, {activePage}) => handlePaginationChange(activePage)}
                         totalPages={pageItem}
-                        activePage={activePage}                 
+                        activePage={activePage}
+                        
+                        style={{
+                            fontFamily: "Poppins",
+                            color: '#000000',
+                            fontWeight: 'Regular',
+                            fontSize: '16px',
+                            characterSpacing: 0,
+                            lineSpacing: 30
+                        }}
                     />
 
                 </Grid.Column>

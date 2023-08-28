@@ -34,8 +34,8 @@ const Headers = () => {
                                                             fontWeight: 'medium',
                                                             fontFamily: 'Poppins',
                                                             color: '#FFFFFF',
-                                                            lineSpacing: '30',
-                                                            characterSpacing: '0'
+                                                            lineSpacing: 30,
+                                                            characterSpacing: 0
                                                     }}>
                                             Register
                                         </Button>

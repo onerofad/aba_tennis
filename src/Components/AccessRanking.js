@@ -2,8 +2,6 @@ import { Container, Grid, Header, Segment } from "semantic-ui-react"
 
 const AccessRanking = () => {
     return(
-        <Segment vertical style={{backgroundColor: '#F4F6F6', border: 0}}>
-            <Container>
                 <Grid>
                     <Grid.Row>
                         <Grid.Column>
@@ -22,9 +20,6 @@ const AccessRanking = () => {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-            </Container>
-
-        </Segment>
     )
 }
 export default AccessRanking

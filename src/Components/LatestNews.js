@@ -2,13 +2,13 @@ import { Container, Divider, Grid, Header, Icon, Segment, Image, Pagination } fr
 import PaginationComponent from "./PaginationComponent"
 import { useParams } from "react-router-dom"
 import getNews from "./Db"
+import '../style.css'
 
 const LatestNews = () => {
     const params = useParams()
 
     return(
-        <Segment vertical style={{backgroundColor: '#F4F6F6', border: 0}}>
-            <Container>
+    
             <Grid>
                 <Grid.Row>
                     <Grid.Column>
@@ -18,21 +18,33 @@ const LatestNews = () => {
                                     <Grid.Column width={8}>
                                         <Header
                                             content="Latest News"
-                                            as="h2"
+                                            style={{
+                                                fontFamily: "dharma-gothic-e",
+                                                color: '#193275',
+                                                fontWeight: 'bold',
+                                                fontSize: '35px',
+                                                characterSpacing: 20,
+                                                lineSpacing: 100
+                                            }}
                                         />
                                     </Grid.Column>
                                     <Grid.Column width={8} textAlign="right">
-                                        <span>
+                                        <span
+                                            style={{
+                                                fontFamily: "Poppins",
+                                                color: '#000000',
+                                                fontWeight: 'Regular',
+                                                fontSize: '20px',
+                                                characterSpacing: 0,
+                                                lineSpacing: 30
+                                            }}
+                                        
+                                        >
                                             View All <Icon name="right angle" />
                                         </span>
                                     </Grid.Column>
                                 </Grid.Row>
                                 <Divider style={{marginTop: '0em'}} />
-                                <Grid.Row>
-                                    <Grid.Column>
-                                        <Image bordered centered rounded src="/images/fayose.jpg" />
-                                    </Grid.Column>
-                                </Grid.Row>
                                 <Grid.Row>
                                     {
                                         getNews().map((news) => {
@@ -41,8 +53,19 @@ const LatestNews = () => {
                                             if(news.id >= firstItemId && news.id <= lastItemId){      
                                                 return(
                                                     <Grid.Column width={4} key={news.id}>
+                                                        <Image bordered centered rounded src={news.image} />
+
                                                         <Header
                                                             content = {news.description}
+                                                            style={{
+                                                                fontFamily: "Poppins",
+                                                                color: '#000000',
+                                                                fontWeight: 'medium',
+                                                                fontSize: '16px',
+                                                                characterSpacing: 0,
+                                                                lineSpacing: 35
+                                                            }}
+                                                        
                                                         />
                                                     </Grid.Column>
                                                 )
@@ -54,7 +77,7 @@ const LatestNews = () => {
                                     
                                 </Grid.Row>
                                 <Grid.Row>
-                                    <Grid.Column textAlign="center">
+                                    <Grid.Column style={{marginTop: '2em'}} textAlign="center">
                                         <PaginationComponent />
                                     </Grid.Column>
                                 </Grid.Row>
@@ -65,8 +88,7 @@ const LatestNews = () => {
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
-            </Container>
-        </Segment>
+          
     )
 
 }

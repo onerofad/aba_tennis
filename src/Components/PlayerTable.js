@@ -1,4 +1,4 @@
-import { Container, Divider, Dropdown, Grid, Header, Segment, Menu, Search, Table, Tab } from "semantic-ui-react"
+import { Container, Divider, Dropdown, Grid, Header, Segment, Menu, Search, Table, Tab, Select, Input } from "semantic-ui-react"
 
 const PlayerTable = () => {
     const options = [
@@ -7,41 +7,97 @@ const PlayerTable = () => {
         { key: 3, text: 'Choice 3', value: 3 },
       ]
     return(
-        <Segment vertical style={{backgroundColor: '#F4F6F6', paddingTop: '2em', border: 0}}>
-            <Container>
                 <Grid>
                     <Grid.Row>
                         <Grid.Column>
                             <Header
                                 content="PLAYER RANKING"
+                                style={{
+                                    fontFamily: "dharma-gothic-e",
+                                    color: '#000000',
+                                    fontWeight: 'bold',
+                                    fontSize: '35px',
+                                    characterSpacing: 20,
+                                    lineSpacing: 100
+                                }}
                             />
                             <Divider />
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
-                        <Grid.Column width={8} style={{marginTop: '0em'}}>
-                        <Menu compact>
-                            <Dropdown text='Premier League' options={options} simple item />
-                        </Menu>
-                        <Menu compact>
-                            <Dropdown text='Top 5 Players' options={options} simple item />
-                        </Menu>
+                        <Grid.Column width={4}>
+                            <Select 
+                                    options={options} 
+                                    placeholder="Premier League" 
+                                    style={{
+                                        color: '#000000',
+                                        fontFamily: 'Poppins',
+                                        fontSize: '16px',
+                                        fontWeight: 'bold',
+                                        characterSpacing: 0,
+                                        lineSpacing: 33,
+                                    }}
+                            />
+                        </Grid.Column>
+                        <Grid.Column width={4}>
+                            <Select 
+                                    options={options} 
+                                    placeholder="Top 5 Players" 
+                                    style={{
+                                        color: '#000000',
+                                        fontFamily: 'Poppins',
+                                        fontSize: '16px',
+                                        fontWeight: 'bold',
+                                        characterSpacing: 0,
+                                        lineSpacing: 33,
+                                    }}
+                            />
                        </Grid.Column>
                         <Grid.Column width={8} textAlign="right">
-                            <Search placeholder="search" />
+                            <Input placeholder="search"
+                                        style={{
+                                            color: '#000000',
+                                            fontFamily: 'Poppins',
+                                            fontSize: '16px',
+                                            fontWeight: 'bold',
+                                            characterSpacing: 0,
+                                            lineSpacing: 33,
+                                        }}
+                            
+                            />
                         </Grid.Column>
                     </Grid.Row>
                     <Divider />
                     <Grid.Row>
                         <Grid.Column>
                             <Table celled size="huge">
-                                <Table.Header>
-                                    <Table.HeaderCell>Ranking</Table.HeaderCell>
-                                    <Table.HeaderCell>Avatar</Table.HeaderCell>
-                                    <Table.HeaderCell>Player Name</Table.HeaderCell>
-                                    <Table.HeaderCell>Points</Table.HeaderCell>
+                                <Table.Header
+                                    style={{
+                                        color: '#000000',
+                                        fontFamily: 'Poppins',
+                                        fontSize: '16px',
+                                        fontWeight: 'bold',
+                                        characterSpacing: 0,
+                                        lineSpacing: 33,
+                                    }}
+                                
+                                >
+                                    <Table.HeaderCell width={1}>Position</Table.HeaderCell>
+                                    <Table.HeaderCell width={1}>Avatar</Table.HeaderCell>
+                                    <Table.HeaderCell width={13}>Player Name</Table.HeaderCell>
+                                    <Table.HeaderCell width={1}>Points</Table.HeaderCell>
                                 </Table.Header>
-                                <Table.Body>
+                                <Table.Body
+                                       style={{
+                                        color: '#000000',
+                                        fontFamily: 'Poppins',
+                                        fontSize: '16px',
+                                        fontWeight: 'bold',
+                                        characterSpacing: 0,
+                                        lineSpacing: 33,
+                                    }}
+                                
+                                >
                                     <Table.Row>
                                         <Table.Cell>1</Table.Cell>
                                         <Table.Cell></Table.Cell>
@@ -82,8 +138,6 @@ const PlayerTable = () => {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-            </Container>
-        </Segment>
     )
 }
 export default PlayerTable

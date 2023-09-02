@@ -5,6 +5,16 @@ import {useNavigate} from 'react-router-dom'
 
 const HeadingPage = () => {
     const navigate = useNavigate()
+
+    const openregister = () => {
+        if(sessionStorage.getItem("em") === null ){
+            navigate("/signup")
+        }else{
+            navigate("/register")
+
+        }
+
+    }
     return(
         <Grid>
             <Grid.Row>
@@ -76,7 +86,7 @@ const HeadingPage = () => {
                                                             fontWeight: 'normal',
                                                             fontFamily: 'Poppins',      
                                                         }}
-                                                        onClick={() => navigate("/signup")}
+                                                        onClick={() => openregister()}
                                                         >
                                                             Register
                                                         </Button>

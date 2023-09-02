@@ -82,7 +82,7 @@ const Login = () => {
 
 
             setTimeout(() => {
-               navigate("/profile")
+               navigate("/")
             }, 5000)
         }
     }

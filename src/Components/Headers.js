@@ -135,12 +135,13 @@ const Headers = () => {
                         </Dropdown> 
                     </Menu.Item>
                     <Menu.Item>
-                       {sessionStorage.getItem("f")}
+                      
                        <Icon name="user" />
-                       <Dropdown  text="Competitions" floating>
+                       <Dropdown  text= {sessionStorage.getItem("f")} floating>
                             <Dropdown.Menu pointing="bottom">
                                 <Dropdown.Item 
-                                    text={sessionStorage.getItem("em")}             
+                                    text="Profile"           
+                                    onClick={() => navigate("/profile")}  
                                 />
                                 <Dropdown.Item 
                                     text="Log Out" 

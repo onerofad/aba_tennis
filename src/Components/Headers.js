@@ -136,7 +136,7 @@ const Headers = () => {
                     </Menu.Item>
                     <Menu.Item>
                       
-                       <Icon name="user" />
+                       <Icon name="user" size="large"  />
                        <Dropdown  text= {sessionStorage.getItem("f")} floating>
                             <Dropdown.Menu pointing="bottom">
                                 <Dropdown.Item 

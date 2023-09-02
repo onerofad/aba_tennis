@@ -1,7 +1,6 @@
 import { Segment, Grid, Container, Header, Button, Image } from "semantic-ui-react"
 import Footer from "./Footer"
-import RegisterHeader from "./RegisterHeader"
-
+import Headers from "./Headers"
 const Registration = () => {
     return(
         <Segment vertical style={{backgroundColor: '#F6F6F6'}}>         
@@ -9,7 +8,7 @@ const Registration = () => {
         <Container>
             <Grid.Row>
                 <Grid.Column>
-                    <RegisterHeader />
+                    <Headers />
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row style={{paddingTop: '4em', paddingBottom: '2em'}}>

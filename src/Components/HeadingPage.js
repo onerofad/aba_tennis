@@ -24,7 +24,7 @@ const HeadingPage = () => {
                                 <List.Item style={{color: '#000000'}}>Coming Up</List.Item>
                                 <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("search/profile")}>Player Profiles</List.Item>
                                 <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("/gallary")}>Image Gallary</List.Item>
-                                <List.Item style={{color: '#000000'}}>Results</List.Item>
+                                <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("/results")}>Results</List.Item>
                             </List>
 
                         </Segment>

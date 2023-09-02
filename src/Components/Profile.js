@@ -4,6 +4,8 @@ import Footer from "./Footer"
 import { useNavigate } from "react-router-dom"
 
 const Profile = () => {
+
+    const navigate = useNavigate()
     return(
         <Segment vertical style={{backgroundColor: '#FFFFFF'}}>
              <Grid>

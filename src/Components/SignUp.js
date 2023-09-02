@@ -262,10 +262,13 @@ const SignUp = () => {
                           positive
                           onClick={() => {dispatch({type: 'close'}); navigate("/login");}}
                           style={{
-                            textAlign: 'center'
+                            textAlign: 'center',
+                            backgroundColor: '#193275',
+                            color: '#FFFFFF'
+
                           }}
                         >
-                            Continue
+                            Continue to Login
                         </Button>
                     </Modal.Actions>
 

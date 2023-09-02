@@ -25,9 +25,40 @@ const Profile = () => {
                                     <Menu.Item position="center" as="a">
                                         <Image size="tiny" src="/images/about/about.png" />
                                     </Menu.Item>
-                                    <Menu.Item as="a">Home</Menu.Item>
-                                    <Menu.Item as="a">Premier League</Menu.Item>
-                                    <Menu.Item as="a">Competitions</Menu.Item>
+                                    <Menu.Item position="right" onClick={() => navigate("/")} as="a">
+                        Home
+                    </Menu.Item>
+                    <Menu.Item as="a">
+                        <Dropdown  text="Premier League" floating>
+                            <Dropdown.Menu pointing="bottom">
+                                <Dropdown.Item 
+                                    text="Registration" 
+                                    onClick={() => navigate("/signup") }          
+                                />
+                                <Dropdown.Item 
+                                    text="Results" 
+                                />
+                                <Dropdown.Item 
+                                    text="PL Stories" 
+                                />
+                            </Dropdown.Menu>
+    
+                        </Dropdown>                                    
+                    </Menu.Item>
+                    <Menu.Item as="a">
+                        
+                        <Dropdown  text="Competitions" floating>
+                            <Dropdown.Menu pointing="bottom">
+                                <Dropdown.Item 
+                                    text="Covernor's cup"             
+                                />
+                                <Dropdown.Item 
+                                    text="Chairman's cup" 
+                                />
+                            </Dropdown.Menu>
+    
+                        </Dropdown> 
+                    </Menu.Item>
                                    <Menu.Item as="a" position="right">
                                         <Button style={{
                                         backgroundColor: '#193275', 

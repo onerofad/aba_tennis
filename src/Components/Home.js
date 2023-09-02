@@ -55,7 +55,7 @@ const Home = () => {
                             <Contact />
                         </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row style={{padding: '2em 0em'}}>
+                    <Grid.Row style={{padding: '2em 6em'}}>
                         <Grid.Column>
                             <Footer />
                         </Grid.Column>

@@ -39,10 +39,8 @@ const PaginationComponent = () => {
                         style={{
                             fontFamily: "Poppins",
                             color: '#000000',
-                            fontWeight: 'Regular',
+                            fontWeight: 'normal',
                             fontSize: '16px',
-                            characterSpacing: 0,
-                            lineSpacing: 30
                         }}
                     />
 

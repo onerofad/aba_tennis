@@ -2,49 +2,60 @@ import { Grid, Header, Segment, Form, Button, Input } from "semantic-ui-react"
 
 const Contact = () => {
     return(
-        <Grid>
-            <Grid.Row>
-                <Grid.Column>
-                    <Segment  style={{backgroundColor: '#c3c0c0'}}>
-                        <Grid textAlign="center">
-                            <Grid.Row>
-                                <Grid.Column>
-                                    <p
-                                         style={{
-                                            fontFamily: "dharma-gothic-e",
-                                            fontWeight: 'bold',
-                                            fontSize: '60px',
-                                            characterSpacing: 20,
-                                            lineSpacing: 100,
-                                            marginBottom: '0em',
-                                        }}
-                                    >
-                                        STAY <span style={{color: '#D70826'}}>INFORMED</span><br/>
+    
+        <Segment  style={{backgroundColor: '#c3c0c0', padding: '2em 0em'}}>
+            <Grid textAlign="center">
+                <Grid.Row>
+                    <Grid.Column>
+                        <Header style={{
+                                fontFamily: "dharma-gothic-c",
+                                fontWeight: 'bold',
+                                fontSize: '120px',
+                                marginBottom: 0
+                            }}
+                        >
+                            STAY <span style={{color: '#D70826'}}>INFORMED</span>
+                        </Header>
+                        <span 
+                            style={{
+                                fontSize: '20px',
+                                fontFamily: 'helvetical',
+                                fontWeight: 'normal'
 
-                                    </p>
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row >
-                                <Grid.Column >
-                                  
-                                    <Input size="huge" placeholder="Email"  />
-                                    <Button
-                                                size="huge"
-                                                style={{
-                                                    backgroundColor: '#405092',
-                                                    color: '#ffffff'
-                                                }}
-                                                >
-                                                    Sign Up
-                                                </Button>
-                                </Grid.Column>
-                            </Grid.Row>
-                        </Grid>
+                            }}
+                            >
+                                Up to date with today's top stories
+                        </span>
 
-                    </Segment>
-                </Grid.Column>
-            </Grid.Row>
-        </Grid>
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row >
+                    <Grid.Column >
+                        <Input placeholder="Email"  
+                            style={{
+                                fontFamily: 'Poppins',
+                                fontSize: '20px',
+                                fontWeight: 'normal',
+                                width: '500px',
+                                marginRight: '1em'
+                            }}
+                        />
+                            <Button
+                              style={{
+                                backgroundColor: '#405092',
+                                fontFamily: 'Poppins',
+                                fontSize: '20px',
+                                fontWeight: 'normal',
+                                color: '#ffffff'
+                              }}
+                            >
+                                Sign Up
+                            </Button>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
+
+        </Segment>
     )
 }
 export default Contact

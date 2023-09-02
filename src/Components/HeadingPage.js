@@ -1,30 +1,30 @@
 import { Button, Container, Grid, Header, List, Segment, Image } from "semantic-ui-react"
 import '../AGRESSIVE.otf'
 import '../style.css'
+import {useNavigate} from 'react-router-dom'
 
 const HeadingPage = () => {
+    const navigate = useNavigate()
     return(
-            <Grid>
-                <Grid.Row>
-                    <Grid.Column width={3}>
-                        <Segment>
+        <Grid>
+            <Grid.Row>
+                    <Grid.Column style={{color: '#000000'}} width={3}>
+                        <Segment >
                             <List 
-                                relaxed  size="big"
+                                relaxed  size="medium"
                                 style={{
                                         fontSize: '20px',
-                                        fontWeight: 'Regular',
+                                        fontWeight: 'normal',
                                         fontFamily: 'Poppins',
-                                        lineSpacing: 30,
-                                        characterSpacing: 0
-                  
+                                        color: '#000000'
                                 }}
                             >
-                                <List.Item as="a" style={{color: '#000000'}}>Player Ratings</List.Item>
-                                <List.Item as="a" style={{color: '#000000', }}>Watch Videos</List.Item>
-                                <List.Item as="a" style={{color: '#000000', }}>Coming Up</List.Item>
-                                <List.Item as="a" style={{color: '#000000', }}>Player Profiles</List.Item>
-                                <List.Item as="a" style={{color: '#000000', }}>Image Gallary</List.Item>
-                                <List.Item as="a" style={{color: '#000000'}}>Results</List.Item>
+                                <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("/ranking")}>Player Ratings</List.Item>
+                                <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("/videos")}>Watch Videos</List.Item>
+                                <List.Item style={{color: '#000000'}}>Coming Up</List.Item>
+                                <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("search/profile")}>Player Profiles</List.Item>
+                                <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("/gallary")}>Image Gallary</List.Item>
+                                <List.Item style={{color: '#000000'}}>Results</List.Item>
                             </List>
 
                         </Segment>
@@ -44,17 +44,13 @@ const HeadingPage = () => {
                                                     fontFamily: 'AGRESSIVE',
                                                     fontSize: '50px',
                                                     color: '#000000',
-                                                    characterSpacing: 20,
-                                                    lineSpacing: 80,
-                                                    transform: 'uppercase'
-
                                                   }}
                                         />
                                         <Segment id="bgSegment"  
-                                                            style={{
-                                                                maxHeight: 300,
-                                                                padding: '2em 0em' 
-                                                            }}
+                                                  style={{
+                                                    maxHeight: 300,
+                                                    padding: '2em 0em' 
+                                                }}          
                                         >
                                             <Grid verticalAlign="middle">
                                                 <Grid.Row>
@@ -64,10 +60,9 @@ const HeadingPage = () => {
                                                             style={{
                                                             	fontFamily: "dharma-gothic-e",
                                                                 color: '#ffffff',
-                                                                fontWeight: 'Regular',
+                                                                fontWeight: 'normal',
                                                                 fontSize: '50px',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
+                                                              
                                                             }}
                                                         />
                                                     </Grid.Column>
@@ -75,25 +70,21 @@ const HeadingPage = () => {
                                                 <Grid.Row >
                                                     <Grid.Column>
                                                         <Button 
-                                                        size="large"
                                                         style={{
                                                             color: '#193275', 
                                                             fontSize: '20px',
-                                                            fontWeight: 'Regular',
-                                                            fontFamily: 'Poppins',
-                                                            lineSpacing: 30,
-                                                            characterSpacing: 0,
-                                      
+                                                            fontWeight: 'normal',
+                                                            fontFamily: 'Poppins',      
                                                         }}
-                                                        
+                                                        onClick={() => navigate("/signup")}
                                                         >
                                                             Register
                                                         </Button>
                                                     </Grid.Column>
                                                 </Grid.Row>
-                                                <Grid.Row style={{marginTop: 0}}>
-                                                    <Grid.Column verticalAlign="bottom">
-                                                        <Image style={{margin: '0em 0em'}} size="small" src="/images/tennispat.svg" />
+                                                <Grid.Row>
+                                                    <Grid.Column verticalAlign="top">
+                                                        <Image size="small" src="/images/tennispat.svg" />
                                                     </Grid.Column>
                                                 </Grid.Row>
                                             </Grid>
@@ -106,9 +97,9 @@ const HeadingPage = () => {
                         </Segment>
                         
                     </Grid.Column>
-                </Grid.Row>
+                </Grid.Row>    
 
-            </Grid>
+        </Grid>       
     )
 }
 export default HeadingPage

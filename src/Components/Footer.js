@@ -3,12 +3,12 @@ import { Link } from "react-router-dom"
 const Footer = () => {
 
     return(
-  
+        
         <Grid textAlign="center">
-            <Grid.Row style={{fontWeight: 'normal'}}>
+            <Grid.Row style={{fontWeight: 'normal', paddingBottom: '4em'}}>
                 <Grid.Column width={4} >
                    <Image centered size="tiny" src="/images/logo/logo.jpg" />
-                    <List link
+                    <List link relaxed
                         style={{
                             fontSize: '14px', 
                             fontWeight: 'normal', 
@@ -31,7 +31,7 @@ const Footer = () => {
                     }}
                     
                     />
-                    <List link style={{
+                    <List link relaxed style={{
                         fontSize: '14px', 
                         fontWeight: 'normal', 
                         fontFamily: 'Poppins',
@@ -54,7 +54,7 @@ const Footer = () => {
                         fontFamily: 'Poppins',
                     }}
                     />
-                    <List link 
+                    <List link relaxed
                         style={{
                             fontSize: '14px', 
                             fontWeight: 'normal', 
@@ -77,7 +77,7 @@ const Footer = () => {
                         fontFamily: 'Poppins',
                     }}
                     />
-                    <List  link  
+                    <List relaxed 
                     style={{
                             fontSize: '14px', 
                             fontWeight: 'normal', 
@@ -88,6 +88,45 @@ const Footer = () => {
                     </List>
                 </Grid.Column>
             </Grid.Row>    
+            <Grid.Row>
+                <Grid.Column>
+                    <Grid>
+                        <Grid.Row >
+                            <Grid.Column width={8}>
+
+                            </Grid.Column>
+                            <Grid.Column width={8}>
+                                <Grid>
+                                    <Grid.Row>
+                                        <Grid.Column width={4}>
+                                        <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
+                                            <Icon size="large" name="facebook f" style={{color: "#FFFFFF"}}/>
+                                        </Segment>
+                                        </Grid.Column>
+                                        <Grid.Column width={4}>
+                                        <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
+                                            <Icon size="large" name="instagram" style={{color: "#FFFFFF"}}/>
+                                        </Segment>
+                                        </Grid.Column>
+                                        <Grid.Column width={4}>
+                                        <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
+                                            <Icon size="large" name="youtube" style={{color: "#FFFFFF"}}/>
+                                        </Segment>
+                                        </Grid.Column>
+                                        <Grid.Column width={2} verticalAlign="middle">
+                                            Privacy
+                                        </Grid.Column>
+                                        <Grid.Column width={2} verticalAlign="middle">
+                                            Terms
+                                        </Grid.Column>
+                                    </Grid.Row>
+                                </Grid>
+
+                            </Grid.Column>
+                        </Grid.Row>
+                    </Grid>
+                </Grid.Column>
+            </Grid.Row>
             </Grid>
 
     )

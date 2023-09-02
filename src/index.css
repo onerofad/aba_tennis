@@ -19,3 +19,11 @@ code {
   background-size: cover;
 
 }
+#bgColumn{
+  background-image:
+  linear-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.3));  
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}

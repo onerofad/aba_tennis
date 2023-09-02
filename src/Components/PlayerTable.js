@@ -16,9 +16,7 @@ const PlayerTable = () => {
                                     fontFamily: "dharma-gothic-e",
                                     color: '#000000',
                                     fontWeight: 'bold',
-                                    fontSize: '35px',
-                                    characterSpacing: 20,
-                                    lineSpacing: 100
+                                    fontSize: '50px'
                                 }}
                             />
                             <Divider />
@@ -33,9 +31,7 @@ const PlayerTable = () => {
                                         color: '#000000',
                                         fontFamily: 'Poppins',
                                         fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        characterSpacing: 0,
-                                        lineSpacing: 33,
+                                        fontWeight: 'normal',
                                     }}
                             />
                         </Grid.Column>
@@ -47,22 +43,18 @@ const PlayerTable = () => {
                                         color: '#000000',
                                         fontFamily: 'Poppins',
                                         fontSize: '16px',
-                                        fontWeight: 'bold',
-                                        characterSpacing: 0,
-                                        lineSpacing: 33,
+                                        fontWeight: 'normal',
                                     }}
                             />
                        </Grid.Column>
                         <Grid.Column width={8} textAlign="right">
                             <Input placeholder="search"
-                                        style={{
-                                            color: '#000000',
-                                            fontFamily: 'Poppins',
-                                            fontSize: '16px',
-                                            fontWeight: 'bold',
-                                            characterSpacing: 0,
-                                            lineSpacing: 33,
-                                        }}
+                                      style={{
+                                        color: '#000000',
+                                        fontFamily: 'Poppins',
+                                        fontSize: '16px',
+                                        fontWeight: 'normal',
+                                    }}
                             
                             />
                         </Grid.Column>
@@ -77,8 +69,6 @@ const PlayerTable = () => {
                                         fontFamily: 'Poppins',
                                         fontSize: '16px',
                                         fontWeight: 'bold',
-                                        characterSpacing: 0,
-                                        lineSpacing: 33,
                                     }}
                                 
                                 >
@@ -93,8 +83,6 @@ const PlayerTable = () => {
                                         fontFamily: 'Poppins',
                                         fontSize: '16px',
                                         fontWeight: 'bold',
-                                        characterSpacing: 0,
-                                        lineSpacing: 33,
                                     }}
                                 
                                 >

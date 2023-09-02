@@ -135,8 +135,20 @@ const Headers = () => {
                         </Dropdown> 
                     </Menu.Item>
                     <Menu.Item>
+                       {sessionStorage.getItem("f")}
                        <Icon name="user" />
-                       {sessionStorage.getItem("em")}
+                       <Dropdown  text="Competitions" floating>
+                            <Dropdown.Menu pointing="bottom">
+                                <Dropdown.Item 
+                                    text={sessionStorage.getItem("em")}             
+                                />
+                                <Dropdown.Item 
+                                    text="Log Out" 
+                                    onClick={() => navigate("/logout") }
+                                />
+                            </Dropdown.Menu>
+                            </Dropdown> 
+                      
                     </Menu.Item>
             </Container>
     </Menu>    

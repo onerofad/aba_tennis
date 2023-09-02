@@ -77,6 +77,8 @@ const Login = () => {
             sessionStorage.setItem("em",email)
             sessionStorage.setItem("fn", info.fname + " " + info.lname)
             sessionStorage.setItem("db", info.dob)
+            sessionStorage.setItem("f", info.fname)
+
 
 
             setTimeout(() => {

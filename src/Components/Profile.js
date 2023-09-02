@@ -35,9 +35,13 @@ const Profile = () => {
                                         fontWeight: 'normal',
                                         fontFamily: 'Poppins',
                                         color: '#FFFFFF',
-                                }}>
+                                }}
+                                >
                                             Edit Profile
                                         </Button>
+                                    </Menu.Item>
+                                    <Menu.Item as="a">
+                                        <Link to="/logout">Log Out</Link>
                                     </Menu.Item>
                                 
 
@@ -71,7 +75,7 @@ const Profile = () => {
                                             fontFamily: "dharma-gothic-e",
                                         }}
                                     >
-                                        Onyemeachi Oloh
+                                        {sessionStorage.getItem("fn")}
                                     </p>
                                     Date of birth:
                                     <p style={{
@@ -81,7 +85,7 @@ const Profile = () => {
                                         }}
                                     
                                     >
-                                        29/03/1987
+                                        {sessionStorage.getItem("db")}
                                     </p>
                                     Nationality:
                                     <p style={{
@@ -100,7 +104,7 @@ const Profile = () => {
                                             fontFamily: "dharma-gothic-e",
                                         }}
                                     >
-                                        Onyema23.itp@gmail.com
+                                        {sessionStorage.getItem("em")}
                                     </p>
                     </Grid.Column>
                     <Grid.Column width={6}>

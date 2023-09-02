@@ -14,6 +14,7 @@ import SignUp from './Components/SignUp';
 import Login from './Components/Login';
 import HomePagination from './Components/HomePagination';
 import MatchResult from './Components/MatchResults';
+import LogOut from './Components/LogOut';
 
 const App = () => {
   return (
@@ -33,6 +34,8 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path='/results' element={<MatchResult />} />
+          <Route path='/logout' element={<LogOut />} />
+
         </Routes>
      </BrowserRouter>
   );

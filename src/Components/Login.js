@@ -1,5 +1,89 @@
-import {Segment, Container, Grid, Form, Header, Button, Image, Icon} from 'semantic-ui-react'
+import { useEffect, useState } from 'react'
+import {Segment, Container, Grid, Form, Header, Button, Image, Icon, Loader} from 'semantic-ui-react'
+import getsignupDetails from '../services/API'
+import { useNavigate } from 'react-router-dom'
+
 const Login = () => {
+
+    const [email, setemail] = useState("") 
+    const [password, setpassword] = useState("") 
+    const [details, setdetails] = useState([])
+
+    const [fname, setfname] = useState("") 
+    const [lname, setlname] = useState("") 
+    const [dob, setdob] = useState("") 
+
+
+    const [loader, setloader] = useState(false)
+
+    const navigate = useNavigate()
+
+    let count = 0
+    let count1 = 0
+
+    const [eemail, esetemail] = useState(false) 
+    const [epassword, esetpassword] = useState(false) 
+
+    useEffect(() => {
+        getDetails()
+    }, []
+
+    )
+
+    const getDetails = () => {
+        getsignupDetails().get("/").
+        then((res) => {setdetails(res.data)})
+        .catch(console.error)
+    }
+    const clearError = () => {
+        esetemail(false)
+        esetpassword(false)
+    }
+
+    
+    const btnlogin  = () => {
+        details.map((user) => {
+            if(user.email === email){
+                ++count
+            }
+
+        })
+        details.map((user) => {
+            if(user.email === email && user.password === password){
+                ++count1
+            }
+
+        })
+        if(count == 0){
+            esetemail({ content: 'Email address not registered', pointing: 'below'})
+
+        }else if(email === "" ){
+            esetemail({ content:'Please enter your Email address', pointing: 'below'})           
+         
+        }else if(password === "" ){
+            esetpassword({ content:'Please enter your password', pointing: 'below'})           
+  
+        }else if(count1 == 0){
+            esetpassword({ content:'Invalid password', pointing: 'below'})           
+        }else if(count1 > 0){
+            setloader(true)
+            const info = details.filter(e => e.email === email)[0]
+            setfname(info.fname)
+            setlname(info.lname)
+            setdob(info.dob)
+            console.log(info.fname)
+
+            sessionStorage.setItem("em",email)
+            sessionStorage.setItem("fn", info.fname + " " + info.lname)
+            sessionStorage.setItem("db", info.dob)
+
+
+            setTimeout(() => {
+               navigate("/profile")
+            }, 5000)
+        }
+    }
+
     return(
     
         <Segment vertical style={{backgroundColor: '#F6F6F6'}}>
@@ -49,10 +133,23 @@ const Login = () => {
                                                     }}
                                                 />
                                                 <Form.Field>
-                                                    <Form.Input placeholder="Email" />
+                                                    <Form.Input 
+
+                                                        placeholder="Email"
+                                                        onChange={(e) => setemail(e.target.value) }
+                                                        onFocus = {() => clearError()}
+                                                        error={eemail}
+                                                    
+                                                    />
                                                 </Form.Field>
                                                 <Form.Field>
-                                                    <Form.Input type='password' placeholder="Password" />
+                                                    <Form.Input 
+                                                        type='password' 
+                                                        placeholder="Password" 
+                                                        onChange={(e) => setpassword(e.target.value) }
+                                                        onFocus = {() => clearError()}
+                                                        error={epassword}
+                                                    />
                                                 </Form.Field>
                                                 <Form.Field>
                                                     <Button style={{
@@ -61,7 +158,10 @@ const Login = () => {
                                                         fontWeight: 'normal',
                                                         backgroundColor: '#193275',
                                                         fontSize: '16px'
-                                                    }}>
+                                                    }}
+                                                        loading={loader}
+                                                        onClick={() => btnlogin() }
+                                                    >
                                                         Login
                                                     </Button>
                                                 </Form.Field>

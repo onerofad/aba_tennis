@@ -2,6 +2,7 @@ import {Form, Modal, Dropdown, Segment, Grid, Menu, Container, Image, Button, He
 import { Link } from "react-router-dom"
 import Footer from "./Footer"
 import { useNavigate } from "react-router-dom"
+import { useReducer } from "react"
 
 const Profile = () => {
 

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import {Segment, Container, Grid, Form, Header, Button, Image, Icon, Loader} from 'semantic-ui-react'
 import getsignupDetails from '../services/API'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
 
@@ -188,7 +189,8 @@ const Login = () => {
                                                 
                                                 >
                                                       <Link to="/" style={{color: '#FFFFFF'}}>
-                                                        Continue to website <Icon name="right angle" />
+                                                        Continue to website 
+                                                        <Icon name="right angle" />
                                                     </Link>
                                                 </Form.Field>
 

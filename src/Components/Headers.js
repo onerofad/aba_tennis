@@ -100,7 +100,7 @@ const Headers = () => {
                         <Image size="tiny" src="/images/about/about.png" />
                     </Menu.Item>
     
-                    <Menu.Item position="right" onClick={() => navigate("/")} as="a">
+                    <Menu.Item onClick={() => navigate("/")} as="a">
                         Home
                     </Menu.Item>
                     <Menu.Item as="a">

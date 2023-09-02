@@ -40,9 +40,7 @@ const Profile = () => {
                                             Edit Profile
                                         </Button>
                                     </Menu.Item>
-                                    <Menu.Item as="a">
-                                        <Link to="/logout">Log Out</Link>
-                                    </Menu.Item>
+                                   
                                 
 
                             </Container>

@@ -234,7 +234,7 @@ const SignUp = () => {
                                                     }}
                                                 
                                                 >
-                                                    <span>
+                                                    <span  onClick={() => navigate("/")}>
                                                         Continue to website <Icon name="right angle" />
                                                     </span>
                                                 </Form.Field>

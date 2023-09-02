@@ -1,4 +1,4 @@
-import { Dropdown, Segment, Grid, Menu, Container, Image, Button, Header, Divider, Placeholder } from "semantic-ui-react"
+import {Form, Modal, Dropdown, Segment, Grid, Menu, Container, Image, Button, Header, Divider, Placeholder } from "semantic-ui-react"
 import { Link } from "react-router-dom"
 import Footer from "./Footer"
 import { useNavigate } from "react-router-dom"
@@ -203,9 +203,22 @@ const Profile = () => {
                  open={open}
                  onClose={() => dispatch({type: 'close'})}         
                 >
-                    <Modal.Header>Details</Modal.Header>
+                    <Modal.Header>Edit Profile</Modal.Header>
                     <Modal.Content>
-                        Sign Up Successfull?
+                        <Form>
+                            <Form.Group>
+                                <Form.Input 
+                              
+                                />
+                                <Form.Input 
+                              
+                              />
+                                <Form.Input 
+                              
+                              />
+                            </Form.Group>
+                        </Form>
+                        
                     </Modal.Content>
                     <Modal.Actions>
                         <Button
@@ -218,7 +231,7 @@ const Profile = () => {
 
                           }}
                         >
-                            Continue to Login
+                            Edit
                         </Button>
                     </Modal.Actions>
 

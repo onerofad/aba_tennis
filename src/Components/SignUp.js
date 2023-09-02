@@ -1,7 +1,7 @@
 import {Segment, Container, Grid, Form, Header, Button, Image, Icon, Modal} from 'semantic-ui-react'
 import { useEffect, useState, useReducer } from 'react'
 import getsignupDetails from '../services/API'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import EmailValidator from 'email-validator'
 
 const SignUp = () => {
@@ -234,9 +234,9 @@ const SignUp = () => {
                                                     }}
                                                 
                                                 >
-                                                    <span  onClick={() => navigate("/")}>
+                                                    <Link to="/" style={{color: '#FFFFFF'}}>
                                                         Continue to website <Icon name="right angle" />
-                                                    </span>
+                                                    </Link>
                                                 </Form.Field>
 
 

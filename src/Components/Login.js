@@ -187,9 +187,9 @@ const Login = () => {
                                                     }}
                                                 
                                                 >
-                                                    <span  onClick={() => navigate("/")}>
+                                                      <Link to="/" style={{color: '#FFFFFF'}}>
                                                         Continue to website <Icon name="right angle" />
-                                                    </span>
+                                                    </Link>
                                                 </Form.Field>
 
 

@@ -6,6 +6,7 @@ import {useNavigate} from 'react-router-dom'
 const Headers = () => {
 
     const navigate = useNavigate()
+    
 
     if(sessionStorage.getItem("em") === null ){
         return(
@@ -134,7 +135,7 @@ const Headers = () => {
     
                         </Dropdown> 
                     </Menu.Item>
-                    <Menu.Item>
+                    <Menu.Item position="right">
                       
                        <Icon name="user" size="large"  />
                        <Dropdown  text= {sessionStorage.getItem("f")} floating>

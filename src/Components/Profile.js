@@ -6,6 +6,25 @@ import { useNavigate } from "react-router-dom"
 const Profile = () => {
 
     const navigate = useNavigate()
+
+    function reducer(state, action){
+        switch(action.type){
+            case 'close':
+                return {open: false}
+            case 'open':
+                return {open: true, size: action.size}
+            default:
+                throw new Error('unsupported action...')
+        }
+
+    }
+
+    const [state, dispatch] = useReducer(reducer, {open: false, size: undefined,})
+    const {open, size} = state
+
+    const openEdit = () => {
+        dispatch({type: 'open', size: 'small'})
+    }
     return(
         <Segment vertical style={{backgroundColor: '#FFFFFF'}}>
              <Grid>
@@ -63,7 +82,7 @@ const Profile = () => {
     
                         </Dropdown> 
                     </Menu.Item>
-                                   <Menu.Item as="a" position="right">
+                                   <Menu.Item position="right">
                                         <Button style={{
                                         backgroundColor: '#193275', 
                                         fontSize: '20px',
@@ -178,7 +197,32 @@ const Profile = () => {
                     </Grid.Column>
                  
                    
-                </Grid.Row>                
+                </Grid.Row> 
+                <Modal
+                 size={size}
+                 open={open}
+                 onClose={() => dispatch({type: 'close'})}         
+                >
+                    <Modal.Header>Details</Modal.Header>
+                    <Modal.Content>
+                        Sign Up Successfull?
+                    </Modal.Content>
+                    <Modal.Actions>
+                        <Button
+                          positive
+                          onClick={() => {dispatch({type: 'close'}); navigate("/login");}}
+                          style={{
+                            textAlign: 'center',
+                            backgroundColor: '#193275',
+                            color: '#FFFFFF'
+
+                          }}
+                        >
+                            Continue to Login
+                        </Button>
+                    </Modal.Actions>
+
+                </Modal>               
             </Grid>
             </Container>
             <Grid>

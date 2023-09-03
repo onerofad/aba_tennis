@@ -8,7 +8,9 @@ import getsignupDetails from "../services/API"
 const Profile = () => {
 
     const [details, setdetails] = useState([])
-    const [dob, setdob] = useState("")
+    const [dob, setdob] = useState(sessionStorage.getItem("db"))
+    const [handbat, sethandbat] = useState(sessionStorage.getItem("handbat"))
+
 
     useEffect(() => {
         getdetails()
@@ -21,13 +23,17 @@ const Profile = () => {
     }
 
     const options = [
-        { key: 1, text: 'Left', value: 1 },
-        { key: 2, text: 'Right', value: 2 },
+        { key: 1, text: 'Left', value: "Left" },
+        { key: 2, text: 'Right', value: "Right" },
     ]
 
     const editProfile = (email) => {
         let detail  = details.filter(e => e.email === email)[0]
-        alert(detail.id)
+        let id = detail.id
+        let item = {dob, handbat}
+        getsignupDetails().patch(`/${id}/`, item)
+        .catch(console.error)
+       // alert(detail.id)
     }
 
 
@@ -165,7 +171,7 @@ const Profile = () => {
                                         }}
                                     
                                     >
-                                        {sessionStorage.getItem("db")}
+                                        {dob}
                                     </p>
                                     Nationality:
                                     <p style={{
@@ -200,7 +206,7 @@ const Profile = () => {
                                             fontFamily: "dharma-gothic-e",
                                         }}
                                     >
-                                        {sessionStorage.getItem("handbat")}
+                                        {handbat}
                                     </p>
                                     Current Ranking:
                                     <p style={{
@@ -240,6 +246,7 @@ const Profile = () => {
                                     <Form.Select 
                                         placeholder="Select" 
                                         options={options} 
+                                        onChange={(e, value) => sethandbat(value.toString())}
                                     />
                                 </Form.Field>
                                 <Form.Field>

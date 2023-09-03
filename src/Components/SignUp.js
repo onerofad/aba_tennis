@@ -244,7 +244,7 @@ const SignUp = () => {
                                                         fontFamily: 'Poppins'
                                                         }}
                                                     >
-                                                        Have an account? Login
+                                                        <Link to="/login">Have an account? Login</Link>
                                                     </span>
                                                 </Form.Field>
                                                 <Form.Field 

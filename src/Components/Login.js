@@ -187,7 +187,7 @@ const Login = () => {
                                                         fontFamily: 'Poppins'
                                                         }}
                                                     >
-                                                        Have an account? Login
+                                                        <Link to="/signup">Don't have an account? Sign up</Link>
                                                     </span>
                                                 </Form.Field>
                                                 <Form.Field 

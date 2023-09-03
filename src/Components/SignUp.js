@@ -13,6 +13,8 @@ const SignUp = () => {
     const [dob, setdob] = useState("")
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
+    const [nationality, setnationality] = useState("")
+
     const [loader, setloader] = useState(false)
     const [details, setdetails] = useState([])
     let count =  0
@@ -23,6 +25,7 @@ const SignUp = () => {
     const [edob, esetdob] = useState(false)
     const [eemail, esetemail] = useState(false)
     const [epassword, esetpassword] = useState(false)
+    const [enationality, esetnationality] = useState(false)
 
 
 
@@ -59,6 +62,7 @@ const SignUp = () => {
         esetdob(false)
         esetemail(false)
         esetpassword(false)
+        esetnationality(false)
     }
 
     const signup = () => {
@@ -88,10 +92,14 @@ const SignUp = () => {
           }else if(password === ""){
             esetpassword({ content:'Please enter your Password', pointing: 'below'})           
 
-          }else{
+         }else if(nationality === ""){
+            esetnationality({ content:'Please enter your Country', pointing: 'below'})           
+
+          }
+          else{
             setloader(true)
             setTimeout(() => {
-               let item = {fname, lname, dob, email, password}
+               let item = {fname, lname, dob, email, password, nationality}
                getsignupDetails().post("/", item)
                .catch(console.error)
                dispatch({type: 'open', size: 'mini'})
@@ -194,6 +202,15 @@ const SignUp = () => {
                                                         type='password'
                                                         onChange={(e) => setpassword(e.target.value)}
                                                         error={epassword}
+                                                        onFocus={() => clearError()}
+
+                                                    />
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <Form.Select 
+                                                        placeholder="Select Country" 
+                                                        onChange={(e) => setnationality(e.target.value)}
+                                                        error={enationality}
                                                         onFocus={() => clearError()}
 
                                                     />

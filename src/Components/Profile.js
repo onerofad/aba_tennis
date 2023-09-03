@@ -254,7 +254,7 @@ const Profile = () => {
                                     <Form.Select 
                                         placeholder="Select" 
                                         options={options} 
-                                        onChange={(e, value) => sethandbat(value.toString())}
+                                        onChange={(e, {value}) => {sethandbat(value.toString())}}
                                     />
                                 </Form.Field>
                                 <Form.Field>

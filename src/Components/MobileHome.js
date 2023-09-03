@@ -49,29 +49,14 @@ const MobileHome = () => {
                      size="huge"
                      secondary
                      pointing
-                     style={{backgroundColor: '#FFFFFF'}}           
+                     style={{backgroundColor: '#F6F6F6'}}           
                     >
                         <Container>
                             <Menu.Item as='a' >
                                 ABA TENNIS
                             </Menu.Item>                                                
-                            <Menu.Item>
-                                <Button
-                                onClick={() => navigate("/signup")}
-                                style={{
-                                    backgroundColor: '#193275', 
-                                    fontSize: '20px',
-                                    fontWeight: 'normal',
-                                    fontFamily: 'Poppins',
-                                    color: '#FFFFFF',
-                                }}
-                                
-                                >
-                                    Register
-                                </Button>
-                            </Menu.Item>
-                            <Menu.Item onClick={() => setSidebarOpened(true)}>
-                                <Icon name="sidebar" />
+                            <Menu.Item position="right" onClick={() => setSidebarOpened(true)}>
+                                <Icon size="huge" name="sidebar" />
                             </Menu.Item> 
                             
                         </Container>

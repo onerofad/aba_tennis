@@ -6,6 +6,20 @@ import { useReducer } from "react"
 
 const Profile = () => {
 
+    const options = [
+        { key: 1, text: 'Left', value: 1 },
+        { key: 2, text: 'Right', value: 2 },
+        { key: 3, text: 'Choice 3', value: 3 },
+    ]
+
+    const editProfile = (email) => {
+
+        alert(email)
+
+    }
+
+
+
     const navigate = useNavigate()
 
     function reducer(state, action){
@@ -208,24 +222,42 @@ const Profile = () => {
                     <Modal.Header>Edit Profile</Modal.Header>
                     <Modal.Content>
                         <Form>
-                            <Form.Group>
-                                <Form.Input 
-                              
-                                />
-                                <Form.Input 
-                              
-                              />
-                                <Form.Input 
-                              
-                              />
+                            <Form.Group widths={2}>
+                                <Form.Field>
+                                    <label>Hand Bat</label>
+                                    <Form.Select 
+                                        placeholder="Select" 
+                                        options={options} 
+                                    />
+                                </Form.Field>
+                                <Form.Field>
+                                    <label>Birth Date</label>
+                                    <Form.Input
+                                        placeholder="Select" 
+                                        type ="date"
+                                    />
+                                </Form.Field>
                             </Form.Group>
+                           
                         </Form>
                         
                     </Modal.Content>
                     <Modal.Actions>
+                    <Button
+                          negative
+                          onClick={() => {dispatch({type: 'close'});}}
+                          style={{
+                            textAlign: 'center',
+                            backgroundColor: '#193275',
+                            color: '#FFFFFF'
+
+                          }}
+                        >
+                            Cancel
+                        </Button>
                         <Button
                           positive
-                          onClick={() => {dispatch({type: 'close'}); navigate("/login");}}
+                          onClick={() => {dispatch({type: 'close'}); editProfile(sessionStorage.getItem("em"))}}
                           style={{
                             textAlign: 'center',
                             backgroundColor: '#193275',

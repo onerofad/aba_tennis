@@ -9,12 +9,8 @@ const LogOut = () => {
     sessionStorage.removeItem("f")
     sessionStorage.removeItem("handbat")
     sessionStorage.removeItem("country")
-
-
-
-    return(
-        navigate("/")
-    )  
+        
+    navigate("/")
 
 }
 export default LogOut

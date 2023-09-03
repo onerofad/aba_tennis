@@ -13,6 +13,8 @@ const Login = () => {
     const [fname, setfname] = useState("") 
     const [lname, setlname] = useState("") 
     const [dob, setdob] = useState("") 
+    const [nationality, setnationality] = useState("") 
+
 
 
     const [loader, setloader] = useState(false)
@@ -72,12 +74,15 @@ const Login = () => {
             setfname(info.fname)
             setlname(info.lname)
             setdob(info.dob)
+            setdob(info.nationality)
             console.log(info.fname)
 
             sessionStorage.setItem("em",email)
             sessionStorage.setItem("fn", info.fname + " " + info.lname)
             sessionStorage.setItem("db", info.dob)
             sessionStorage.setItem("f", info.fname)
+            sessionStorage.setItem("country", info.nationality)
+
 
 
 

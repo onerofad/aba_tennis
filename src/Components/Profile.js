@@ -175,7 +175,7 @@ const Profile = () => {
                                         }}
                                     
                                     >
-                                        Nigerian
+                                        {sessionStorage.getItem("country")}
                                     </p>
                                     Contact Email:
                                     <p  style={{

@@ -200,7 +200,7 @@ const Profile = () => {
                                             fontFamily: "dharma-gothic-e",
                                         }}
                                     >
-                                        Left
+                                        {sessionStorage.getItem("handbat")}
                                     </p>
                                     Current Ranking:
                                     <p style={{

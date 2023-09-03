@@ -10,6 +10,8 @@ const Profile = () => {
     const [details, setdetails] = useState([])
     const [dob, setdob] = useState(sessionStorage.getItem("db"))
     const [handbat, sethandbat] = useState(sessionStorage.getItem("handbat"))
+    const [loader, setLoader] = useState(false)
+
 
 
     useEffect(() => {
@@ -28,11 +30,17 @@ const Profile = () => {
     ]
 
     const editProfile = (email) => {
-        let detail  = details.filter(e => e.email === email)[0]
-        let id = detail.id
-        let item = {dob, handbat}
-        getsignupDetails().patch(`/${id}/`, item)
-        .catch(console.error)
+        setLoader(true)
+        setTimeout(() => {
+            let detail  = details.filter(e => e.email === email)[0]
+            let id = detail.id
+            let item = {dob, handbat}
+            getsignupDetails().patch(`/${id}/`, item)
+            .catch(console.error)
+            setLoader(false)
+
+        }, 5000)
+        
        // alert(detail.id)
     }
 
@@ -276,6 +284,7 @@ const Profile = () => {
                             Cancel
                         </Button>
                         <Button
+                        loading={loader}
                           positive
                           onClick={() => {dispatch({type: 'close'}); editProfile(sessionStorage.getItem("em"))}}
                           style={{

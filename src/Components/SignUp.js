@@ -18,6 +18,8 @@ const SignUp = () => {
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
     const [nationality, setnationality] = useState("")
+    const [handbat, sethandbat] = useState("No Entry")
+
 
     const [loader, setloader] = useState(false)
     const [details, setdetails] = useState([])
@@ -103,7 +105,7 @@ const SignUp = () => {
           else{
             setloader(true)
             setTimeout(() => {
-               let item = {fname, lname, dob, email, password, nationality}
+               let item = {fname, lname, dob, email, password, nationality, handbat}
                getsignupDetails().post("/", item)
                .catch(console.error)
                dispatch({type: 'open', size: 'mini'})

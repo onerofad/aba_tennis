@@ -29,7 +29,14 @@ const { MediaContextProvider, Media } = createMedia({
 
 const App = () => {
   return (
-    <MediaContextProvider>
+  <MediaContextProvider>
+    <Media  at="mobile">
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<MobileHome />} />
+        </Routes>
+      </BrowserRouter>
+    </Media>
     <Media greaterThan="mobile">
      <BrowserRouter>
         <Routes>
@@ -52,10 +59,6 @@ const App = () => {
         </Routes>
      </BrowserRouter>
      </Media>
-    <Media  at="mobile">
-      <Route index element={<MobileHome />} />
-
-    </Media>
     </MediaContextProvider>
   );
 }

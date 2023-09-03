@@ -22,19 +22,19 @@ const App = () => {
         <Routes>
           <Route index element={<Home />} />
           <Route path='/:pageno' element={<HomePagination />} />
-          <Route path='/register' element={<Registration />} />
-          <Route path='/successregister' element={<SuccessfullRegistration />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/ranking" element={<PlayerRankingTable />} />
-          <Route path="/videos" element={<VideoSection />} />
-          <Route path="/search/profile" element={<SearchProfile />} />
-          <Route path="/search/profile/result" element={<SearchProfileResult />} />
-          <Route path="/gallary" element={<ImageGallary />} />
-          <Route path="/search/personal/profile" element={<SearchPersonalProfile />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path='/results' element={<MatchResult />} />
-          <Route path='/logout' element={<LogOut />} />
+          <Route path='register' element={<Registration />} />
+          <Route path='successregister' element={<SuccessfullRegistration />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="ranking" element={<PlayerRankingTable />} />
+          <Route path="videos" element={<VideoSection />} />
+          <Route path="search/profile" element={<SearchProfile />} />
+          <Route path="search/profile/result" element={<SearchProfileResult />} />
+          <Route path="gallary" element={<ImageGallary />} />
+          <Route path="search/personal/profile" element={<SearchPersonalProfile />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="login" element={<Login />} />
+          <Route path='results' element={<MatchResult />} />
+          <Route path='logout' element={<LogOut />} />
 
         </Routes>
      </BrowserRouter>

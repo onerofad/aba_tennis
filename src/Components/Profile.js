@@ -91,6 +91,7 @@ const Profile = () => {
                                         fontFamily: 'Poppins',
                                         color: '#FFFFFF',
                                 }}
+                                onClick = {() => openEdit()}
                                 >
                                             Edit Profile
                                         </Button>

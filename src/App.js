@@ -1,4 +1,5 @@
 import './App.css';
+import { createMedia } from "@artsy/fresnel"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import Registration from './Components/Registration';
@@ -16,8 +17,18 @@ import HomePagination from './Components/HomePagination';
 import MatchResult from './Components/MatchResults';
 import LogOut from './Components/LogOut';
 
+const { MediaContextProvider, Media } = createMedia({
+  breakpoints:{
+    mobile: 0,
+    tablet: 768,
+    computer: 1024
+  }
+})
+
 const App = () => {
   return (
+    <MediaContextProvider>
+    <Media greaterThan="mobile">
      <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
@@ -38,6 +49,12 @@ const App = () => {
 
         </Routes>
      </BrowserRouter>
+     </Media>
+    <Media  at="mobile">
+      <Route index element={<MobileHome />} />
+
+    </Media>
+    </MediaContextProvider>
   );
 }
 

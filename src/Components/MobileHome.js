@@ -52,19 +52,12 @@ const MobileHome = () => {
                      style={{backgroundColor: '#FFFFFF'}}           
                     >
                         <Container>
-                            <Menu.Item onClick={() => setSidebarOpened(true)}>
-                                <Icon name="sidebar" />
-                            </Menu.Item>
                             <Menu.Item as='a' >
                                 ABA TENNIS
-                            </Menu.Item>                           
-                            <Menu.Item 
-                             as="a" 
-                             position="right" 
-                             onClick={() => navigate("/login")}>
-                             <Icon name='sign-in' />
-                                Login
-                            </Menu.Item>
+                            </Menu.Item>  
+                            <Menu.Item onClick={() => setSidebarOpened(true)}>
+                                <Icon name="sidebar" />
+                            </Menu.Item>                                               
                             <Menu.Item>
                                 <Button
                                 onClick={() => navigate("/signup")}

@@ -6,6 +6,10 @@ import EmailValidator from 'email-validator'
 
 const SignUp = () => {
 
+    const options = [
+        { key: 1, text: 'Nigerian', value: 'Nigerian' },
+    ]
+
     const navigate = useNavigate()
 
     const [fname, setfname] = useState("")
@@ -209,6 +213,7 @@ const SignUp = () => {
                                                 <Form.Field>
                                                     <Form.Select 
                                                         placeholder="Select Country" 
+                                                        options={options}
                                                         onChange={(e) => setnationality(e.target.value)}
                                                         error={enationality}
                                                         onFocus={() => clearError()}

@@ -15,7 +15,7 @@ const Profile = () => {
     }, [])
 
     const getdetails = () => {
-        getSignupDetails().get("/")
+        getsignupDetails().get("/")
         .then((res) => setdetails(res.data))
         .catch(console.error)
     }

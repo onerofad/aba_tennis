@@ -3,7 +3,7 @@ import { Sidebar, Menu, Container, Button, Segment, Icon } from "semantic-ui-rea
 import 'semantic-ui-css/semantic.min.css'
 import { useNavigate } from "react-router-dom"
 
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const MobileHome = () => {
 

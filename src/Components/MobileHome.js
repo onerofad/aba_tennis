@@ -17,23 +17,24 @@ const MobileHome = () => {
             vertical
             inverted
             onHide={() => setSidebarOpened(false)}
-            visible={sidebarOpened}          
+            visible={sidebarOpened}   
+            style={{
+                fontFamily: 'Poppins', 
+                fontSize: '20px',
+                fontWeight: 'normal',
+            }}       
             >
               
-                <Menu.Item as='a' active>
-                        <Link style={{color: '#FFF'}} to='/'>Home</Link>
+                <Menu.Item as='a' active onClick={() => navigate("/")}>
+                    Home
                 </Menu.Item>
-                <Menu.Item as='a' pointing>
-                        <Link style={{color: '#FFF'}} to='/'>Jobs</Link>
+                <Menu.Item as='a' pointing onClick={() => navigate("/")}>
+                    Premier League
                 </Menu.Item>
-                <Menu.Item as='a'>
-                        <Link style={{color: '#FFF'}} to='/'>Careers</Link>
+                <Menu.Item as='a' pointing onClick={() => navigate("/")}>
+                    Competitions
                 </Menu.Item>
-                <Menu.Item as='a'>
-                        <Link style={{color: '#FFF'}} to='/'>Post Jobs</Link>
-                </Menu.Item>
-           
-
+            
             </Sidebar>
             <Sidebar.Pusher dimmed={sidebarOpened}>
                 <Segment
@@ -54,15 +55,28 @@ const MobileHome = () => {
                                 <Icon name="sidebar" />
                             </Menu.Item>
                             <Menu.Item as='a' >
-                                <Link style={{color: '#000'}} to='/'>JOBSITE</Link>
+                                ABA TENNIS
                             </Menu.Item>                           
-                            <Menu.Item as="a" position="right">
-                                <Icon name='sign-in' />
-                                <Link style={{color: '#000'}} to="/signin">Sign In</Link>
+                            <Menu.Item 
+                             as="a" 
+                             position="right" 
+                             onClick={() => navigate("/login")}>
+                             <Icon name='sign-in' />
+                                Login
                             </Menu.Item>
                             <Menu.Item>
-                                <Button as="button" style={{backgroundColor: 'teal', color: '#FFF'}}>
-                                    Upload Resume
+                                <Button
+                                onClick={() => navigate("/signup")}
+                                style={{
+                                    backgroundColor: '#193275', 
+                                    fontSize: '20px',
+                                    fontWeight: 'normal',
+                                    fontFamily: 'Poppins',
+                                    color: '#FFFFFF',
+                                }}
+                                
+                                >
+                                    Register
                                 </Button>
                             </Menu.Item>
                             

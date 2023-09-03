@@ -17,6 +17,8 @@ import HomePagination from './Components/HomePagination';
 import MatchResult from './Components/MatchResults';
 import LogOut from './Components/LogOut';
 
+import MobileHome from './Components/MobileHome';
+
 const { MediaContextProvider, Media } = createMedia({
   breakpoints:{
     mobile: 0,

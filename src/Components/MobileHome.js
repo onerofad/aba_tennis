@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Sidebar, Menu, Container, Button, Segment, Icon } from "semantic-ui-react"
+import { Sidebar, Menu, Container, Button, Segment, Icon, Image } from "semantic-ui-react"
 import 'semantic-ui-css/semantic.min.css'
 import { useNavigate } from "react-router-dom"
 

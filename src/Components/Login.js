@@ -202,7 +202,7 @@ const Login = () => {
                                                 
                                                 >
                                                       <Link to="/" style={{color: '#FFFFFF'}}>
-                                                        Continue to website 
+                                                        Continue to website Now
                                                         <Icon name="right angle" />
                                                     </Link>
                                                 </Form.Field>

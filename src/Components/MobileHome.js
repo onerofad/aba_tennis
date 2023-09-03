@@ -1,13 +1,14 @@
 import { useState } from "react"
 import { Sidebar, Menu, Container, Button, Segment, Icon } from "semantic-ui-react"
 import 'semantic-ui-css/semantic.min.css'
+import { useNavigate } from "react-router-dom"
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const MobileHome = () => {
 
     const [ sidebarOpened, setSidebarOpened ] = useState()
-
+    const navigate = useNavigate()
     return(
         <div>
         <Sidebar.Pushable>

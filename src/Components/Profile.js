@@ -2,20 +2,32 @@ import {Form, Modal, Dropdown, Segment, Grid, Menu, Container, Image, Button, He
 import { Link } from "react-router-dom"
 import Footer from "./Footer"
 import { useNavigate } from "react-router-dom"
-import { useReducer } from "react"
+import { useEffect, useReducer, useState } from "react"
+import getsignupDetails from "../services/API"
 
 const Profile = () => {
+
+    const [details, setdetails] = useState([])
+    const [dob, setdob] = useState("")
+
+    useEffect(() => {
+        getdetails()
+    }, [])
+
+    const getdetails = () => {
+        getSignupDetails().get("/")
+        .then((res) => setdetails(res.data))
+        .catch(console.error)
+    }
 
     const options = [
         { key: 1, text: 'Left', value: 1 },
         { key: 2, text: 'Right', value: 2 },
-        { key: 3, text: 'Choice 3', value: 3 },
     ]
 
     const editProfile = (email) => {
-
-        alert(email)
-
+        let detail  = details.filter(e => e.email === email)[0]
+        alert(detail.id)
     }
 
 
@@ -235,6 +247,7 @@ const Profile = () => {
                                     <Form.Input
                                         placeholder="Select" 
                                         type ="date"
+                                        onChange={(e) => setdob(e.target.value)}
                                     />
                                 </Form.Field>
                             </Form.Group>

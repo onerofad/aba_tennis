@@ -214,7 +214,7 @@ const SignUp = () => {
                                                     <Form.Select 
                                                         placeholder="Select Country" 
                                                         options={options}
-                                                        onChange={(e) => setnationality(e.target.value)}
+                                                        onChange={(e, {value}) => setnationality(value,toString())}
                                                         error={enationality}
                                                         onFocus={() => clearError()}
 

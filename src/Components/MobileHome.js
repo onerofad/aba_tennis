@@ -54,10 +54,7 @@ const MobileHome = () => {
                         <Container>
                             <Menu.Item as='a' >
                                 ABA TENNIS
-                            </Menu.Item>  
-                            <Menu.Item onClick={() => setSidebarOpened(true)}>
-                                <Icon name="sidebar" />
-                            </Menu.Item>                                               
+                            </Menu.Item>                                                
                             <Menu.Item>
                                 <Button
                                 onClick={() => navigate("/signup")}
@@ -73,6 +70,9 @@ const MobileHome = () => {
                                     Register
                                 </Button>
                             </Menu.Item>
+                            <Menu.Item onClick={() => setSidebarOpened(true)}>
+                                <Icon name="sidebar" />
+                            </Menu.Item> 
                             
                         </Container>
                     </Menu>

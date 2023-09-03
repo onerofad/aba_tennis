@@ -121,7 +121,7 @@ const SignUp = () => {
     
         <Segment vertical style={{backgroundColor: '#F6F6F6'}}>
             <Container>
-                <Grid>
+                <Grid stackable>
                     <Grid.Row>
                         <Grid.Column>
                                 <Grid>

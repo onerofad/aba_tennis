@@ -105,7 +105,7 @@ const Login = () => {
                 <Grid>
                     <Grid.Row>
                         <Grid.Column>
-                                <Grid>
+                                <Grid stackable>
                                     <Grid.Row style={{padding: '4em 0em'}}>
                                         <Grid.Column id="bgColumn" style={{padding: '4em 4em'}} width={8}>
                                             <Grid>

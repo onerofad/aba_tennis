@@ -7,6 +7,15 @@ const Headers = () => {
 
     const navigate = useNavigate()
     
+    const logout = () => {
+            sessionStorage.removeItem("em")
+            sessionStorage.removeItem("db")
+            sessionStorage.removeItem("fn")
+            sessionStorage.removeItem("f")
+            sessionStorage.removeItem("handbat")
+            sessionStorage.removeItem("country")
+            navigate("/")
+    }
 
     if(sessionStorage.getItem("em") === null ){
         return(
@@ -146,7 +155,7 @@ const Headers = () => {
                                 />
                                 <Dropdown.Item 
                                     text="Log Out" 
-                                    onClick={() => navigate("/logout") }
+                                    onClick={() => logout() }
                                 />
                             </Dropdown.Menu>
                             </Dropdown> 

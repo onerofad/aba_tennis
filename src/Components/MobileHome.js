@@ -521,7 +521,7 @@ const MobileHome = () => {
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row >
-                    <Grid.Column >
+                    <Grid.Column mobile={12}>
                         <Input placeholder="Email"  
                             style={{
                                 fontFamily: 'Poppins',
@@ -530,6 +530,8 @@ const MobileHome = () => {
                                 marginRight: '1em'
                             }}
                         />
+                        </Grid.Column>
+                        <Grid.Column mobile={4}>
                             <Button
                               style={{
                                 backgroundColor: '#405092',

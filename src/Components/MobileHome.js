@@ -240,8 +240,9 @@ const MobileHome = () => {
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row>
-                            <Grid.Column width={6}>
-                            <Button 
+                            <Grid.Column width={8}>
+                            <Button
+                                size="medium"
                                 style={{
                                     fontFamily: "Poppins",
                                     color: '#ffffff',
@@ -253,9 +254,9 @@ const MobileHome = () => {
                                 Register Now
                             </Button>
                             </Grid.Column>
-                            <Grid.Column width={7}>
+                            <Grid.Column width={8}>
                             <Button 
-                                size="huge"
+                                size="medium"
                                 style={{
                                     fontFamily: "Poppins",
                                     color: '#193275',

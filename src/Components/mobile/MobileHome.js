@@ -76,7 +76,7 @@ const MobileHome = () => {
                      size="medium"
                      secondary
                      pointing
-                     style={{border: 0, backgroundColor: '#F6F6F6', paddingLeft: '1em', paddingRight: '0.5em'}}           
+                     style={{border: 0, backgroundColor: '#F6F6F6', paddingTop: '0.5em', paddingLeft: '1em', paddingRight: '0.5em'}}           
                     >
                         <Container>
                         <Image  size="mini" src="../../images/about/about.png" />

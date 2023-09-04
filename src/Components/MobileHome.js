@@ -527,7 +527,6 @@ const MobileHome = () => {
                                 fontFamily: 'Poppins',
                                 fontSize: '20px',
                                 fontWeight: 'normal',
-                                width: '500px',
                                 marginRight: '1em'
                             }}
                         />

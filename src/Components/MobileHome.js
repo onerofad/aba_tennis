@@ -1,7 +1,9 @@
 import { useState } from "react"
-import { Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header} from "semantic-ui-react"
+import { Icon, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder} from "semantic-ui-react"
 import 'semantic-ui-css/semantic.min.css'
 import { useNavigate } from "react-router-dom"
+import PaginationComponent from "./PaginationComponent"
+import getNews from "./Db"
 
 const MobileHome = () => {
     const openregister = () => {

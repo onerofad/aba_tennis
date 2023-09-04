@@ -14,7 +14,7 @@ const MobileHome = () => {
         { key: 2, text: 'Choice 2', value: 2 },
         { key: 3, text: 'Choice 3', value: 3 },
       ]
-      
+
     const openregister = () => {
         if(sessionStorage.getItem("em") === null ){
             navigate("/signup")
@@ -366,6 +366,7 @@ const MobileHome = () => {
 
     </Segment> 
     <Segment vertical style={{padding: '4em 0em', backgroundColor: '#F6F6F6'}}>
+    <Container>
     <Grid>
                     <Grid.Row>
                         <Grid.Column>
@@ -382,7 +383,7 @@ const MobileHome = () => {
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
-                        <Grid.Column width={4}>
+                        <Grid.Column>
                             <Select 
                                     options={options} 
                                     placeholder="Premier League" 
@@ -394,7 +395,7 @@ const MobileHome = () => {
                                     }}
                             />
                         </Grid.Column>
-                        <Grid.Column width={4}>
+                        <Grid.Column>
                             <Select 
                                     options={options} 
                                     placeholder="Top 5 Players" 
@@ -406,7 +407,7 @@ const MobileHome = () => {
                                     }}
                             />
                        </Grid.Column>
-                        <Grid.Column width={8} textAlign="right">
+                        <Grid.Column>
                             <Input placeholder="search"
                                       style={{
                                         color: '#000000',
@@ -421,6 +422,7 @@ const MobileHome = () => {
                     <Divider />
                     <Grid.Row>
                         <Grid.Column>
+                            <div style={{overflowX: 'scroll'}}>
                             <Table celled size="huge">
                                 <Table.Header
                                     style={{
@@ -482,9 +484,11 @@ const MobileHome = () => {
                                     </Table.Row>
                                 </Table.Body>
                             </Table>
+                            </div>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
+                </Container>
     </Segment>    
             
         </Sidebar.Pushable>

@@ -1,12 +1,18 @@
 import { useState } from "react"
-import { Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid} from "semantic-ui-react"
+import { Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header} from "semantic-ui-react"
 import 'semantic-ui-css/semantic.min.css'
 import { useNavigate } from "react-router-dom"
 
-import { Link } from "react-router-dom"
-
 const MobileHome = () => {
+    const openregister = () => {
+        if(sessionStorage.getItem("em") === null ){
+            navigate("/signup")
+        }else{
+            navigate("/register")
 
+        }
+
+    }
     const [ sidebarOpened, setSidebarOpened ] = useState()
     const navigate = useNavigate()
     return(

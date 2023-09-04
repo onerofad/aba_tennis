@@ -4,6 +4,8 @@ import 'semantic-ui-css/semantic.min.css'
 import { useNavigate } from "react-router-dom"
 import PaginationComponent from "./PaginationComponent"
 import getNews from "./Db"
+import '../AGRESSIVE.otf'
+import '../style.css'
 
 const MobileHome = () => {
     const openregister = () => {

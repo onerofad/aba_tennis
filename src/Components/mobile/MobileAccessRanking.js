@@ -72,7 +72,7 @@ const MobileAccessRanking = () => {
                                                 color: '#FFFFFF',
                                                 fontWeight: 'Regular',
                                                 fontFamily: 'Poppins',
-                                                fontSize: '15px'
+                                                fontSize: '12px'
                                            }}
                                         >
                                                 - 50 limited tickets
@@ -83,10 +83,10 @@ const MobileAccessRanking = () => {
                                                 color: '#FFFFFF',
                                                 fontWeight: 'Regular',
                                                 fontFamily: 'Poppins',
-                                                fontSize: '15px'
+                                                fontSize: '12px'
                                            }}
                                         >
-                                            - Expires 2nd october after which<br/><br/>
+                                            - Expires 2nd october after which<br/>
                                         Game tickets cost 500Naira only</p>
                                     </Grid.Column>
                                 </Grid.Row>

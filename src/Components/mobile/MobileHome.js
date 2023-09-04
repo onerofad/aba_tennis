@@ -76,10 +76,10 @@ const MobileHome = () => {
                      size="medium"
                      secondary
                      pointing
-                     style={{border: 0, backgroundColor: '#F6F6F6', padding: '0.5em 0.5em'}}           
+                     style={{border: 0, backgroundColor: '#F6F6F6', paddingLeft: '1em', paddingRight: '0.5em'}}           
                     >
                         <Container>
-                        <Image size="mini" src="../../images/about/about.png" />
+                        <Image  size="mini" src="../../images/about/about.png" />
                                     
                             <Menu.Item as="a" position="right" onClick={() => setSidebarOpened(true)}>
                                  <Icon size="large" verticalAlign="middle" name="sidebar" />

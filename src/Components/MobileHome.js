@@ -217,10 +217,10 @@ const MobileHome = () => {
     <Segment style={{padding: '4em 6em'}}>
         <Grid stackable>
             <Grid.Row>
-                <Grid.Column width={6}>
+                <Grid.Column>
                     <Image src="/images/about/about.png" />
                 </Grid.Column>
-                <Grid.Column width={10}  verticalAlign="middle">
+                <Grid.Column verticalAlign="middle">
                     <Grid>
                         <Grid.Row>
                             <Grid.Column>

@@ -143,6 +143,73 @@ const MobileHome = () => {
 
                             </Grid>
                         </Segment>
+                        <Segment>
+        <Grid>
+            <Grid.Row>
+                <Grid.Column width={8}>
+                    <Header
+                        content="Latest News"
+                        style={{
+                            fontFamily: "dharma-gothic-e",
+                            color: '#193275',
+                            fontWeight: 'bold',
+                            fontSize: '35px'
+                        }}
+                    />
+                </Grid.Column>
+                <Grid.Column width={8} textAlign="right">
+                    <span
+                        style={{
+                            fontFamily: "Poppins",
+                            color: '#000000',
+                            fontWeight: 'normal',
+                            fontSize: '20px'
+                        }}
+                    
+                    >
+                        View All <Icon name="right angle" />
+                    </span>
+                </Grid.Column>
+            </Grid.Row>
+            <Divider style={{marginTop: '0em'}} />
+            <Grid.Row>
+                {
+                    getNews().map((news) => {
+                    
+                        if(news.id >= 1 && news.id <= 4){      
+                            return(
+                                <Grid.Column width={4} key={news.id}>
+                                    <Placeholder fluid style={{ height: 150, width: 250 }}>
+                                        <Placeholder.Image />
+                                    </Placeholder>
+                                    <Header
+                                        content = {news.description}
+                                        style={{
+                                            fontFamily: "Poppins",
+                                            color: '#000000',
+                                            fontWeight: 'normal',
+                                            fontSize: '16px',
+                                        }}
+                                    
+                                    />
+                                </Grid.Column>
+                            )
+                        }
+                       
+                    })
+                   
+                }
+                
+            </Grid.Row>
+            
+            <Grid.Row>
+                <Grid.Column style={{marginTop: '2em'}} textAlign="center">
+                    <PaginationComponent />
+                </Grid.Column>
+            </Grid.Row>
+        </Grid>
+
+    </Segment>            
             
         </Sidebar.Pushable>
         </div>

@@ -41,6 +41,25 @@ const MobileHome = () => {
                 <Menu.Item as='a' pointing onClick={() => navigate("/")}>
                     Competitions
                 </Menu.Item>
+
+                <Menu.Item as='a' active onClick={() => navigate("/")}>
+                    Player Ratings
+                </Menu.Item>
+                <Menu.Item as='a' pointing onClick={() => navigate("/")}>
+                    Watch Videos
+                </Menu.Item>
+                <Menu.Item as='a' pointing onClick={() => navigate("/")}>
+                    Coming Up
+                </Menu.Item>
+                <Menu.Item as='a' pointing onClick={() => navigate("/")}>
+                    Player Profiles
+                </Menu.Item>
+                <Menu.Item as='a' pointing onClick={() => navigate("/")}>
+                    Image Gallary
+                </Menu.Item>
+                <Menu.Item as='a' pointing onClick={() => navigate("/")}>
+                    Results
+                </Menu.Item>
             
             </Sidebar>
             <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -64,8 +83,7 @@ const MobileHome = () => {
                         </Container>
                     </Menu>
                 </Segment>
-            </Sidebar.Pusher>
-            <Segment vertical style={{padding: '2em 0em'}}>
+                <Segment vertical style={{padding: '2em 0em'}}>
                             <Grid>
                                 <Grid.Row>
                                     <Grid.Column textAlign="center">
@@ -123,6 +141,8 @@ const MobileHome = () => {
 
                             </Grid>
                         </Segment>
+            </Sidebar.Pusher>
+            
         </Sidebar.Pushable>
         </div>
               

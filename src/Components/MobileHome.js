@@ -495,6 +495,7 @@ const MobileHome = () => {
                 </Container>
     </Segment>    
     <Segment  style={{backgroundColor: '#c3c0c0', padding: '4em 0em'}}>
+        <Container>
             <Grid textAlign="center">
                 <Grid.Row>
                     <Grid.Column>
@@ -522,7 +523,7 @@ const MobileHome = () => {
                 </Grid.Row>
                 <Grid.Row >
                     <Grid.Column width={10}>
-                        <Input placeholder="Email"  
+                        <Input fluid placeholder="Email"  
                             style={{
                                 fontFamily: 'Poppins',
                                 fontSize: '16px',
@@ -533,6 +534,7 @@ const MobileHome = () => {
                         </Grid.Column>
                         <Grid.Column width={6}>
                             <Button
+                               fluid
                               style={{
                                 backgroundColor: '#405092',
                                 fontFamily: 'Poppins',
@@ -546,6 +548,7 @@ const MobileHome = () => {
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
+            </Container>
 
         </Segment>
             

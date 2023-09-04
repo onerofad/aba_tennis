@@ -280,18 +280,18 @@ const MobileHome = () => {
     </Segment>    
     <Segment style={{padding: '4em 0em', backgroundColor: '#030303'}}>
             <Container>
-                <Grid>
+                <Grid stackable>
                     <Grid.Row>
                         <Grid.Column>
                         <Header style={{
                               color: '#FFFFFF',
                               fontFamily: 'AGRESSIVE',
-                              fontSize: '50px',
+                              fontSize: '35px',
                               fontWeight: 'bold',
                           }}
                       >
                           GET FREE ACCESS<br/>
-                          For THE RANKING WEEK
+                          FOR THE RANKING WEEK
 
                       </Header>                                       
                         </Grid.Column>               

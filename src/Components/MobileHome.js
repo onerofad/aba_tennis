@@ -82,7 +82,10 @@ const MobileHome = () => {
                             
                         </Container>
                     </Menu>
-                    <Segment vertical style={{padding: '2em 0em'}}>
+                </Segment>
+                
+            </Sidebar.Pusher>
+            <Segment vertical style={{padding: '4em 0em'}}>
                             <Grid>
                                 <Grid.Row>
                                     <Grid.Column textAlign="center">
@@ -140,9 +143,6 @@ const MobileHome = () => {
 
                             </Grid>
                         </Segment>
-                </Segment>
-             
-            </Sidebar.Pusher>
             
         </Sidebar.Pushable>
         </div>

@@ -257,7 +257,7 @@ const MobileHome = () => {
                                     fontFamily: "Poppins",
                                     color: '#ffffff',
                                     fontWeight: 'normal',
-                                    fontSize: '16px',
+                                    fontSize: '14px',
                                     backgroundColor: '#193275',
                                 }}
                             >
@@ -272,7 +272,7 @@ const MobileHome = () => {
                                     fontFamily: "Poppins",
                                     color: '#193275',
                                     fontWeight: 'normal',
-                                    fontSize: '16px',
+                                    fontSize: '14px',
                                     backgroundColor: '#ffffff',
                                     border: '1px solid #193275'
                                 }}
@@ -665,10 +665,10 @@ const MobileHome = () => {
                                         </Grid.Column>
                                     </Grid.Row>
                                     <Grid.Row>
-                                        <Grid.Column>
+                                        <Grid.Column width={8}>
                                             Privacy
                                         </Grid.Column>
-                                        <Grid.Column>
+                                        <Grid.Column width={8}>
                                             Terms
                                         </Grid.Column>
                                     </Grid.Row>

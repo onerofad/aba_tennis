@@ -225,6 +225,7 @@ const MobileHome = () => {
 
     </Segment>      
     <Segment style={{padding: '4em 0em'}}>
+        <Container>
         <Grid stackable>
             <Grid.Row>
                 <Grid.Column>
@@ -288,6 +289,7 @@ const MobileHome = () => {
                 </Grid.Column>
             </Grid.Row>
         </Grid>
+        </Container>
     </Segment>    
     <Segment style={{padding: '4em 0em', backgroundColor: '#030303'}}>
             <Container>
@@ -533,7 +535,6 @@ const MobileHome = () => {
                                 fontFamily: 'Poppins',
                                 fontSize: '14px',
                                 fontWeight: 'normal',
-                                marginRight: '1em'
                             }}
                         />
                         </Grid.Column>

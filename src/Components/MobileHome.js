@@ -521,22 +521,22 @@ const MobileHome = () => {
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row >
-                    <Grid.Column mobile={12}>
+                    <Grid.Column width={10}>
                         <Input placeholder="Email"  
                             style={{
                                 fontFamily: 'Poppins',
-                                fontSize: '20px',
+                                fontSize: '16px',
                                 fontWeight: 'normal',
                                 marginRight: '1em'
                             }}
                         />
                         </Grid.Column>
-                        <Grid.Column mobile={4}>
+                        <Grid.Column width={6}>
                             <Button
                               style={{
                                 backgroundColor: '#405092',
                                 fontFamily: 'Poppins',
-                                fontSize: '20px',
+                                fontSize: '16px',
                                 fontWeight: 'normal',
                                 color: '#ffffff'
                               }}

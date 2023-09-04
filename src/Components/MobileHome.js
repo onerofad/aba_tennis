@@ -65,7 +65,7 @@ const MobileHome = () => {
                     </Menu>
                 </Segment>
             </Sidebar.Pusher>
-            <Segment vertical>
+            <Segment vertical style={{padding: '2em 0em'}}>
                             <Grid>
                                 <Grid.Row>
                                     <Grid.Column textAlign="center">
@@ -75,7 +75,7 @@ const MobileHome = () => {
                                             style={{
                                                     fontWeight: 'bold', 
                                                     fontFamily: 'AGRESSIVE',
-                                                    fontSize: '25px',
+                                                    fontSize: '40px',
                                                     color: '#000000',
                                                   }}
                                         />

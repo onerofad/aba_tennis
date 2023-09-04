@@ -42,7 +42,7 @@ const MobileHome = () => {
                     Competitions
                 </Menu.Item>
 
-                <Menu.Item as='a' active onClick={() => navigate("/")}>
+                <Menu.Item as='a' onClick={() => navigate("/")}>
                     Player Ratings
                 </Menu.Item>
                 <Menu.Item as='a' pointing onClick={() => navigate("/")}>
@@ -82,8 +82,7 @@ const MobileHome = () => {
                             
                         </Container>
                     </Menu>
-                </Segment>
-                <Segment vertical style={{padding: '2em 0em'}}>
+                    <Segment vertical style={{padding: '2em 0em'}}>
                             <Grid>
                                 <Grid.Row>
                                     <Grid.Column textAlign="center">
@@ -141,6 +140,8 @@ const MobileHome = () => {
 
                             </Grid>
                         </Segment>
+                </Segment>
+             
             </Sidebar.Pusher>
             
         </Sidebar.Pushable>

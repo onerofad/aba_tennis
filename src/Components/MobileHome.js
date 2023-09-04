@@ -6,6 +6,7 @@ import PaginationComponent from "./PaginationComponent"
 import getNews from "./Db"
 import '../AGRESSIVE.otf'
 import '../style.css'
+import { Link } from "react-router-dom"
 
 const MobileHome = () => {
 

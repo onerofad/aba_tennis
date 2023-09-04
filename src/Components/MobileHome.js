@@ -541,6 +541,7 @@ const MobileHome = () => {
                         <Grid.Column width={5}>
                             <Button
                               fluid
+                              basic
                               style={{
                                 backgroundColor: '#405092',
                                 fontFamily: 'Poppins',

@@ -56,7 +56,7 @@ const MobileHome = () => {
                                 <Image size="mini" src="/images/about/about.png" />
                             </Menu.Item>                                                
                             <Menu.Item position="right" onClick={() => setSidebarOpened(true)}>
-                                <Icon size="huge" name="sidebar" />
+                                <Icon size="medium" name="sidebar" />
                             </Menu.Item> 
                             
                         </Container>

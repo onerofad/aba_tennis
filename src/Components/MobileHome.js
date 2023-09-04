@@ -56,9 +56,7 @@ const MobileHome = () => {
                      style={{backgroundColor: '#F6F6F6'}}           
                     >
                         <Container>
-                            <Menu.Item as='a' >
-                                <Image size="mini" src="/images/about/about.png" />
-                            </Menu.Item>                                                
+                                                                        
                             <Menu.Item position="right" onClick={() => setSidebarOpened(true)}>
                                 <Icon verticalAlign="middle" name="sidebar" />
                             </Menu.Item> 

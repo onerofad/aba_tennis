@@ -174,12 +174,13 @@ const MobileHome = () => {
                 </Grid.Column>
             </Grid.Row>
             <Divider style={{marginTop: '0em'}} />
-            <Grid.Row>
+            
                 {
                     getNews().map((news) => {
                     
-                        if(news.id >= 1 && news.id <= 4){      
+                        if(news.id >= 1 && news.id <= 2){      
                             return(
+                                <Grid.Row>
                                 <Grid.Column width={4} key={news.id}>
                                     <Placeholder fluid style={{ height: 150, width: 250 }}>
                                         <Placeholder.Image />
@@ -195,6 +196,7 @@ const MobileHome = () => {
                                     
                                     />
                                 </Grid.Column>
+                                </Grid.Row>
                             )
                         }
                        
@@ -202,7 +204,7 @@ const MobileHome = () => {
                    
                 }
                 
-            </Grid.Row>
+           
             
             <Grid.Row>
                 <Grid.Column style={{marginTop: '2em'}} textAlign="center">

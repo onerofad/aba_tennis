@@ -395,6 +395,8 @@ const MobileHome = () => {
                                     }}
                             />
                         </Grid.Column>
+                        </Grid.Row>
+                        <Grid.Row>
                         <Grid.Column>
                             <Select 
                                     options={options} 
@@ -407,6 +409,8 @@ const MobileHome = () => {
                                     }}
                             />
                        </Grid.Column>
+                       </Grid.Row>
+                       <Grid.Row>
                         <Grid.Column>
                             <Input placeholder="search"
                                       style={{

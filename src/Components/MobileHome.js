@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Sidebar, Menu, Container, Button, Segment, Icon, Image } from "semantic-ui-react"
+import { Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid} from "semantic-ui-react"
 import 'semantic-ui-css/semantic.min.css'
 import { useNavigate } from "react-router-dom"
 
@@ -41,8 +41,6 @@ const MobileHome = () => {
                 <Segment
                  textAlign='center'
                  vertical
-                 id='bgSegment'
-                 style={{ minHeight: 350, padding: '1em 0em' }} 
                 >
                     <Menu
                      fixed='top'
@@ -56,13 +54,76 @@ const MobileHome = () => {
                                 <Image size="mini" src="/images/about/about.png" />
                             </Menu.Item>                                                
                             <Menu.Item position="right" onClick={() => setSidebarOpened(true)}>
-                                <Icon name="sidebar" />
+                                <Icon size="mini" name="sidebar" />
                             </Menu.Item> 
                             
                         </Container>
                     </Menu>
                 </Segment>
             </Sidebar.Pusher>
+            <Segment vertical>
+                            <Grid>
+                                <Grid.Row>
+                                    <Grid.Column textAlign="center">
+                                        <Header
+                                            content="ABA PREMIER LEAGUE
+                                                     TABLE TENNIS"
+                                            style={{
+                                                    fontWeight: 'bold', 
+                                                    fontFamily: 'AGRESSIVE',
+                                                    fontSize: '50px',
+                                                    color: '#000000',
+                                                  }}
+                                        />
+                                        <Segment id="bgSegment"  
+                                                  style={{
+                                                    maxHeight: 300,
+                                                    padding: '2em 0em' 
+                                                }}          
+                                        >
+                                            <Grid verticalAlign="middle">
+                                                <Grid.Row>
+                                                    <Grid.Column>
+                                                        <Header
+                                                            content="2nd October to 5th November 2023"
+                                                            style={{
+                                                            	fontFamily: "dharma-gothic-e",
+                                                                color: '#ffffff',
+                                                                fontWeight: 'normal',
+                                                                fontSize: '50px',
+                                                              
+                                                            }}
+                                                        />
+                                                    </Grid.Column>
+                                                </Grid.Row>
+                                                <Grid.Row >
+                                                    <Grid.Column>
+                                                        <Button 
+                                                        style={{
+                                                            color: '#193275', 
+                                                            fontSize: '20px',
+                                                            fontWeight: 'normal',
+                                                            fontFamily: 'Poppins',      
+                                                        }}
+                                                        onClick={() => openregister()}
+                                                        >
+                                                            Register
+                                                        </Button>
+                                                    </Grid.Column>
+                                                </Grid.Row>
+                                                <Grid.Row>
+                                                    <Grid.Column verticalAlign="top">
+                                                        <Image size="small" src="/images/tennispat.svg" />
+                                                    </Grid.Column>
+                                                </Grid.Row>
+                                            </Grid>
+                                        </Segment>
+                                    </Grid.Column>
+
+                                </Grid.Row>
+
+                            </Grid>
+                        </Segment>
         </Sidebar.Pushable>
         </div>
               

@@ -181,8 +181,8 @@ const MobileHome = () => {
                         if(news.id >= 1 && news.id <= 2){      
                             return(
                                 <Grid.Row>
-                                <Grid.Column width={4} key={news.id}>
-                                    <Placeholder fluid style={{ height: 150, width: 250 }}>
+                                <Grid.Column key={news.id}>
+                                    <Placeholder fluid>
                                         <Placeholder.Image />
                                     </Placeholder>
                                     <Header

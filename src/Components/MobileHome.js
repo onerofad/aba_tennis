@@ -250,7 +250,7 @@ const MobileHome = () => {
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row>
-                            <Grid.Column>
+                            <Grid.Column width={8}>
                             <Button
                                 size="medium"
                                 style={{
@@ -264,6 +264,8 @@ const MobileHome = () => {
                             >
                                 Register Now
                             </Button>
+                            </Grid.Column>
+                            <Grid.Column width={8}>
                          
                             <Button 
                                 size="medium"
@@ -525,22 +527,23 @@ const MobileHome = () => {
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row >
-                    <Grid.Column width={10}>
+                    <Grid.Column width={8}>
                         <Input fluid placeholder="Email"  
                             style={{
                                 fontFamily: 'Poppins',
-                                fontSize: '16px',
+                                fontSize: '20px',
                                 fontWeight: 'normal',
                                 marginRight: '1em'
                             }}
                         />
                         </Grid.Column>
-                        <Grid.Column width={6}>
+                        <Grid.Column width={8}>
+                            fluid
                             <Button
                               style={{
                                 backgroundColor: '#405092',
                                 fontFamily: 'Poppins',
-                                fontSize: '16px',
+                                fontSize: '20px',
                                 fontWeight: 'normal',
                                 color: '#ffffff'
                               }}
@@ -553,13 +556,13 @@ const MobileHome = () => {
             </Container>
 
         </Segment>
-        <Segment>
+        <Segment  style={{padding: '4em 0em', backgroundColor: '#F6F6F6'}}>
         <Container>
         <Grid textAlign="center" stackable>
           
             <Grid.Row style={{fontWeight: 'normal', paddingBottom: '4em'}}>
                 <Grid.Column width={4} >
-                   <Image centered size="tiny" src="/images/logo/logo.jpg" />
+                   <Image centered size="tiny" src="/images/about/about.png" />
                     <List link relaxed
                         style={{
                             fontSize: '14px', 

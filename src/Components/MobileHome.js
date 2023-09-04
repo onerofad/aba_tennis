@@ -258,7 +258,7 @@ const MobileHome = () => {
                                     fontFamily: "Poppins",
                                     color: '#ffffff',
                                     fontWeight: 'normal',
-                                    fontSize: '14px',
+                                    fontSize: '16px',
                                     backgroundColor: '#193275',
                                 }}
                             >
@@ -274,13 +274,13 @@ const MobileHome = () => {
                                     fontFamily: "Poppins",
                                     color: '#193275',
                                     fontWeight: 'normal',
-                                    fontSize: '14px',
+                                    fontSize: '16px',
                                     backgroundColor: '#ffffff',
                                     border: '1px solid #193275'
                                 }}
                             
                             >
-                                Check Prospectus
+                                Prospectus
                             </Button>
                             </Grid.Column>
                         </Grid.Row>

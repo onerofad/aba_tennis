@@ -60,7 +60,7 @@ const MobileHome = () => {
                                 <Image size="mini" src="/images/about/about.png" />
                             </Menu.Item>                                                
                             <Menu.Item position="right" onClick={() => setSidebarOpened(true)}>
-                                <Icon size="mini" name="sidebar" />
+                                <Icon verticalAlign="middle" name="sidebar" />
                             </Menu.Item> 
                             
                         </Container>
@@ -77,7 +77,7 @@ const MobileHome = () => {
                                             style={{
                                                     fontWeight: 'bold', 
                                                     fontFamily: 'AGRESSIVE',
-                                                    fontSize: '50px',
+                                                    fontSize: '25px',
                                                     color: '#000000',
                                                   }}
                                         />
@@ -115,11 +115,6 @@ const MobileHome = () => {
                                                         >
                                                             Register
                                                         </Button>
-                                                    </Grid.Column>
-                                                </Grid.Row>
-                                                <Grid.Row>
-                                                    <Grid.Column verticalAlign="top">
-                                                        <Image size="small" src="/images/tennispat.svg" />
                                                     </Grid.Column>
                                                 </Grid.Row>
                                             </Grid>

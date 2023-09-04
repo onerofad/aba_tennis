@@ -529,8 +529,8 @@ const MobileHome = () => {
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row >
-                    <Grid.Column width={11}>
-                        <Input  placeholder="Email"  
+                    <Grid.Column width={10}>
+                        <Input fluid placeholder="Email"  
                             style={{
                                 fontFamily: 'Poppins',
                                 fontSize: '14px',
@@ -538,10 +538,9 @@ const MobileHome = () => {
                             }}
                         />
                         </Grid.Column>
-                        <Grid.Column width={5}>
+                        <Grid.Column width={6}>
                             <Button
                               fluid
-                              basic
                               style={{
                                 backgroundColor: '#405092',
                                 fontFamily: 'Poppins',

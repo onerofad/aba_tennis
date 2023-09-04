@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder} from "semantic-ui-react"
+import { Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder} from "semantic-ui-react"
 import 'semantic-ui-css/semantic.min.css'
 import { useNavigate } from "react-router-dom"
 import PaginationComponent from "./PaginationComponent"
@@ -8,6 +8,13 @@ import '../AGRESSIVE.otf'
 import '../style.css'
 
 const MobileHome = () => {
+
+    const options = [
+        { key: 1, text: 'Choice 1', value: 1 },
+        { key: 2, text: 'Choice 2', value: 2 },
+        { key: 3, text: 'Choice 3', value: 3 },
+      ]
+      
     const openregister = () => {
         if(sessionStorage.getItem("em") === null ){
             navigate("/signup")

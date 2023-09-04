@@ -262,7 +262,7 @@ const MobileHome = () => {
                                     backgroundColor: '#193275',
                                 }}
                             >
-                                Register Now
+                                Register
                             </Button>
                             </Grid.Column>
                             <Grid.Column width={8}>
@@ -527,23 +527,23 @@ const MobileHome = () => {
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row >
-                    <Grid.Column width={8}>
+                    <Grid.Column width={12}>
                         <Input fluid placeholder="Email"  
                             style={{
                                 fontFamily: 'Poppins',
-                                fontSize: '20px',
+                                fontSize: '14px',
                                 fontWeight: 'normal',
                                 marginRight: '1em'
                             }}
                         />
                         </Grid.Column>
-                        <Grid.Column width={8}>
-                            fluid
+                        <Grid.Column width={4}>
                             <Button
+                              fluid
                               style={{
                                 backgroundColor: '#405092',
                                 fontFamily: 'Poppins',
-                                fontSize: '20px',
+                                fontSize: '14px',
                                 fontWeight: 'normal',
                                 color: '#ffffff'
                               }}

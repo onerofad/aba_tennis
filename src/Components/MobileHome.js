@@ -259,7 +259,6 @@ const MobileHome = () => {
                                     fontWeight: 'normal',
                                     fontSize: '16px',
                                     backgroundColor: '#193275',
-                                    padding: '0.5em'
                                 }}
                             >
                                 Register Now
@@ -270,7 +269,6 @@ const MobileHome = () => {
                             <Button 
                                 size="medium"
                                 style={{
-                                    padding: '0.5em',
                                     fontFamily: "Poppins",
                                     color: '#193275',
                                     fontWeight: 'normal',
@@ -647,31 +645,30 @@ const MobileHome = () => {
                 <Grid.Column>
                     <Grid>
                         <Grid.Row >
-                            <Grid.Column width={8}>
-
-                            </Grid.Column>
-                            <Grid.Column width={8}>
+                            <Grid.Column>
                                 <Grid>
                                     <Grid.Row>
-                                        <Grid.Column width={4}>
+                                        <Grid.Column width={5}>
                                         <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
                                             <Icon size="large" name="facebook f" style={{color: "#FFFFFF"}}/>
                                         </Segment>
                                         </Grid.Column>
-                                        <Grid.Column width={4}>
+                                        <Grid.Column width={5}>
                                         <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
                                             <Icon size="large" name="instagram" style={{color: "#FFFFFF"}}/>
                                         </Segment>
                                         </Grid.Column>
-                                        <Grid.Column width={4}>
+                                        <Grid.Column width={5}>
                                         <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
                                             <Icon size="large" name="youtube" style={{color: "#FFFFFF"}}/>
                                         </Segment>
                                         </Grid.Column>
-                                        <Grid.Column width={2} verticalAlign="middle">
+                                    </Grid.Row>
+                                    <Grid.Row>
+                                        <Grid.Column>
                                             Privacy
                                         </Grid.Column>
-                                        <Grid.Column width={2} verticalAlign="middle">
+                                        <Grid.Column>
                                             Terms
                                         </Grid.Column>
                                     </Grid.Row>

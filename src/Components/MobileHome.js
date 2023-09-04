@@ -182,7 +182,7 @@ const MobileHome = () => {
                             return(
                                 <Grid.Row>
                                 <Grid.Column key={news.id}>
-                                    <Placeholder fluid>
+                                    <Placeholder fluid style={{height: 200}}>
                                         <Placeholder.Image />
                                     </Placeholder>
                                     <Header

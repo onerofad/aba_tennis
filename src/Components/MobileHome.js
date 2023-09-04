@@ -214,7 +214,7 @@ const MobileHome = () => {
         </Grid>
 
     </Segment>      
-    <Segment style={{padding: '4em'}}>
+    <Segment style={{padding: '4em 0em'}}>
         <Grid stackable>
             <Grid.Row>
                 <Grid.Column>

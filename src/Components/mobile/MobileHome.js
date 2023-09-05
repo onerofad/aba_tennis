@@ -26,7 +26,15 @@ const MobileHome = () => {
         sessionStorage.removeItem("handbat")
         sessionStorage.removeItem("country")
         navigate("/")
-}
+    }
+
+    const checkregister = () => {
+        if(sessionStorage.getItem("em") === null){
+             navigate("/signup")
+        }else{
+            navigate("/register")
+        }
+    }
 
     if(sessionStorage.getItem("em") === null ){
     return(
@@ -53,17 +61,37 @@ const MobileHome = () => {
                 <Menu.Item as='a'   active onClick={() => navigate("/")}>
                     Home
                 </Menu.Item>
-                <Menu.Item as='a' onClick={() => navigate("/")}>
-                    Premier League
-                    <Dropdown>
-
-                    </Dropdown>
+                <Menu.Item as='a'>
+                        <Dropdown  text= "Premier League" floating>
+                                <Dropdown.Menu pointing="bottom">
+                                    <Dropdown.Item 
+                                        text="Registration"           
+                                        onClick={() => checkregister()}  
+                                    />
+                                    <Dropdown.Item 
+                                        text="Results" 
+                                        onClick={() => navigate("/results") }
+                                    />
+                                     <Dropdown.Item 
+                                        text="PL Stories" 
+                                        disabled
+                                    />
+                                </Dropdown.Menu>
+                        </Dropdown> 
                 </Menu.Item>
-                <Menu.Item as='a'   onClick={() => navigate("/")}>
-                    Competitions
-                    <Dropdown>
-
-                    </Dropdown>
+                <Menu.Item as='a'>
+                <Dropdown  text= "Competition" floating>
+                                <Dropdown.Menu pointing="bottom">
+                                    <Dropdown.Item 
+                                        text="Governor's cup"           
+                                        disabled  
+                                    />
+                                     <Dropdown.Item 
+                                         text="Chairman's cup"           
+                                         disabled  
+                                    />
+                                </Dropdown.Menu>
+                        </Dropdown> 
                 </Menu.Item>
 
                 <Menu.Item as='a' onClick={() => navigate("/player/ranking")}>
@@ -194,17 +222,37 @@ const MobileHome = () => {
                 <Menu.Item as='a'   active onClick={() => navigate("/")}>
                     Home
                 </Menu.Item>
-                <Menu.Item as='a' onClick={() => navigate("/")}>
-                    Premier League
-                    <Dropdown>
-
-                    </Dropdown>
+                <Menu.Item as='a'>
+                        <Dropdown  text= "Premier League" floating>
+                                <Dropdown.Menu pointing="bottom">
+                                    <Dropdown.Item 
+                                        text="Registration"           
+                                        onClick={() => checkregister()}  
+                                    />
+                                    <Dropdown.Item 
+                                        text="Results" 
+                                        onClick={() => navigate("/results") }
+                                    />
+                                     <Dropdown.Item 
+                                        text="PL Stories" 
+                                        disabled
+                                    />
+                                </Dropdown.Menu>
+                        </Dropdown> 
                 </Menu.Item>
-                <Menu.Item as='a'   onClick={() => navigate("/")}>
-                    Competitions
-                    <Dropdown>
-
-                    </Dropdown>
+                <Menu.Item as='a'>
+                <Dropdown  text= "Competition" floating>
+                                <Dropdown.Menu pointing="bottom">
+                                    <Dropdown.Item 
+                                        text="Governor's cup"           
+                                        disabled  
+                                    />
+                                     <Dropdown.Item 
+                                         text="Chairman's cup"           
+                                         disabled  
+                                    />
+                                </Dropdown.Menu>
+                        </Dropdown> 
                 </Menu.Item>
 
                 <Menu.Item as='a' onClick={() => navigate("/player/ranking")}>
@@ -230,7 +278,8 @@ const MobileHome = () => {
                                     fontFamily: 'Poppins',
                                     fontWeight: 'normal',
                                     fontSize: '14px',
-                                    color: '#FFFFFF',                                
+                                    color: '#FFFFFF', 
+                                    paddingLeft: '1em'                               
                                 }}>
                             <Icon name="user" size="large"  />
                             <Dropdown  text= {sessionStorage.getItem("f")} floating>

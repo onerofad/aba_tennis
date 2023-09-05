@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom"
 import { Segment, Button, Grid, Menu, Container, Image } from "semantic-ui-react"
 
 const MobileSuccessRegister = () => {
+
+    const navigate = useNavigate()
     return(
         <Segment vertical style={{backgroundColor: '#F6F6F6'}}>
         <Grid>
@@ -20,7 +23,7 @@ const MobileSuccessRegister = () => {
                     >
                         <Container>
                                 <Menu.Item position="center" as="a">
-                                    <Image size="mini" src="/images/about/about.png" />
+                                    <Image onClick={() => navigate("/")} size="mini" src="/images/about/about.png" />
                                 </Menu.Item>
                         </Container>
                     </Menu>            

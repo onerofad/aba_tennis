@@ -66,6 +66,7 @@ const MobileVideo = () => {
                                                                 color: '#000000',
                                                                 fontSize: '16px',
                                                                 fontWeight: 'normal',
+                                                                padding: '1em 0em'
                                                             }}
                                                         
                                                         >
@@ -83,6 +84,8 @@ const MobileVideo = () => {
                                                                color: '#000000',
                                                                fontSize: '16px',
                                                                fontWeight: 'normal',
+                                                               padding: '1em 0em'
+
                                                             }}
                                                         
                                                         >
@@ -147,6 +150,8 @@ const MobileVideo = () => {
                                                                color: '#000000',
                                                                fontSize: '16px',
                                                                fontWeight: 'normal',
+                                                               padding: '1em 0em'
+
                                                             }}
                                                         
                                                         >
@@ -163,6 +168,8 @@ const MobileVideo = () => {
                                                                 color: '#000000',
                                                                 fontSize: '16px',
                                                                 fontWeight: 'normal',
+                                                                padding: '1em 0em'
+
                                                             }}
                                                         
                                                         >
@@ -228,6 +235,8 @@ const MobileVideo = () => {
                                                                color: '#000000',
                                                                fontSize: '16px',
                                                                fontWeight: 'normal',
+                                                               padding: '1em 0em'
+
                                                             }}
                                                         
                                                         >
@@ -244,6 +253,8 @@ const MobileVideo = () => {
                                                                color: '#000000',
                                                                fontSize: '16px',
                                                                fontWeight: 'normal',
+                                                               padding: '1em 0em'
+
                                                             }}
                                                         
                                                         >

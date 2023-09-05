@@ -2,9 +2,13 @@ import { Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, 
 
 const MobilePlayerTable = () => {
     const options = [
-        { key: 1, text: 'Choice 1', value: 1 },
-        { key: 2, text: 'Choice 2', value: 2 },
-        { key: 3, text: 'Choice 3', value: 3 },
+        { key: 1, text: 'Ranking (Week 1)', value: 1 },
+        { key: 2, text: 'league (Week 2)', value: 2 },
+        { key: 3, text: 'league (Week 3)', value: 3 },
+        { key: 4, text: 'league (Week 4)', value: 4 },
+        { key: 5, text: 'Super 4 (Week 5)', value: 4 },
+
+
       ]
     return(
         <Segment vertical style={{border: 0, margin: 0, padding: '4em 0em', backgroundColor: '#F6F6F6'}}>
@@ -45,7 +49,7 @@ const MobilePlayerTable = () => {
                                         color: '#000000',
                                         fontFamily: 'Poppins',
                                         fontSize: '16px',
-                                        fontWeight: 'bold',
+                                        fontWeight: 'normal',
                                     }}
                                 
                                 >

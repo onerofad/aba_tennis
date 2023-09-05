@@ -25,12 +25,13 @@ const MobileAccessRanking = () => {
                             <Grid>
                             <Grid.Row>
                                     <Grid.Column verticalAlign="middle">
-                                       <Segment>
+                                       <Segment style={{padding: '2em 0em'}}>
                                         <Grid>
                                             <Grid.Row>
                                                 <Grid.Column textAlign="center">
                                                     <Header
                                                      content="Ranking week 1"
+                                                     style={{fontFamily: 'Poppins', fontWeight: 'normal', fontStretch: 'expanded'}}
                                                      />
                                                      <Header
                                                      style={{
@@ -86,7 +87,7 @@ const MobileAccessRanking = () => {
                                                 fontSize: '12px'
                                            }}
                                         >
-                                            - Expires 2nd october after which<br/>
+                                            - Expires 2nd october after which
                                         Game tickets cost 500Naira only</p>
                                     </Grid.Column>
                                 </Grid.Row>

@@ -13,7 +13,7 @@ const MobileHeading = () => {
 
     }
     return(
-        <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '6em 0em'}}>
+        <Segment vertical style={{backgroundColor: '#F6F6F6', paddingTop: '6em', paddingBottom: '3em'}}>
         <Grid>
             <Grid.Row>
                 <Grid.Column textAlign="center">
@@ -29,8 +29,8 @@ const MobileHeading = () => {
                     />
                     <Segment id="bgSegment"  
                               style={{
-                                maxHeight: 300,
-                                padding: '2em 0em',
+                                minHeight: 200,
+                                padding: '4em 0em',
                                 margin: '0em 2em' 
                             }}          
                     >

@@ -37,14 +37,13 @@ const MobileLogin = () => {
                                 fontFamily: 'AGRESSIVE',
                                 fontSize: '20px',
                                 color: '#000000',
-                                paddingBottom: '2em'
                             }}
                             />                                                   
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
-                    <Grid.Column style={{backgroundColor: '#000000', padding: '2em'}} textAlign='center'>
-                                            <Form style={{fontFamily: 'Poppins', fontWeight: 'normal', fontSize: '20px', }}>
+                    <Grid.Column style={{backgroundColor: '#000000', padding: '2em', marginBottom: 0}} textAlign='center'>
+                                            <Form style={{minHeight: 300, fontFamily: 'Poppins', fontWeight: 'normal', fontSize: '20px', }}>
                                                
                                                 <Form.Field>
                                                     <Form.Input 
@@ -68,7 +67,7 @@ const MobileLogin = () => {
                                                             fontSize: '16px'
                                                         }}
                                                               >
-                                                        Register
+                                                        Login
                                                     </Button>
                                                 </Form.Field>
                                                 <Form.Field>

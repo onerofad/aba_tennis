@@ -37,7 +37,6 @@ const MobileSignUp = () => {
                                 fontFamily: 'AGRESSIVE',
                                 fontSize: '20px',
                                 color: '#000000',
-                                paddingBottom: '2em'
                             }}
                             />                                                   
                         </Grid.Column>

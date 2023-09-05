@@ -89,40 +89,40 @@ const MobileFooter = () => {
                         <List.Item as='a'><Link to="/">enquiries@apit.com</Link></List.Item>
                     </List>
                 </Grid.Column>
-            </Grid.Row>    
+            </Grid.Row>  
+            </Grid>
+            <Grid>  
+            <Grid.Row> 
+            <Grid.Column width={2}>
+            </Grid.Column>            
+            <Grid.Column width={4}>
+                <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
+                         <Icon size="large" name="facebook f" style={{color: "#FFFFFF"}}/>
+                </Segment>                         
+            </Grid.Column>
+            <Grid.Column width={4}>
+                 <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
+                         <Icon size="large" name="instagram" style={{color: "#FFFFFF"}}/>
+                 </Segment>
+            </Grid.Column>
+            <Grid.Column width={4}>
+                 <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
+                         <Icon size="large" name="youtube" style={{color: "#FFFFFF"}}/>
+                 </Segment>
+            </Grid.Column>
+            <Grid.Column width={2}>
+            </Grid.Column>
+            </Grid.Row>
             <Grid.Row>
-                <Grid.Column>
-                    <Grid>
-                        <Grid.Row >
-                            <Grid.Column>
-                                <Grid>
-                                    <Grid.Row>
-                                        <Grid.Column width={5}>
-                                        <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
-                                            <Icon size="large" name="facebook f" style={{color: "#FFFFFF"}}/>
-                                        </Segment>
-                                        </Grid.Column>
-                                        <Grid.Column width={5}>
-                                        <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
-                                            <Icon size="large" name="instagram" style={{color: "#FFFFFF"}}/>
-                                        </Segment>
-                                        </Grid.Column>
-                                        <Grid.Column width={5}>
-                                        <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
-                                            <Icon size="large" name="youtube" style={{color: "#FFFFFF"}}/>
-                                        </Segment>
-                                        </Grid.Column>
-                                    </Grid.Row>
-                                    <Grid.Row>
-                                        <Grid.Column textAlign="center">
-                                            Privacy   Terms
-                                        </Grid.Column>
-                                    </Grid.Row>
-                                </Grid>
-
-                            </Grid.Column>
-                        </Grid.Row>
-                    </Grid>
+                <Grid.Column textAlign="center" width={4}>
+                </Grid.Column>
+                <Grid.Column textAlign="center" width={4}>
+                    <span style={{fontFamily:'Poppins', fontSize: '16px', fontWeight: 'normal'}}>Privacy</span>
+                </Grid.Column>
+                <Grid.Column textAlign="center" width={4}>
+                    <span style={{fontFamily:'Poppins', fontSize: '16px', fontWeight: 'normal'}}>Terms</span>
+                </Grid.Column>
+                <Grid.Column textAlign="center" width={4}>
                 </Grid.Column>
             </Grid.Row>
             </Grid>

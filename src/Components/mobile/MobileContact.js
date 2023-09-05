@@ -18,8 +18,8 @@ const MobileContact = () => {
                         </Header>
                         <span 
                             style={{
-                                fontSize: '20px',
-                                fontFamily: 'helvetical',
+                                fontSize: '16px',
+                                fontFamily: 'Poppins',
                                 fontWeight: 'normal'
 
                             }}

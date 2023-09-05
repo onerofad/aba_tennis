@@ -5,10 +5,13 @@ import { useEffect, useReducer, useState } from "react"
 import MobileFooter from "./MobileFooter"
 import MobileProfile from "./MobileProfile"
 
+
+
 const MobilePlayerProfileEdit = () => {
 
     const [ sidebarOpened, setSidebarOpened ] = useState()
     const navigate = useNavigate()
+
     return(
         <div>
             <Sidebar.Pushable>
@@ -135,29 +138,6 @@ const MobilePlayerProfileEdit = () => {
                     </Menu>
                 </Segment>
                 <MobileProfile />
-                <Segment textAlign="center" vertical style={{border: 0, margin: 0, backgroundColor: '#F6F6F6'}}>
-                    <Container>
-                    <Grid>
-                        <Grid.Row>
-                            <Grid.Column>
-                            <Button style={{
-                                        backgroundColor: '#000000', 
-                                        fontSize: '20px',
-                                        fontWeight: 'normal',
-                                        fontFamily: 'Poppins',
-                                        color: '#FFFFFF',
-                                }}
-                                >
-                                            Edit Profile
-                                        </Button>
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Divider />
-                    </Grid>
-                    </Container>
-
-
-                </Segment>
              
             </Sidebar.Pusher>
                

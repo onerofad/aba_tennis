@@ -99,7 +99,7 @@ const MobileProfile = () => {
                                             fontFamily: "dharma-gothic-e",
                                         }}
                                     >
-                                     Onyemaechi Oloh
+                                     {sessionStorage.getItem("fn")}
                                     </p>
                                     Date of birth:
                                     <p style={{
@@ -109,7 +109,7 @@ const MobileProfile = () => {
                                         }}
                                     
                                     >
-                                        23/03/1987
+                                        {dob}
                                     </p>
                                     Nationality:
                                     <p style={{
@@ -119,7 +119,7 @@ const MobileProfile = () => {
                                         }}
                                     
                                     >
-                                        Nigerian
+                                        {sessionStorage.getItem("country")}
                                     </p>
                                     Contact Email:
                                     <p  style={{
@@ -128,8 +128,67 @@ const MobileProfile = () => {
                                             fontFamily: "dharma-gothic-e",
                                         }}
                                     >
-                                        Onyema23.ttp@gmail.com
+                                        {sessionStorage.getItem("em")}
                                     </p>
+                                    Left/Right Hand Bat:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    >
+                                        {handbat}
+                                    </p>
+                                    Current Ranking:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    
+                                    >
+                                        3
+                                    </p>
+                                    Points:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    
+                                    >
+                                        47
+                                    </p>
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column>
+                    <Segment textAlign="center" vertical style={{border: 0, margin: 0, backgroundColor: '#F6F6F6'}}>
+                    <Container>
+                    <Grid>
+                        <Grid.Row>
+                            <Grid.Column>
+                            <Button style={{
+                                        backgroundColor: '#000000', 
+                                        fontSize: '20px',
+                                        fontWeight: 'normal',
+                                        fontFamily: 'Poppins',
+                                        color: '#FFFFFF',
+                                }}
+                                onClick = {() => openEdit()}
+
+                                >
+                                            Edit Profile
+                                        </Button>
+                            </Grid.Column>
+                        </Grid.Row>
+                        <Divider />
+                    </Grid>
+                    </Container>
+
+
+                </Segment>
+             
                     </Grid.Column>
                 </Grid.Row>
 

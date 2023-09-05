@@ -237,7 +237,7 @@ const MobileHome = () => {
                                 <Dropdown.Menu pointing="bottom">
                                     <Dropdown.Item 
                                         text="Profile"           
-                                        onClick={() => navigate("/profile")}  
+                                        onClick={() => navigate("/player/profile/edit")}  
                                     />
                                     <Dropdown.Item 
                                         text="Log Out" 

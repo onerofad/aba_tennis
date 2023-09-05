@@ -13,7 +13,7 @@ const MobilePlayerRanking = () => {
     const navigate = useNavigate()
     return(
         <div>
-        <Sidebar.Pushable>
+            <Sidebar.Pushable>
             <Sidebar
             as={Menu}
             animation="overlay"
@@ -21,22 +21,31 @@ const MobilePlayerRanking = () => {
             inverted
             onHide={() => setSidebarOpened(false)}
             visible={sidebarOpened}   
+            
             style={{
                 fontFamily: 'Poppins', 
-                fontSize: '20px',
+                fontSize: '14px',
                 fontWeight: 'normal',
-                maxHeight: 1000
+                maxHeight: 560,
+                minWidth: 200,
+                backgroundColor: '#000000'
             }}       
             >
               
-              <Menu.Item as='a' active onClick={() => navigate("/")}>
+                <Menu.Item as='a'   active onClick={() => navigate("/")}>
                     Home
                 </Menu.Item>
-                <Menu.Item as='a'  onClick={() => navigate("/")}>
+                <Menu.Item as='a' onClick={() => navigate("/")}>
                     Premier League
+                    <Dropdown>
+
+                    </Dropdown>
                 </Menu.Item>
-                <Menu.Item as='a'  onClick={() => navigate("/")}>
+                <Menu.Item as='a'   onClick={() => navigate("/")}>
                     Competitions
+                    <Dropdown>
+
+                    </Dropdown>
                 </Menu.Item>
 
                 <Menu.Item as='a' onClick={() => navigate("/player/ranking")}>
@@ -54,22 +63,60 @@ const MobilePlayerRanking = () => {
                 <Menu.Item as='a'  onClick={() => navigate("/results")}>
                     Results
                 </Menu.Item>
+          
+                    <Grid.Row>
+                        <Grid.Column style={{paddingTop: '4em'}}>
+                            <p style={{ paddingBottom: '1.5em'}}>
+                                <Link style={{
+                                    fontFamily: 'Poppins',
+                                    fontWeight: 'normal',
+                                    fontSize: '14px',
+                                    color: '#FFFFFF',
+                                    paddingLeft: '1em',
+                            
+                                }} to="/signup">
+                                    Register
+                                </Link>
+                            </p>
+                            <p style={{paddingLeft: '1em'}}>
+                                <Link  style={{
+                                    fontFamily: 'Poppins',
+                                    fontWeight: 'normal',
+                                    fontSize: '14px',
+                                    color: '#FFFFFF',
+                            
+                                }} to="/login">
+                                    Login
+                                </Link>
+                            </p>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row style={{padding: '3em 1em'}}>
+                        <Grid>
+                            <Grid.Row>
+                                <Grid.Column width={5}>
+                                    <Icon size="large" style={{color: '#FFFFFF'}} name="instagram" />
 
-
-                <Menu.Item as='a'  onClick={() => navigate("/signup")}>
-                    Register
-                </Menu.Item>
-                <Menu.Item as='a'  onClick={() => navigate("/login")}>
-                    Login
-                </Menu.Item>
-         
+                                </Grid.Column>
+                                <Grid.Column width={5}>
+                                    <Icon size="large" style={{color: '#FFFFFF'}} name="facebook f" />
+                                </Grid.Column>
+                                <Grid.Column width={5}>
+                                    <Icon size="large" style={{color: '#FFFFFF'}} name="youtube" />
+                                </Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                       
+                    </Grid.Row>
+              
+                
             
             </Sidebar>
             <Sidebar.Pusher dimmed={sidebarOpened}>
                 <Segment
                  textAlign='center'
                  vertical
-                 style={{border: 0, backgroundColor: '#F6F6F6', padding: '0.5em 0.5em'}}           
+                 style={{backgroundColor: '#F6F6F6', padding: '0.5em 0.5em'}}           
 
                 >
                     <Menu
@@ -80,7 +127,7 @@ const MobilePlayerRanking = () => {
                      style={{border: 0, backgroundColor: '#F6F6F6', paddingTop: '0.5em', paddingLeft: '1em', paddingRight: '0.5em'}}           
                     >
                         <Container>
-                        <Image  size="mini" src="../../images/about/about.png" />
+                        <Image onClick={() => navigate("/")}  size="mini" src="../../images/about/about.png" />
                                     
                             <Menu.Item as="a" position="right" onClick={() => setSidebarOpened(true)}>
                                  <Icon size="large" verticalAlign="middle" name="sidebar" />

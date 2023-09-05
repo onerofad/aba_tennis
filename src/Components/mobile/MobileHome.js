@@ -225,7 +225,13 @@ const MobileHome = () => {
           
                     <Grid.Row>
                         <Grid.Column style={{paddingTop: '4em'}}>
-                            <p style={{ paddingBottom: '1.5em'}}>
+                            <p style={{ 
+                                paddingBottom: '1.5em',
+                                    fontFamily: 'Poppins',
+                                    fontWeight: 'normal',
+                                    fontSize: '14px',
+                                    color: '#FFFFFF',                                
+                                }}>
                             <Icon name="user" size="large"  />
                             <Dropdown  text= {sessionStorage.getItem("f")} floating>
                                 <Dropdown.Menu pointing="bottom">
@@ -239,17 +245,6 @@ const MobileHome = () => {
                                     />
                                 </Dropdown.Menu>
                             </Dropdown> 
-                            </p>
-                            <p style={{paddingLeft: '1em'}}>
-                                <Link  style={{
-                                    fontFamily: 'Poppins',
-                                    fontWeight: 'normal',
-                                    fontSize: '14px',
-                                    color: '#FFFFFF',
-                            
-                                }} to="/login">
-                                    Login
-                                </Link>
                             </p>
                         </Grid.Column>
                     </Grid.Row>

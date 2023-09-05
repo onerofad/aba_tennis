@@ -16,8 +16,22 @@ import Login from './Components/Login';
 import HomePagination from './Components/HomePagination';
 import MatchResult from './Components/MatchResults';
 import LogOut from './Components/LogOut';
+import MobileSuccessRegister from './Components/mobile/MobileSuccessRegister';
 
 import MobileHome from './Components/mobile/MobileHome';
+import MobileRegistration from './Components/mobile/MobileRegistration';
+import MobilePlayerProfile from './Components/mobile/MobilePlayerProfile'
+import MobilePlayerProfileEdit from './Components/mobile/MobilePlayerProfileEdit';
+import MobilePlayerRanking from './Components/mobile/MobilePlayerRanking';
+import MobileSearchPlayerRanking from './Components/mobile/MobileSearchPlayerRanking';
+import MobileVideoSection from './Components/mobile/MobileVedioSection';
+import SearchMobilePlayerProfile from './Components/mobile/SearchMobilePlayerProfile';
+import SearchMobileResultPlayerProfile from './Components/mobile/SearchMobileResultPlayerProfile';
+import MobileImageGallary from './Components/mobile/MobileImageGallary';
+import MobileSearchResult from './Components/mobile/MobileSearchResult';
+import MobileSignUpComponent from './Components/mobile/MobileSignUpComponent';
+import MobileLoginComponent from './Components/mobile/MobileLoginComponent';
+
 const { MediaContextProvider, Media } = createMedia({
   breakpoints:{
     mobile: 0,
@@ -33,6 +47,25 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route index element={<MobileHome />} />
+          <Route path="register" element={<MobileRegistration />} />
+          <Route path="register/success" element={<MobileSuccessRegister />} />
+          <Route path="player/profile" element={<MobilePlayerProfile />} />
+          <Route path="player/profile/edit" element={<MobilePlayerProfileEdit />} />
+          <Route path="player/ranking" element={<MobilePlayerRanking />} />
+          <Route path="search/player/ranking" element={<MobileSearchPlayerRanking />} />
+          <Route path="video" element={<MobileVideoSection />} />
+          <Route path="search/player/profile" element={<SearchMobilePlayerProfile />} />
+          <Route path="search/result/profile" element={<SearchMobileResultPlayerProfile />} />
+          <Route path="gallary" element={<MobileImageGallary />} />
+          <Route path="results" element={<MobileSearchResult />} />
+          <Route path="signup" element={<MobileSignUpComponent />} />
+          <Route path="login" element={<MobileLoginComponent />} />
+
+
+
+
+
+          
         </Routes>
       </BrowserRouter>
     </Media>

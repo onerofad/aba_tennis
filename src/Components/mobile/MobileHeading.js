@@ -43,7 +43,7 @@ const MobileHeading = () => {
                                             fontFamily: "dharma-gothic-e",
                                             color: '#ffffff',
                                             fontWeight: 'normal',
-                                            fontSize: '40px',
+                                            fontSize: '30px',
                                           
                                         }}
                                     />
@@ -54,11 +54,11 @@ const MobileHeading = () => {
                                     <Button 
                                     style={{
                                         color: '#193275', 
-                                        fontSize: '20px',
+                                        fontSize: '16px',
                                         fontWeight: 'normal',
                                         fontFamily: 'Poppins',      
                                     }}
-                                    onClick={() => openregister()}
+                                    onClick={() => navigate("/register")}
                                     >
                                         Register
                                     </Button>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const MobileFooter = () => {
     return(
-        <Segment  style={{margin: 0, border: 0,padding: '4em 0em', backgroundColor: '#F6F6F6'}}>
+        <Segment  style={{margin: 0, border: 0,padding: '3em 0em', backgroundColor: '#F6F6F6'}}>
         <Container>
         <Grid textAlign="center" stackable>
           

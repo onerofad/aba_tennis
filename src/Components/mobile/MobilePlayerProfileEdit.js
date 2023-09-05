@@ -1,18 +1,11 @@
-import { useState } from "react"
-import { Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List} from "semantic-ui-react"
-import 'semantic-ui-css/semantic.min.css'
+import {Icon, Sidebar, Form, Modal, Dropdown, Segment, Grid, Menu, Container, Image, Button, Header, Divider, Placeholder } from "semantic-ui-react"
+import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import './AGRESSIVE.otf'
-import './style.css'
-import MobileHeading from './MobileHeading'
-import MobileLatestNews from "./MobileLatestNews"
-import MobileAbout from "./MobileAbout"
-import MobileAccessRanking from "./MobileAccessRanking"
-import MobilePlayerTable from "./MobilePlayerTable"
-import MobileContact from "./MobileContact"
+import { useEffect, useReducer, useState } from "react"
 import MobileFooter from "./MobileFooter"
+import MobileProfile from "./MobileProfile"
 
-const MobileHome = () => {
+const MobilePlayerProfileEdit = () => {
 
     const [ sidebarOpened, setSidebarOpened ] = useState()
     const navigate = useNavigate()
@@ -28,14 +21,13 @@ const MobileHome = () => {
             visible={sidebarOpened}   
             style={{
                 fontFamily: 'Poppins', 
-                fontSize: '16px',
+                fontSize: '20px',
                 fontWeight: 'normal',
-                maxHeight: 500,
-                border: 0
+                maxHeight: 1000
             }}       
             >
               
-                <Menu.Item as='a' active onClick={() => navigate("/")}>
+              <Menu.Item as='a' active onClick={() => navigate("/")}>
                     Home
                 </Menu.Item>
                 <Menu.Item as='a'  onClick={() => navigate("/")}>
@@ -69,13 +61,12 @@ const MobileHome = () => {
                     Login
                 </Menu.Item>
          
-            
             </Sidebar>
             <Sidebar.Pusher dimmed={sidebarOpened}>
                 <Segment
                  textAlign='center'
                  vertical
-                 style={{backgroundColor: '#F6F6F6', padding: '0.5em 0.5em'}}           
+                 style={{border: 0, margin: 0, backgroundColor: '#F6F6F6', padding: '0.5em 0.5em'}}           
 
                 >
                     <Menu
@@ -83,7 +74,7 @@ const MobileHome = () => {
                      size="medium"
                      secondary
                      pointing
-                     style={{border: 0, backgroundColor: '#F6F6F6', paddingTop: '0.5em', paddingLeft: '1em', paddingRight: '0.5em'}}           
+                     style={{border: 0, margin: 0, backgroundColor: '#F6F6F6', paddingTop: '0.5em', paddingLeft: '1em', paddingRight: '0.5em'}}           
                     >
                         <Container>
                         <Image  size="mini" src="../../images/about/about.png" />
@@ -94,21 +85,39 @@ const MobileHome = () => {
                             
                         </Container>
                     </Menu>
+                   
                 </Segment>
-                <MobileHeading />
-                <MobileLatestNews />
+                <MobileProfile />
+                <Segment textAlign="center" vertical style={{border: 0, margin: 0, backgroundColor: '#F6F6F6'}}>
+                    <Container>
+                    <Grid>
+                        <Grid.Row>
+                            <Grid.Column>
+                            <Button style={{
+                                        backgroundColor: '#000000', 
+                                        fontSize: '20px',
+                                        fontWeight: 'normal',
+                                        fontFamily: 'Poppins',
+                                        color: '#FFFFFF',
+                                }}
+                                >
+                                            Edit Profile
+                                        </Button>
+                            </Grid.Column>
+                        </Grid.Row>
+                        <Divider />
+                    </Grid>
+                    </Container>
+
+
+                </Segment>
+             
             </Sidebar.Pusher>
-                <MobileAbout />      
-                <MobileAccessRanking />
-                <MobilePlayerTable />
-                <MobileContact />
+               
                 <MobileFooter />
           
         </Sidebar.Pushable>
         </div>
-              
     )
-
 }
-
-export default MobileHome
+export default MobilePlayerProfileEdit

@@ -11,8 +11,9 @@ import MobileAccessRanking from "./MobileAccessRanking"
 import MobilePlayerTable from "./MobilePlayerTable"
 import MobileContact from "./MobileContact"
 import MobileFooter from "./MobileFooter"
+import MobileRegisterHeading from "./MobileRegisterHeading"
 
-const MobileHome = () => {
+const MobileRegistration = () => {
 
     const [ sidebarOpened, setSidebarOpened ] = useState()
     const navigate = useNavigate()
@@ -28,14 +29,13 @@ const MobileHome = () => {
             visible={sidebarOpened}   
             style={{
                 fontFamily: 'Poppins', 
-                fontSize: '16px',
+                fontSize: '20px',
                 fontWeight: 'normal',
-                maxHeight: 500,
-                border: 0
+                maxHeight: 1000
             }}       
             >
               
-                <Menu.Item as='a' active onClick={() => navigate("/")}>
+              <Menu.Item as='a' active onClick={() => navigate("/")}>
                     Home
                 </Menu.Item>
                 <Menu.Item as='a'  onClick={() => navigate("/")}>
@@ -95,14 +95,9 @@ const MobileHome = () => {
                         </Container>
                     </Menu>
                 </Segment>
-                <MobileHeading />
-                <MobileLatestNews />
+                <MobileRegisterHeading />
             </Sidebar.Pusher>
-                <MobileAbout />      
-                <MobileAccessRanking />
-                <MobilePlayerTable />
-                <MobileContact />
-                <MobileFooter />
+           <MobileFooter />
           
         </Sidebar.Pushable>
         </div>
@@ -111,4 +106,4 @@ const MobileHome = () => {
 
 }
 
-export default MobileHome
+export default MobileRegistration

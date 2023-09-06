@@ -308,7 +308,7 @@ const MobileSinglePageNews = () => {
                     <Segment
                      textAlign='center'
                      vertical
-                     style={{backgroundColor: '#F6F6F6', padding: '0.5em 0.5em'}}           
+                     style={{backgroundColor: '#F6F6F6', padding: '3em 0.5em'}}           
     
                     >
                         <Menu

@@ -308,7 +308,7 @@ const MobilePrivacyPolicy = () => {
                     <Segment
                      textAlign='center'
                      vertical
-                     style={{border: 0, backgroundColor: '#F6F6F6', padding: '0.5em 0.5em'}}           
+                     style={{border: 0, backgroundColor: '#F6F6F6', padding: '3em 0.5em'}}           
     
                     >
                         <Menu

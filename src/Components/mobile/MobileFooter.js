@@ -96,33 +96,27 @@ const MobileFooter = () => {
             <Grid.Column width={2}>
             </Grid.Column>            
             <Grid.Column width={4}>
-                <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
+                <Segment circular style={{backgroundColor: '#405092', width: '8px', height: '8px'}}>
                          <Icon size="large" name="facebook f" style={{color: "#FFFFFF"}}/>
                 </Segment>                         
             </Grid.Column>
             <Grid.Column width={4}>
-                 <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
-                         <Icon size="large" name="instagram" style={{color: "#FFFFFF"}}/>
+                 <Segment circular style={{backgroundColor: '#405092', width: '8px', height: '8px'}}>
+                         <Link to="https://instagram.com/abapltt?igshid=MWZjMTM2ODFkZg=="><Icon size="large" name="instagram" style={{color: "#FFFFFF"}}/></Link>
+
                  </Segment>
             </Grid.Column>
             <Grid.Column width={4}>
-                 <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
-                         <Icon size="large" name="youtube" style={{color: "#FFFFFF"}}/>
+                 <Segment circular style={{backgroundColor: '#405092', width: '8px', height: '8px'}}>
+                         <Link to="https://youtube.com/@AbaPremierLeaugeTableTennis?si=UXra4njATRJK5rxx"><Icon size="large" name="youtube" style={{color: "#FFFFFF"}}/></Link>
                  </Segment>
             </Grid.Column>
             <Grid.Column width={2}>
             </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-                <Grid.Column textAlign="center" width={4}>
-                </Grid.Column>
-                <Grid.Column textAlign="center" width={4}>
-                    <span style={{fontFamily:'Poppins', fontSize: '16px', fontWeight: 'normal'}}>Privacy</span>
-                </Grid.Column>
-                <Grid.Column textAlign="center" width={4}>
-                    <span style={{fontFamily:'Poppins', fontSize: '16px', fontWeight: 'normal'}}>Terms</span>
-                </Grid.Column>
-                <Grid.Column textAlign="center" width={4}>
+                <Grid.Column textAlign="center">
+                    <span style={{fontFamily:'Poppins', fontSize: '16px', fontWeight: 'normal'}}>Privacy Terms</span>
                 </Grid.Column>
             </Grid.Row>
             </Grid>

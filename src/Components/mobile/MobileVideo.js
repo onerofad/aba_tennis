@@ -290,8 +290,8 @@ const MobileVideo = () => {
                         </Grid.Row>
                         <Grid.Row>
                         <Grid.Column>
-                            <Segment style={{padding: '10em 0em'}}>
-                                <Image centered src="/images/youtube.svg" />
+                        <Segment style={{padding: '1em 1em'}}>
+                            <iframe width="420" height="315" src="https://www.youtube.com/embed/qmEmfu2Xf5U?si=EklV4oDujZGLVlH4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                             </Segment>
                         </Grid.Column>

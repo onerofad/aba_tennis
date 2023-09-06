@@ -1,7 +1,9 @@
 import { Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List} from "semantic-ui-react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const MobileFooter = () => {
+
+    const navigate = useNavigate()
     return(
         <Segment  style={{margin: 0, border: 0,padding: '3em 0em', backgroundColor: '#F6F6F6'}}>
         <Container>
@@ -116,7 +118,7 @@ const MobileFooter = () => {
             </Grid.Row>
             <Grid.Row>
                 <Grid.Column textAlign="center">
-                    <span style={{fontFamily:'Poppins', fontSize: '16px', fontWeight: 'normal'}}>Privacy Terms</span>
+                    <span style={{fontFamily:'Poppins', fontSize: '16px', fontWeight: 'normal', cursor: 'pointer'}} onClick={() => navigate("/terms")}>Privacy Terms</span>
                 </Grid.Column>
             </Grid.Row>
             </Grid>

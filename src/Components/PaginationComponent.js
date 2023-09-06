@@ -19,7 +19,7 @@ const PaginationComponent = () => {
 
     const handlePaginationChange = (activePage) => {
         setactivePage(activePage)
-        navigate("/" + activePage)
+        navigate("/news/" + activePage)
     }
     const getTotalPages = () => {
         getNews().map((news) => {

@@ -31,6 +31,9 @@ import MobileImageGallary from './Components/mobile/MobileImageGallary';
 import MobileSearchResult from './Components/mobile/MobileSearchResult';
 import MobileSignUpComponent from './Components/mobile/MobileSignUpComponent';
 import MobileLoginComponent from './Components/mobile/MobileLoginComponent';
+import MobileAllNews from './Components/mobile/MobileAllNews';
+import MobileSinglePageNews from './Components/mobile/MobileSinglePageNews';
+import MobilePrivacyPolicy from './Components/mobile/MobilePrivacyPolicy';
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints:{
@@ -60,6 +63,12 @@ const App = () => {
           <Route path="results" element={<MobileSearchResult />} />
           <Route path="signup" element={<MobileSignUpComponent />} />
           <Route path="login" element={<MobileLoginComponent />} />
+          <Route path="news/:pageno" element={<MobileAllNews />} />
+          <Route path="newspage/:pageno" element={<MobileSinglePageNews />} />
+          <Route path="terms" element={<MobilePrivacyPolicy />} />
+
+
+
 
 
 

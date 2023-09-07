@@ -1,4 +1,4 @@
-import { Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List} from "semantic-ui-react"
+import { Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List, Message} from "semantic-ui-react"
 
 const MobileAccessRanking = () => {
     return(
@@ -46,6 +46,12 @@ const MobileAccessRanking = () => {
                                                         style={{
                                                             color: '#FFFFFF',
                                                             backgroundColor: '#193275'
+                                                            
+                                                        }}
+                                                        onClick={() => {
+                                                        <Message>
+                                                            <Message.Content>Hello</Message.Content>
+                                                        </Message>
                                                         }}
                                                      >
                                                         Buy Now

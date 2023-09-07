@@ -10,7 +10,6 @@ const MobilePlayerTable = () => {
     ]
    
     const [tab, setab] = useState([])
-    const [tab1, setab1] = useState([])
 
     useEffect(() => {
         getRank()
@@ -22,12 +21,7 @@ const MobilePlayerTable = () => {
      }
       
     const selectrank = (rank) => {
-        alert(rank)
-         tab.map((ranks) => {
-            if(ranks.leaguetype === rank){
-                setab1(ranks.firstname, ranks.points)
-            }
-         })
+      alert(rank)
     }
     return(
         <Segment vertical style={{border: 0, margin: 0, padding: '4em 0em', backgroundColor: '#F6F6F6'}}>
@@ -95,9 +89,7 @@ const MobilePlayerTable = () => {
                                     }}
                                 
                                 >
-                                    {
-                                        tab1.map((row) => {
-                                            return(
+                                  
                                             <Table.Row>
                                                 <Table.Cell>1</Table.Cell>
                                                 <Table.Cell></Table.Cell>
@@ -106,11 +98,6 @@ const MobilePlayerTable = () => {
         
                                             </Table.Row>
 
-                                            )
-                                       
-
-                                        })
-                                    }
                                    
                                    
                                 </Table.Body>

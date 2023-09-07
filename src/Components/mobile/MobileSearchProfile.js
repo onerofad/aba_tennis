@@ -19,7 +19,7 @@ const MobileSearchProfile = () => {
     }
 
     const searchprofile = () => {
-        let searchdetails = details.filter(p => p.fname === profile)[0]
+       // let searchdetails = details.filter(p => p.fname === profile)[0]
             setloader(true)
             setTimeout(() => {
                 alert(searchdetails.lname)         

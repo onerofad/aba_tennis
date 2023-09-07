@@ -1,4 +1,6 @@
+import { useState } from "react"
 import { Container, Divider, Dropdown, Grid, Header, Segment, Menu, Search, Table, Tab, Select, Input } from "semantic-ui-react"
+import { getRanking } from "../../services/API"
 
 const MobileRanking = () => {
     const options = [

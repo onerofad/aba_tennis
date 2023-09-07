@@ -118,6 +118,8 @@ const MobilePlayerTable = () => {
                     </Grid.Row>
                 </Grid>
                 </Container>
+                <Popup content='Add users to your feed' trigger={<Button icon='add' />} />
+
     </Segment>    
     )
 }

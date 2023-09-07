@@ -92,9 +92,9 @@ const MobilePlayerTable = () => {
                                   
                                             <Table.Row>
                                                 <Table.Cell>1</Table.Cell>
-                                                <Table.Cell></Table.Cell>
-                                                <Table.Cell></Table.Cell>
-                                                <Table.Cell></Table.Cell>
+                                                <Table.Cell>2</Table.Cell>
+                                                <Table.Cell>3</Table.Cell>
+                                                <Table.Cell>4</Table.Cell>
         
                                             </Table.Row>
 

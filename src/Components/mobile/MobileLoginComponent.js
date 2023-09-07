@@ -55,7 +55,7 @@ const MobileLoginComponent = () => {
                     Player Profiles
                 </Menu.Item>
                 <Menu.Item as='a'  onClick={() => navigate("/gallary")}>
-                    Image Gallary
+                    Image Gallery
                 </Menu.Item>
                 <Menu.Item as='a'  onClick={() => navigate("/results")}>
                     Results
@@ -90,16 +90,23 @@ const MobileLoginComponent = () => {
                     </Grid.Row>
                     <Grid.Row style={{padding: '3em 1em'}}>
                         <Grid>
-                            <Grid.Row>
+                        <Grid.Row>
                                 <Grid.Column width={5}>
-                                    <Icon size="large" style={{color: '#FFFFFF'}} name="instagram" />
+                                    <Link to="https://instagram.com/abapltt?igshid=MWZjMTM2ODFkZg==">
+                                        <Icon size="large" style={{color: '#FFFFFF'}} name="instagram" />
+                                    </Link>
+                                </Grid.Column>
+                                <Grid.Column width={5}>
+                                    <Link to="https://web.facebook.com/profile.php?id=61551260060823">
+                                        <Icon size="large" style={{color: '#FFFFFF'}} name="facebook f" />
 
+                                    </Link>
                                 </Grid.Column>
                                 <Grid.Column width={5}>
-                                    <Icon size="large" style={{color: '#FFFFFF'}} name="facebook f" />
-                                </Grid.Column>
-                                <Grid.Column width={5}>
-                                    <Icon size="large" style={{color: '#FFFFFF'}} name="youtube" />
+                                    <Link to="https://youtube.com/@AbaPremierLeaugeTableTennis?si=UXra4njATRJK5rxx">
+                                     <Icon size="large" style={{color: '#FFFFFF'}} name="youtube" />
+
+                                    </Link>
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>

@@ -19,7 +19,7 @@ const MobileFooter = () => {
                             fontFamily: 'Poppins',
                         }}
                     >
-                        <List.Item style={{color: '#000000'}}>Player profiles</List.Item>
+                        <List.Item style={{color: '#000000'}} onClick={() => navigate("/search/player/profile")}>Player profiles</List.Item>
                         <List.Item style={{color: '#000000'}}>FAQ</List.Item>
                     </List>
                    
@@ -42,8 +42,8 @@ const MobileFooter = () => {
                     }}
                     >
                         <List.Item style={{color: '#000000'}} as='a'>Registration</List.Item>
-                        <List.Item style={{color: '#000000'}} as='a'>League Rankings</List.Item>
-                        <List.Item style={{color: '#000000'}} as='a'>Results</List.Item>
+                        <List.Item style={{color: '#000000'}} as='a' onClick={() => navigate("/player/ranking")}>League Rankings</List.Item>
+                        <List.Item style={{color: '#000000'}} as='a' onClick={() => navigate("/results")}>Results</List.Item>
                         <List.Item style={{color: '#000000'}} as='a'>Archives</List.Item>
                     </List>
 
@@ -66,10 +66,7 @@ const MobileFooter = () => {
                         }}
                     >
                         <List.Item style={{color: '#000000'}} as='a'>Tournaments</List.Item>
-                        <List.Item style={{color: '#000000'}} as='a'>League Rankings</List.Item>
-                        <List.Item style={{color: '#000000'}} as='a'>Results</List.Item>
-                        <List.Item style={{color: '#000000'}} as='a'>Archives</List.Item>                
-                    </List>
+                        </List>
                 </Grid.Column>
                 <Grid.Column width={4}>
                     <Header

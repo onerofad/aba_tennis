@@ -12,3 +12,17 @@ export default function getsignupDetails(){
     })
     )
 }
+
+export function getRanking(){
+    return(
+    axios.create({
+        baseURL: "https://tennis-backend.vercel.app/api/ranking/",
+        headers: {
+            "Accept": 'application/json',
+            "Content-Type": 'application/json'
+        }
+        
+    })
+    )
+}
+

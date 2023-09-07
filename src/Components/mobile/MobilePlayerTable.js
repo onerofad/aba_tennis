@@ -1,15 +1,33 @@
+import { useEffect, useState } from "react"
 import { Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List} from "semantic-ui-react"
+import { getRanking } from "../../services/API"
 
 const MobilePlayerTable = () => {
     const options = [
-        { key: 1, text: 'Ranking (Week 1)', value: 1 },
-        { key: 2, text: 'league (Week 2)', value: 2 },
-        { key: 3, text: 'league (Week 3)', value: 3 },
-        { key: 4, text: 'league (Week 4)', value: 4 },
-        { key: 5, text: 'Super 4 (Week 5)', value: 4 },
+        { key: 1, text: 'Premier League', value: 1 },
+        { key: 2, text: 'Governor\'s cup', value: 2 },
+        { key: 3, text: 'Chairman\'s cup', value: 3 },
+    ]
+   
+    const [tab, setab] = useState([])
+    const [tab1, setab1] = useState([])
 
+    useEffect(() => {
+        getRank()
+     }, [])
 
-      ]
+     const getRank = () => {
+        getRanking().get("/")
+        .then((res) => setab(res.data))
+     }
+      
+    const selectrank = (rank) => {
+         tab.map((ranks) => {
+            if(ranks.leaguetype === rank){
+                setab1(ranks.firstname, ranks.points)
+            }
+         })
+    }
     return(
         <Segment vertical style={{border: 0, margin: 0, padding: '4em 0em', backgroundColor: '#F6F6F6'}}>
     <Container>
@@ -32,6 +50,7 @@ const MobilePlayerTable = () => {
                             <Select 
                                     options={options} 
                                     placeholder="Premier League" 
+                                    onChange={(e, {value}) => selectrank(value.toString())}
                                     style={{
                                         color: '#000000',
                                         fontFamily: 'Poppins',
@@ -43,6 +62,14 @@ const MobilePlayerTable = () => {
                         </Grid.Row>                   
                         <Grid.Row>
                         <Grid.Column>
+                            {/*<Placeholder>
+                                <Placeholder.Line />
+                                <Placeholder.Line />
+                                <Placeholder.Line />
+                                <Placeholder.Line />
+                                <Placeholder.Line />
+                            </Placeholder>
+                            */}
                             <Table celled size="large" basic="very">
                                 <Table.Header
                                     style={{
@@ -67,41 +94,19 @@ const MobilePlayerTable = () => {
                                     }}
                                 
                                 >
-                                    <Table.Row>
-                                        <Table.Cell>1</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
+                                    {
+                                        tab1.map((row) => {
+                                        <Table.Row>
+                                            <Table.Cell>1</Table.Cell>
+                                            <Table.Cell>{row.firstname}</Table.Cell>
+                                            <Table.Cell>{row.points}</Table.Cell>
+    
+                                        </Table.Row>
 
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>2</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>3</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>4</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>5</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
+                                        })
+                                    }
+                                   
+                                   
                                 </Table.Body>
                             </Table>
                         </Grid.Column>

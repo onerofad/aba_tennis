@@ -6,6 +6,26 @@ const MobileRanking = () => {
         { key: 2, text: 'Governor\'s cup', value: 'Governors Cup' },
         { key: 3, text: 'Chairman\'s cup', value: 'Chairmans Cup' },
     ]
+
+    const [tab, setab] = useState([])
+    const [loader, setloader] = useState(false)
+      
+    const selectrank = (rank) => {
+        setloader(true)
+        setTimeout(() => {
+            if(rank === "Premier League"){
+                getRanking().get("/")
+                .then((res) => setab(res.data))
+                setloader(false)
+
+            }else{
+                alert("No Entry")
+                setloader(false)
+            }
+        }, 5000)
+      
+       
+    }
     return(
         <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '6em 0em'}}>
             <Container>
@@ -26,15 +46,17 @@ const MobileRanking = () => {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column width={8}>
-                            <Select 
+                        <Select 
                                     options={options} 
                                     placeholder="Premier League" 
+                                    onChange={(e, {value}) => selectrank(value.toString())}
                                     style={{
                                         color: '#000000',
                                         fontFamily: 'Poppins',
                                         fontSize: '16px',
                                         fontWeight: 'normal',
                                     }}
+                                   loading = {loader} 
                             />
                         </Grid.Column>
                         {
@@ -58,13 +80,13 @@ const MobileRanking = () => {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            <Table celled size="medium" basic="very">
+                        <Table celled size="large" basic="very" unstackable >
                                 <Table.Header
                                     style={{
                                         color: '#000000',
                                         fontFamily: 'Poppins',
                                         fontSize: '16px',
-                                        fontWeight: 'bold',
+                                        fontWeight: 'normal',
                                     }}
                                 
                                 >
@@ -80,43 +102,25 @@ const MobileRanking = () => {
                                         fontSize: '16px',
                                         fontWeight: 'bold',
                                     }}
-                                
+                                    
                                 >
-                                    <Table.Row>
-                                        <Table.Cell>1</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
+                                  {
+                                    tab.map((rank) => {
+                                        return(
+                                        <Table.Row>
+                                                <Table.Cell>1</Table.Cell>
+                                                <Table.Cell>2</Table.Cell>
+                                                <Table.Cell>{rank.firstname}</Table.Cell>
+                                                <Table.Cell>{rank.points}</Table.Cell>
+        
+                                        </Table.Row>
+                                        )
+                                    })
+                                  }
+                                            
 
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>2</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>3</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>4</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>5</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
+                                   
+                                   
                                 </Table.Body>
                             </Table>
                         </Grid.Column>

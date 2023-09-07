@@ -97,6 +97,7 @@ const MobilePlayerTable = () => {
                                 >
                                   {
                                     tab.map((rank) => {
+                                        return(
                                         <Table.Row>
                                                 <Table.Cell>1</Table.Cell>
                                                 <Table.Cell>2</Table.Cell>
@@ -104,6 +105,7 @@ const MobilePlayerTable = () => {
                                                 <Table.Cell>{rank.points}</Table.Cell>
         
                                         </Table.Row>
+                                        )
                                     })
                                   }
                                             

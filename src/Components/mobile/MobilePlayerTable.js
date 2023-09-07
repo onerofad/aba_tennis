@@ -10,14 +10,22 @@ const MobilePlayerTable = () => {
     ]
    
     const [tab, setab] = useState([])
+    const [loader, setloader] = useState(false)
       
     const selectrank = (rank) => {
-        if(rank === "Premier League"){
-            getRanking().get("/")
-            .then((res) => setab(res.data))
-        }else{
-            alert("No Entry")
-        }
+        setloader(true)
+        setTimeout(() => {
+            if(rank === "Premier League"){
+                getRanking().get("/")
+                .then((res) => setab(res.data))
+                setloader(false)
+
+            }else{
+                alert("No Entry")
+                setloader(false)
+            }
+        }, 5000)
+      
        
     }
     return(
@@ -49,6 +57,7 @@ const MobilePlayerTable = () => {
                                         fontSize: '16px',
                                         fontWeight: 'normal',
                                     }}
+                                   loading = {loader} 
                             />
                         </Grid.Column>
                         </Grid.Row>                   
@@ -62,7 +71,7 @@ const MobilePlayerTable = () => {
                                 <Placeholder.Line />
                             </Placeholder>
                             */}
-                            <Table celled size="large" basic="very" unstackable>
+                            <Table celled size="large" basic="very" unstackable >
                                 <Table.Header
                                     style={{
                                         color: '#000000',
@@ -84,7 +93,7 @@ const MobilePlayerTable = () => {
                                         fontSize: '16px',
                                         fontWeight: 'bold',
                                     }}
-                                
+                                    
                                 >
                                   {
                                     tab.map((rank) => {

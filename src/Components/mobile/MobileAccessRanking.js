@@ -1,4 +1,4 @@
-import { Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List, Message} from "semantic-ui-react"
+import { Popup, Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List, Message} from "semantic-ui-react"
 
 const MobileAccessRanking = () => {
     return(
@@ -49,13 +49,13 @@ const MobileAccessRanking = () => {
                                                             
                                                         }}
                                                         onClick={() => {
-                                                        <Message>
-                                                            <Message.Content>Hello</Message.Content>
-                                                        </Message>
                                                         }}
                                                      >
+
                                                         Buy Now
                                                      </Button>
+                                                     <Popup content='Add users to your feed' trigger={<Button icon='add' />} />
+
                                                 </Grid.Column>
                                             </Grid.Row>
                                         </Grid>

@@ -70,7 +70,7 @@ const MobilePlayerTable = () => {
                                 <Placeholder.Line />
                             </Placeholder>
                             */}
-                            <Table celled size="large" basic="very">
+                            <Table celled size="large" basic="very" unstackable>
                                 <Table.Header
                                     style={{
                                         color: '#000000',
@@ -95,7 +95,7 @@ const MobilePlayerTable = () => {
                                 
                                 >
                                     {
-                                        tab.map((row) => {
+                                        tab1.map((row) => {
                                             return(
                                             <Table.Row>
                                                 <Table.Cell>1</Table.Cell>

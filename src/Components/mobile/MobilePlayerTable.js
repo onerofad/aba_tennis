@@ -97,8 +97,9 @@ const MobilePlayerTable = () => {
                                     {
                                         tab.map((row) => {
                                             return(
-                                                <Table.Row>
+                                            <Table.Row>
                                                 <Table.Cell>1</Table.Cell>
+                                                <Table.Cell></Table.Cell>
                                                 <Table.Cell>{row.firstname}</Table.Cell>
                                                 <Table.Cell>{row.points}</Table.Cell>
         

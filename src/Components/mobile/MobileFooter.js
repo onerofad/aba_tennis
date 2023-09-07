@@ -99,7 +99,7 @@ const MobileFooter = () => {
             </Grid.Column>            
             <Grid.Column width={4}>
                 <Segment circular style={{backgroundColor: '#405092', width: '8px', height: '8px'}}>
-                        <Link to="https://web.facebook.com/profile.php?id=61551260060823"></Link> <Icon size="large" name="facebook f" style={{color: "#FFFFFF"}}/>
+                        <Link to="https://web.facebook.com/profile.php?id=61551260060823"><Icon size="large" name="facebook f" style={{color: "#FFFFFF"}}/></Link> 
                 </Segment>                         
             </Grid.Column>
             <Grid.Column width={4}>

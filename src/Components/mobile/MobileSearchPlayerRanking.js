@@ -58,7 +58,7 @@ const MobileSearchPlayerRanking = () => {
                     Player Profiles
                 </Menu.Item>
                 <Menu.Item as='a'  onClick={() => navigate("/gallary")}>
-                    Image Gallary
+                    Image Gallery
                 </Menu.Item>
                 <Menu.Item as='a'  onClick={() => navigate("/results")}>
                     Results

@@ -37,7 +37,7 @@ const MobileSingleNews = () => {
                             <Grid.Row>
                                 <Grid.Column key={news.id}>
                                     <Placeholder fluid style={{height: 200}}>
-                                        <Placeholder.Image />
+                                    <Image src={news.image} />
                                     </Placeholder>
                                     <p
                                          style={{

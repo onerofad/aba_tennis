@@ -18,18 +18,16 @@ const MobileSearchProfile = () => {
         .then((res) => setdetails(res.data))
     }
 
-    const searchprofile = (profile) => {
+    const searchprofile = () => {
         let searchdetails = details.filter(p => p.fname === profile)[0]
-
-        if(searchdetails.fname === search){
             setloader(true)
             setTimeout(() => {
                 alert(searchdetails.lname)         
                 setloader(false)
             }, 5000)
-        }
-       
     }
+       
+    
     return(
         <Segment vertical style={{border: 0, backgroundColor: '#F6F6F6', padding: '6em 0em'}}>
         <Container>
@@ -49,7 +47,7 @@ const MobileSearchProfile = () => {
                 <Input 
                     fluid placeholder="Search for player" 
                     loading={loader}
-                    onChange={(e) => {setsearch(e.target.value); searchprofile(e.target.value)}}
+                    onChange={(e) => {setsearch(e.target.value); searchprofile()}}
                 />
 
             </Grid.Column>

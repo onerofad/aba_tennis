@@ -44,7 +44,7 @@ const MobileAccessRanking = () => {
                                                       <Popup
                                                             content={
                                                             <>
-                                                               Comming Soon!
+                                                               Coming Soon!
                                                             </>
                                                             }
                                                             on='click'

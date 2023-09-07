@@ -12,6 +12,8 @@ const MobileRanking = () => {
 
     const [tab, setab] = useState([])
     const [loader, setloader] = useState(false)
+    let id = 0
+
       
     const selectrank = (rank) => {
         setab([])
@@ -111,10 +113,10 @@ const MobileRanking = () => {
                                 >
                                   {
                                     tab.map((rank) => {
-                                        let id = 0
+                                        ++id
                                         return(
                                         <Table.Row>
-                                                <Table.Cell>{++id}</Table.Cell>
+                                                <Table.Cell>{id}</Table.Cell>
                                                 <Table.Cell>...</Table.Cell>
                                                 <Table.Cell>{rank.firstname}</Table.Cell>
                                                 <Table.Cell>{rank.points}</Table.Cell>

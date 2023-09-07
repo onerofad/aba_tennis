@@ -1,6 +1,17 @@
+import { useNavigate } from "react-router-dom"
 import { Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List} from "semantic-ui-react"
 
 const MobileAbout = () => {
+
+    const navigate = useNavigate()
+
+    const openregister= () => {
+        if(sessionStorage.getItem("em") === null){
+            navigate("/signuo")
+        }else{
+            navigate("/register")
+        }
+    }
     return(
         <Segment style={{margin: 0, padding: '4em 0em', backgroundColor: '#F6F6F6'}}>
         <Container>
@@ -40,6 +51,7 @@ const MobileAbout = () => {
                                     fontSize: '16px',
                                     backgroundColor: '#193275',
                                 }}
+                                onClick={() => openregister()}
                             >
                                 Register
                             </Button>

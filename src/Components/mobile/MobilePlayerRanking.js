@@ -89,7 +89,7 @@ const MobilePlayerRanking = () => {
                 </Menu.Item>
 
                 <Menu.Item as='a' active onClick={() => navigate("/player/ranking")}>
-                    Player Ratings
+                Player Ranking
                 </Menu.Item>
                 <Menu.Item as='a'  onClick={() => navigate("/video")}>
                     Watch Videos
@@ -244,7 +244,7 @@ const MobilePlayerRanking = () => {
                 </Menu.Item>
 
                 <Menu.Item active as='a' onClick={() => navigate("/player/ranking")}>
-                    Player Ratings
+                Player Ranking
                 </Menu.Item>
                 <Menu.Item as='a'  onClick={() => navigate("/video")}>
                     Watch Videos

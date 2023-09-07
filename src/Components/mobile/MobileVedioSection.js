@@ -88,7 +88,7 @@ const MobileVideoSection = () => {
 
 
                 <Menu.Item as='a' onClick={() => navigate("/player/ranking")}>
-                    Player Ratings
+                Player Ranking
                 </Menu.Item>
                 <Menu.Item as='a' active  onClick={() => navigate("/video")}>
                     Watch Videos
@@ -243,7 +243,7 @@ const MobileVideoSection = () => {
                 </Menu.Item>
 
                     <Menu.Item as='a' onClick={() => navigate("/player/ranking")}>
-                        Player Ratings
+                    Player Ranking
                     </Menu.Item>
                     <Menu.Item as='a' active onClick={() => navigate("/video")}>
                         Watch Videos

@@ -5,9 +5,9 @@ const MobileAbout = () => {
 
     const navigate = useNavigate()
 
-    const openregister= () => {
+    const openregister = () => {
         if(sessionStorage.getItem("em") === null){
-            navigate("/signuo")
+            navigate("/signup")
         }else{
             navigate("/register")
         }

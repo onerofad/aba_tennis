@@ -49,7 +49,7 @@ const MobileSearchPlayerRanking = () => {
                 </Menu.Item>
 
                 <Menu.Item as='a' onClick={() => navigate("/player/ranking")}>
-                    Player Ratings
+                Player Ranking
                 </Menu.Item>
                 <Menu.Item as='a'  onClick={() => navigate("/video")}>
                     Watch Videos

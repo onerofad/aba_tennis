@@ -13,6 +13,7 @@ const MobilePlayerTable = () => {
     const [loader, setloader] = useState(false)
       
     const selectrank = (rank) => {
+        setab([])
         setloader(true)
         setTimeout(() => {
             if(rank === "Premier League"){
@@ -97,10 +98,11 @@ const MobilePlayerTable = () => {
                                 >
                                   {
                                     tab.map((rank) => {
+                                        let id = 1
                                         return(
                                         <Table.Row>
-                                                <Table.Cell>1</Table.Cell>
-                                                <Table.Cell>2</Table.Cell>
+                                                <Table.Cell>{++id}</Table.Cell>
+                                                <Table.Cell>...</Table.Cell>
                                                 <Table.Cell>{rank.firstname}</Table.Cell>
                                                 <Table.Cell>{rank.points}</Table.Cell>
         

@@ -46,7 +46,7 @@ const MobileLatestNews = () => {
                             return(
                                 <Grid.Row>
                                 <Grid.Column key={news.id}>
-                                    <Placeholder fluid style={{height: 200}}>
+                                    <Placeholder fluid style={{height: 180}}>
                                         <Image bordered src={news.image} />
                                     </Placeholder>
                                     <Header

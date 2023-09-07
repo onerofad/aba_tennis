@@ -36,7 +36,7 @@ const MobileSingleNews = () => {
                             </Grid.Row>
                             <Grid.Row>
                                 <Grid.Column key={news.id}>
-                                    <Placeholder fluid style={{height: 200}}>
+                                    <Placeholder fluid style={{height: 180}}>
                                     <Image bordered src={news.image}  />
                                     </Placeholder>
                                     <p
@@ -46,6 +46,7 @@ const MobileSingleNews = () => {
                                             fontWeight: 'normal',
                                             fontSize: '16px',
                                             lineHeight: '2em',
+                                            paddingTop: '1em'
                                         }}
                                     
                                     >

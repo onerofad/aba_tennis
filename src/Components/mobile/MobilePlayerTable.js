@@ -95,13 +95,17 @@ const MobilePlayerTable = () => {
                                 
                                 >
                                     {
-                                        tab1.map((row) => {
-                                        <Table.Row>
-                                            <Table.Cell>1</Table.Cell>
-                                            <Table.Cell>{row.firstname}</Table.Cell>
-                                            <Table.Cell>{row.points}</Table.Cell>
-    
-                                        </Table.Row>
+                                        tab.map((row) => {
+                                            return(
+                                                <Table.Row>
+                                                <Table.Cell>1</Table.Cell>
+                                                <Table.Cell>{row.firstname}</Table.Cell>
+                                                <Table.Cell>{row.points}</Table.Cell>
+        
+                                            </Table.Row>
+
+                                            )
+                                       
 
                                         })
                                     }

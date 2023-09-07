@@ -37,39 +37,8 @@ const MobileSearchResultProfile = () => {
                             
                         </Grid.Column>
         </Grid.Row>
-        <Grid.Row style={{paddingBottom: '1em'}}>
-                    <Grid.Column textAlign="center">                     
-                    <Segment textAlign='left' vertical style={{padding: '1em', fontFamily: 'Poppins', fontSize: '16px', backgroundColor: '#000000', color: '#FAFAFA'}}>
-                                    <Grid>
-                                        <Grid.Row>
-                                            <Grid.Column width={8}>
-                                                Chimo Okereke
-                                            </Grid.Column>
-                                            <Grid.Column textAlign='right' width={8}>
-                                                View full profile <Icon name="right angle" />
-                                            </Grid.Column>
-                                        </Grid.Row>
-                                    </Grid>
-                                </Segment>
-                                                    
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row style={{paddingBottom: '1em'}}>
-                    <Grid.Column textAlign="center"> 
-                    <Segment textAlign='left' vertical style={{padding: '1em', fontFamily: 'Poppins', fontSize: '16px', backgroundColor: '#000000', color: '#FAFAFA'}}>
-                                <Grid>
-                                        <Grid.Row>
-                                            <Grid.Column width={8}>
-                                                Chimoabi Ekueme
-                                            </Grid.Column>
-                                            <Grid.Column textAlign='right' width={8}>
-                                                View full profile <Icon name="right angle" />
-                                            </Grid.Column>
-                                        </Grid.Row>
-                                    </Grid>
-                                </Segment>                           
-                    </Grid.Column>
-                </Grid.Row>
+
+               
                 <Grid.Row style={{paddingBottom: '1em'}}>
                     <Grid.Column textAlign="center"> 
                     <Segment textAlign='left' vertical style={{padding: '1em', fontFamily: 'Poppins', fontSize: '16px', backgroundColor: '#000000', color: '#FAFAFA'}}>

@@ -1,5 +1,6 @@
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List} from "semantic-ui-react"
+import pdf from '../../PDF'
 
 const MobileAbout = () => {
 
@@ -73,6 +74,7 @@ const MobileAbout = () => {
                             >
                                 Prospectus
                             </Button>
+                            <a href = {Pdf} target = "_blank">Download Pdf</a>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>

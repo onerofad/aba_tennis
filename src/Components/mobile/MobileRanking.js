@@ -2,10 +2,10 @@ import { Container, Divider, Dropdown, Grid, Header, Segment, Menu, Search, Tabl
 
 const MobileRanking = () => {
     const options = [
-        { key: 1, text: 'Choice 1', value: 1 },
-        { key: 2, text: 'Choice 2', value: 2 },
-        { key: 3, text: 'Choice 3', value: 3 },
-      ]
+        { key: 1, text: 'Premier League', value:  'Premier League' },
+        { key: 2, text: 'Governor\'s cup', value: 'Governors Cup' },
+        { key: 3, text: 'Chairman\'s cup', value: 'Chairmans Cup' },
+    ]
     return(
         <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '6em 0em'}}>
             <Container>

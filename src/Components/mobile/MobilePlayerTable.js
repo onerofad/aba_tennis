@@ -4,9 +4,9 @@ import { getRanking } from "../../services/API"
 
 const MobilePlayerTable = () => {
     const options = [
-        { key: 1, text: 'Premier League', value: 1 },
-        { key: 2, text: 'Governor\'s cup', value: 2 },
-        { key: 3, text: 'Chairman\'s cup', value: 3 },
+        { key: 1, text: 'Premier League', value:  'Premier League' },
+        { key: 2, text: 'Governor\'s cup', value: 'Governors Cup' },
+        { key: 3, text: 'Chairman\'s cup', value: 'Chairmans Cup' },
     ]
    
     const [tab, setab] = useState([])

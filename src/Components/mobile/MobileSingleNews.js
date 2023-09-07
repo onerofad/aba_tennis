@@ -40,11 +40,12 @@ const MobileSingleNews = () => {
                                         <Placeholder.Image />
                                     </Placeholder>
                                     <p
-                                        style={{
+                                         style={{
                                             fontFamily: "Poppins",
                                             color: '#000000',
                                             fontWeight: 'normal',
                                             fontSize: '16px',
+                                            lineHeight: '2em',
                                         }}
                                     
                                     >

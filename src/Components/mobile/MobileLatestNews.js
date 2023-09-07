@@ -1,4 +1,4 @@
-import { Segment, Grid, Header, Button, Divider, Icon, Placeholder } from "semantic-ui-react"
+import { Image, Segment, Grid, Header, Button, Divider, Icon, Placeholder } from "semantic-ui-react"
 import getNews from "./Db"
 import { useNavigate } from "react-router-dom"
 
@@ -47,7 +47,7 @@ const MobileLatestNews = () => {
                                 <Grid.Row>
                                 <Grid.Column key={news.id}>
                                     <Placeholder fluid style={{height: 200}}>
-                                        <Placeholder.Image />
+                                        <Image src={news.image} />
                                     </Placeholder>
                                     <Header
                                         content = {news.title}

@@ -1,4 +1,4 @@
-import { Segment, Grid, Header, Button, Divider, Icon, Placeholder, Container } from "semantic-ui-react"
+import {Image, Segment, Grid, Header, Button, Divider, Icon, Placeholder, Container } from "semantic-ui-react"
 import getNews from "./Db"
 import { useNavigate, useParams } from "react-router-dom"
 import PaginationComponent from "../PaginationComponent"
@@ -37,7 +37,7 @@ const MobileSingleNews = () => {
                             <Grid.Row>
                                 <Grid.Column key={news.id}>
                                     <Placeholder fluid style={{height: 200}}>
-                                    <Image src={news.image} />
+                                    <Image bordered src={news.image}  />
                                     </Placeholder>
                                     <p
                                          style={{

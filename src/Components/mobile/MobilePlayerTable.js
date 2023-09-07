@@ -10,18 +10,15 @@ const MobilePlayerTable = () => {
     ]
    
     const [tab, setab] = useState([])
-
-    useEffect(() => {
-        getRank()
-     }, [])
-
-     const getRank = () => {
-        getRanking().get("/")
-        .then((res) => setab(res.data))
-     }
       
     const selectrank = (rank) => {
-      alert(rank)
+        if(rank === "Premier League"){
+            getRanking().get("/")
+            .then((res) => setab(res.data))
+        }else{
+            alert("No Entry")
+        }
+       
     }
     return(
         <Segment vertical style={{border: 0, margin: 0, padding: '4em 0em', backgroundColor: '#F6F6F6'}}>
@@ -89,14 +86,18 @@ const MobilePlayerTable = () => {
                                     }}
                                 
                                 >
-                                  
-                                            <Table.Row>
+                                  {
+                                    tab.map((rank) => {
+                                        <Table.Row>
                                                 <Table.Cell>1</Table.Cell>
                                                 <Table.Cell>2</Table.Cell>
-                                                <Table.Cell>3</Table.Cell>
-                                                <Table.Cell>4</Table.Cell>
+                                                <Table.Cell>{rank.firstname}</Table.Cell>
+                                                <Table.Cell>{rank.points}</Table.Cell>
         
-                                            </Table.Row>
+                                        </Table.Row>
+                                    })
+                                  }
+                                            
 
                                    
                                    

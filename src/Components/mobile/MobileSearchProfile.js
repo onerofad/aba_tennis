@@ -1,16 +1,34 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Grid, Segment, Header, Container, Divider, Input } from "semantic-ui-react"
+import getsignupDetails from "../../services/API"
 
 const MobileSearchProfile = () => {
 
-    const [loader, setiloader] = useState(false)
-    const [search, setsearch] = useState([])
+    const [loader, setloader] = useState(false)
+    const [search, setsearch] = useState("")
+    const [details, setdetails] = useState([])
+    const [fname, setfname] = useState("")
+
+    useEffect(() => {
+        getDetails()
+    }, [])
+
+    const getDetails = () => {
+        getsignupDetails().get("/")
+        .then((res) => setdetails(res.data))
+    }
 
     const searchprofile = (profile) => {
-        setiloader(true)
-        setTimeout(() => {
-            alert(profile)
-        }, 5000)
+        let searchdetails = details.filter(p => p.fname === profile)[0]
+
+        if(searchdetails.fname === search){
+            setloader(true)
+            setTimeout(() => {
+                alert(searchdetails.lname)         
+                setloader(false)
+            }, 5000)
+        }
+       
     }
     return(
         <Segment vertical style={{border: 0, backgroundColor: '#F6F6F6', padding: '6em 0em'}}>
@@ -31,7 +49,7 @@ const MobileSearchProfile = () => {
                 <Input 
                     fluid placeholder="Search for player" 
                     loading={loader}
-                    onChange={(e) => {setsearch(e.target.value); searchprofile(e.target.value)}}
+                    onChange={(e, {value}) => {setsearch(e.target.value); searchprofile(value)}}
                 />
 
             </Grid.Column>

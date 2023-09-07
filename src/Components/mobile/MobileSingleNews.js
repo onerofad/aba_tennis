@@ -39,8 +39,7 @@ const MobileSingleNews = () => {
                                     <Placeholder fluid style={{height: 200}}>
                                         <Placeholder.Image />
                                     </Placeholder>
-                                    <Header
-                                        content = {news.description}
+                                    <p
                                         style={{
                                             fontFamily: "Poppins",
                                             color: '#000000',
@@ -48,7 +47,10 @@ const MobileSingleNews = () => {
                                             fontSize: '16px',
                                         }}
                                     
-                                    />
+                                    >
+                                     {news.description}
+
+                                    </p>
                                 </Grid.Column>
                                 </Grid.Row>
                                 </div>

@@ -31,7 +31,7 @@ const MobileSearchProfile = () => {
                 <Input 
                     fluid placeholder="Search for player" 
                     loading={loader}
-                    onChange={(e) => {setsearch(e.target.value), searchprofile(e.target.value)}}
+                    onChange={(e) => {setsearch(e.target.value); searchprofile(e.target.value)}}
                 />
 
             </Grid.Column>

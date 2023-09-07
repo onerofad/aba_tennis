@@ -22,7 +22,7 @@ const MobileSingleNews = () => {
                                 <Grid.Row>
                                 <Grid.Column>
                                     <Header
-                                        content={news.description}
+                                        content={news.title}
                                         style={{
                                             fontFamily: "dharma-gothic-e",
                                             color: '#000000',

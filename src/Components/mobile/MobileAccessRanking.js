@@ -41,16 +41,26 @@ const MobileAccessRanking = () => {
                                                      }}
                                                      content="Free Ticket"
                                                      />
-                                                     <Popup content='Coming Soon' trigger={<Button 
-                                                     size="huge"
-                                                     style={{
-                                                         color: '#FFFFFF',
-                                                         backgroundColor: '#193275'
-                                                         
-                                                     }}
-                                                     label="Buy Now"
-                                                     
-                                                     />} />
+                                                      <Popup
+                                                            content={
+                                                            <>
+                                                               Comming Soon!
+                                                            </>
+                                                            }
+                                                            on='click'
+                                                            positionFixed
+                                                            trigger={
+                                                            <Button
+                                                                style={{
+                                                                    color: '#FFFFFF',
+                                                                    backgroundColor: '#193275'
+                                                                    
+                                                                }}
+                                                            >
+                                                                Buy Now
+                                                            
+                                                            </Button>}
+                                                        />
 
                                                 </Grid.Column>
                                             </Grid.Row>

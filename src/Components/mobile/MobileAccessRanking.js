@@ -41,20 +41,17 @@ const MobileAccessRanking = () => {
                                                      }}
                                                      content="Free Ticket"
                                                      />
-                                                     <Button
-                                                        size="huge"
-                                                        style={{
-                                                            color: '#FFFFFF',
-                                                            backgroundColor: '#193275'
-                                                            
-                                                        }}
-                                                        onClick={() => {
-                                                        }}
-                                                     >
-
-                                                        Buy Now
-                                                     </Button>
-                                                     <Popup content='Add users to your feed' trigger={<Button icon='add' />} />
+                                                     <Popup content='Coming Soon' trigger={<Button 
+                                                     icon='add' 
+                                                     size="huge"
+                                                     style={{
+                                                         color: '#FFFFFF',
+                                                         backgroundColor: '#193275'
+                                                         
+                                                     }}
+                                                     label="Buy Now"
+                                                     
+                                                     />} />
 
                                                 </Grid.Column>
                                             </Grid.Row>

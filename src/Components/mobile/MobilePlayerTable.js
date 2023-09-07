@@ -98,7 +98,7 @@ const MobilePlayerTable = () => {
                                 >
                                   {
                                     tab.map((rank) => {
-                                        let id = 1
+                                        let id = 0
                                         return(
                                         <Table.Row>
                                                 <Table.Cell>{++id}</Table.Cell>

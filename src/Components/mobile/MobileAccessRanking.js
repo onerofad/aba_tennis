@@ -42,7 +42,6 @@ const MobileAccessRanking = () => {
                                                      content="Free Ticket"
                                                      />
                                                      <Popup content='Coming Soon' trigger={<Button 
-                                                     icon='add' 
                                                      size="huge"
                                                      style={{
                                                          color: '#FFFFFF',

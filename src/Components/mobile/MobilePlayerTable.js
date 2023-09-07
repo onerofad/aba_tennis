@@ -22,6 +22,7 @@ const MobilePlayerTable = () => {
      }
       
     const selectrank = (rank) => {
+        alert(rank)
          tab.map((ranks) => {
             if(ranks.leaguetype === rank){
                 setab1(ranks.firstname, ranks.points)

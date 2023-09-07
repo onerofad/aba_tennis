@@ -37,7 +37,9 @@ const MobileRanking = () => {
                                     }}
                             />
                         </Grid.Column>
-                        <Grid.Column width={8}>
+                        {
+                            /*
+                            <Grid.Column width={8}>
                             <Input 
                                     placeholder="Search" 
                                     style={{
@@ -48,6 +50,9 @@ const MobileRanking = () => {
                                     }}
                             />
                         </Grid.Column>
+
+                                */}
+                      
                        
                        
                     </Grid.Row>

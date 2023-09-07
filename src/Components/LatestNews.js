@@ -47,7 +47,7 @@ const LatestNews = () => {
                                         <Placeholder.Image />
                                     </Placeholder>
                                     <Header
-                                        content = {news.title}
+                                        content = {news.description}
                                         style={{
                                             fontFamily: "Poppins",
                                             color: '#000000',

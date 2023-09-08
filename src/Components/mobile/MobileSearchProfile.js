@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Grid, Segment, Header, Container, Divider, Input } from "semantic-ui-react"
+import { Grid, Segment, Header, Container, Divider, Input, Search } from "semantic-ui-react"
 import getsignupDetails from "../../services/API"
 
 const MobileSearchProfile = () => {
@@ -18,11 +18,9 @@ const MobileSearchProfile = () => {
         .then((res) => setdetails(res.data))
     }
 
-    const searchprofile = () => {
-       // let searchdetails = details.filter(p => p.fname === profile)[0]
-            setloader(true)
+    const searchprofile = (sec) => {  
+        setloader(true)  
             setTimeout(() => {
-               // alert(searchdetails.lname)         
                 setloader(false)
             }, 5000)
     }
@@ -47,7 +45,8 @@ const MobileSearchProfile = () => {
                 <Input 
                     fluid placeholder="Search for player" 
                     loading={loader}
-                    onChange={(e) => {setsearch(e.target.value); searchprofile()}}
+                    onChange={(e, {value}) =>  {searchprofile(value.toString())}}
+                    
                 />
 
             </Grid.Column>
@@ -55,7 +54,7 @@ const MobileSearchProfile = () => {
 
         <Grid.Row>
             <Grid.Column textAlign="center" style={{padding: '6em 0em'}}>
-                <span style={{fontWeight: 'normal', fontFamily: "Poppins", fontSize: '16px'}}>Use the search bar to begin your search</span>
+                <span onKe style={{fontWeight: 'normal', fontFamily: "Poppins", fontSize: '16px'}}>Use the search bar to begin your search</span>
             </Grid.Column>
         </Grid.Row>
         

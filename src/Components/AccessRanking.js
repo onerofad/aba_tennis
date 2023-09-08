@@ -1,4 +1,4 @@
-import { Container, Grid, Header, Segment, Image, List, Button } from "semantic-ui-react"
+import { Popup, Container, Grid, Header, Segment, Image, List, Button } from "semantic-ui-react"
 
 const AccessRanking = () => {
     return(
@@ -59,18 +59,29 @@ const AccessRanking = () => {
                                 </Grid.Row>
                                 <Grid.Row>
                                     <Grid.Column verticalAlign="middle">
-                                        <Button
-                                            style={{
-                                                color: '#193275',
-                                                fontWeight: 'Regular',
-                                                fontFamily: 'Poppins',
-                                                fontSize: '15px',
-                                                backgroundColor: '#FFFFFF'
-                                            }}
-                                                        
-                                        >
-                                                Get free pass
-                                        </Button>
+                                    <Popup
+                                                            content={
+                                                            <>
+                                                               Coming Soon!
+                                                            </>
+                                                            }
+                                                            on='click'
+                                                            positionFixed
+                                                            trigger={
+                                                            <Button
+                                                            style={{
+                                                                color: '#193275',
+                                                                fontWeight: 'Regular',
+                                                                fontFamily: 'Poppins',
+                                                                fontSize: '15px',
+                                                                backgroundColor: '#FFFFFF'
+                                                            }}
+                                                            >
+                                                                Get free pass
+                                                            
+                                                            </Button>}
+                                                        />
+                                        
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>

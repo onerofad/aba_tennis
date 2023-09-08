@@ -10,14 +10,14 @@ import Footer from './Footer'
 import '../style.css'
 import Video from './Video'
 import Contact from './Contact'
+import VideoComponent from './VideoComponent'
 
 
 const Home = () => {
     return(
-        <Segment vertical style={{backgroundColor: '#F6F6F6'}}>
+        <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '0em 6em'}}>
            
             <Grid>
-            <Container>
                 <Grid.Row>
                     <Grid.Column>
                         <Headers />
@@ -38,16 +38,19 @@ const Home = () => {
                         <About />
                     </Grid.Column>
                 </Grid.Row>
-                </Container>
                 <Grid.Row style={{padding: '2em 0em'}}>
                     <Grid.Column>
                         <AccessRanking />
                     </Grid.Column>
                 </Grid.Row>
-                <Container>
                     <Grid.Row style={{padding: '2em 0em'}}>
                         <Grid.Column>
                             <PlayerTable />
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row style={{padding: '2em 0em'}}>
+                        <Grid.Column>
+                            <VideoComponent />
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row style={{padding: '2em 0em'}}>
@@ -60,7 +63,6 @@ const Home = () => {
                             <Footer />
                         </Grid.Column>
                     </Grid.Row>
-                </Container> 
                 </Grid>
 
         </Segment>

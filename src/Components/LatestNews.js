@@ -1,10 +1,17 @@
-import { Container, Divider, Grid, Header, Icon, Segment, Placeholder } from "semantic-ui-react"
+import { Image, Container, Divider, Grid, Header, Icon, Segment, Placeholder } from "semantic-ui-react"
 import PaginationComponent from "./PaginationComponent"
 import { useParams } from "react-router-dom"
 import getNews from "./Db"
 import '../style.css'
+import { useNavigate } from "react-router-dom"
 
 const LatestNews = () => {
+
+    const navigate = useNavigate()
+    const openallnews = () => {
+        navigate("/news/1")
+    }
+
     const params = useParams()
     return(
         <Segment>
@@ -27,9 +34,10 @@ const LatestNews = () => {
                             fontFamily: "Poppins",
                             color: '#000000',
                             fontWeight: 'normal',
-                            fontSize: '20px'
+                            fontSize: '16px',
+                            cursor: 'pointer'
                         }}
-                    
+                        onClick={() => openallnews()}
                     >
                         View All <Icon name="right angle" />
                     </span>
@@ -44,17 +52,19 @@ const LatestNews = () => {
                             return(
                                 <Grid.Column width={4} key={news.id}>
                                     <Placeholder fluid style={{ height: 150, width: 250 }}>
-                                        <Placeholder.Image />
+                                        <Image src={news.image} />
                                     </Placeholder>
                                     <Header
-                                        content = {news.description}
+                                        content = {news.title}
                                         style={{
                                             fontFamily: "Poppins",
                                             color: '#000000',
                                             fontWeight: 'normal',
                                             fontSize: '16px',
+                                            cursor: 'pointer'
                                         }}
-                                    
+                                        onClick = {() => navigate("/newspage/" + news.id)}
+
                                     />
                                 </Grid.Column>
                             )
@@ -66,11 +76,15 @@ const LatestNews = () => {
                 
             </Grid.Row>
             
-            <Grid.Row>
+          {
+            /*
+                <Grid.Row>
                 <Grid.Column style={{marginTop: '2em'}} textAlign="center">
                     <PaginationComponent />
                 </Grid.Column>
             </Grid.Row>
+            */
+          }  
         </Grid>
 
     </Segment>                      

@@ -1,4 +1,4 @@
-import { Container, Grid, Segment } from "semantic-ui-react"
+import { Container, Divider, Grid, Segment } from "semantic-ui-react"
 import Headers from "./Headers"
 import AccessRanking from "./AccessRanking"
 import PlayerTable from "./PlayerTable"
@@ -19,7 +19,12 @@ const PlayerRankingTable = () => {
                             <PlayerTable />
                         </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row style={{padding: '2em 6em'}}>
+                    <Grid.Row>
+                        <Grid.Column style={{paddingTop: '10em'}}> 
+                            <Divider />
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row style={{}}>
                         <Grid.Column >
                             <Footer />
                         </Grid.Column>

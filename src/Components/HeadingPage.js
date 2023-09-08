@@ -21,19 +21,19 @@ const HeadingPage = () => {
                     <Grid.Column style={{color: '#000000'}} width={3}>
                         <Segment >
                             <List 
-                                relaxed  size="medium"
+                                relaxed  size="small"
                                 style={{
-                                        fontSize: '20px',
+                                        fontSize: '18px',
                                         fontWeight: 'normal',
                                         fontFamily: 'Poppins',
                                         color: '#000000'
                                 }}
                             >
-                                <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("/ranking")}>Player Ratings</List.Item>
+                                <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("/ranking")}>Player Rankings</List.Item>
                                 <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("/videos")}>Watch Videos</List.Item>
-                                <List.Item style={{color: '#000000'}}>Coming Up</List.Item>
+                                <List.Item style={{color: '#000000'}} disabled>Coming Up</List.Item>
                                 <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("search/profile")}>Player Profiles</List.Item>
-                                <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("/gallary")}>Image Gallary</List.Item>
+                                <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("/gallary")}>Image Gallery</List.Item>
                                 <List.Item style={{color: '#000000'}} as="a" onClick={() => navigate("/results")}>Results</List.Item>
                             </List>
 
@@ -42,7 +42,7 @@ const HeadingPage = () => {
 
                     </Grid.Column>
                     <Grid.Column width={12}>
-                        <Segment vertical>
+                        <Segment vertical style={{marginTop: '0em', paddingTop: '0em'}}>
                             <Grid>
                                 <Grid.Row>
                                     <Grid.Column textAlign="center">
@@ -54,35 +54,41 @@ const HeadingPage = () => {
                                                     fontFamily: 'AGRESSIVE',
                                                     fontSize: '50px',
                                                     color: '#000000',
+                                                    paddingTop: '0em'
                                                   }}
                                         />
-                                        <Segment id="bgSegment"  
-                                                  style={{
-                                                    maxHeight: 300,
-                                                    padding: '2em 0em' 
-                                                }}          
-                                        >
-                                            <Grid verticalAlign="middle">
+                                    </Grid.Column>
+                                </Grid.Row>
+                                <Grid.Row>
+                                    <Grid.Column>
+                                    <Segment id="bgSegment"  
+                                        style={{
+                                            maxHeight: 430,
+                                            padding: '2em 0em' 
+                                        }}          
+                                    >
+                                        
+                                        <Grid verticalAlign="middle">
                                                 <Grid.Row>
-                                                    <Grid.Column>
+                                                    <Grid.Column style={{paddingTop: '2em'}} textAlign="center">
                                                         <Header
                                                             content="2nd October to 5th November 2023"
                                                             style={{
                                                             	fontFamily: "dharma-gothic-e",
                                                                 color: '#ffffff',
                                                                 fontWeight: 'normal',
-                                                                fontSize: '50px',
+                                                                fontSize: '45px',
                                                               
                                                             }}
                                                         />
                                                     </Grid.Column>
                                                 </Grid.Row>
                                                 <Grid.Row >
-                                                    <Grid.Column>
+                                                    <Grid.Column textAlign="center">
                                                         <Button 
                                                         style={{
                                                             color: '#193275', 
-                                                            fontSize: '20px',
+                                                            fontSize: '18px',
                                                             fontWeight: 'normal',
                                                             fontFamily: 'Poppins',      
                                                         }}
@@ -93,16 +99,16 @@ const HeadingPage = () => {
                                                     </Grid.Column>
                                                 </Grid.Row>
                                                 <Grid.Row>
-                                                    <Grid.Column verticalAlign="top">
-                                                        <Image size="small" src="/images/tennispat.svg" />
+                                                    <Grid.Column>
+                                                        <Image verticalAlign="top" style={{paddingLeft: '0em', marginTop: '0em'}} size="medium" src="/images/tennispat.svg" />
                                                     </Grid.Column>
                                                 </Grid.Row>
-                                            </Grid>
-                                        </Segment>
+                                        </Grid>
+                                        
+                                    </Segment>
+
                                     </Grid.Column>
-
                                 </Grid.Row>
-
                             </Grid>
                         </Segment>
                         

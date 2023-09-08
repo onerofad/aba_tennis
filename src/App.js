@@ -34,6 +34,8 @@ import MobileLoginComponent from './Components/mobile/MobileLoginComponent';
 import MobileAllNews from './Components/mobile/MobileAllNews';
 import MobileSinglePageNews from './Components/mobile/MobileSinglePageNews';
 import MobilePrivacyPolicy from './Components/mobile/MobilePrivacyPolicy';
+import SingleNews from './Components/SingleNews';
+import AllNews from './Components/AllNews';
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints:{
@@ -66,14 +68,6 @@ const App = () => {
           <Route path="news/:pageno" element={<MobileAllNews />} />
           <Route path="newspage/:pageno" element={<MobileSinglePageNews />} />
           <Route path="terms" element={<MobilePrivacyPolicy />} />
-
-
-
-
-
-
-
-
           
         </Routes>
       </BrowserRouter>
@@ -96,6 +90,8 @@ const App = () => {
           <Route path="login" element={<Login />} />
           <Route path='results' element={<MatchResult />} />
           <Route path='logout' element={<LogOut />} />
+          <Route path='newspage/:pageno' element={<SingleNews />} />
+          <Route path='news/:pageno' element={<AllNews />} />
 
         </Routes>
      </BrowserRouter>

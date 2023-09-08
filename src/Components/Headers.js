@@ -24,17 +24,22 @@ const Headers = () => {
             secondary
             style={{
                         fontFamily: 'Poppins', 
-                        fontSize: '20px',
+                        fontSize: '18px',
                         fontWeight: 'normal',
                         color:'#000000',
                     }}
             
             >
-            <Container>
-                    <Menu.Item  position="center" as="a">
+                  
+                    <Menu.Item  position="center" onClick={() => navigate("/")}>
                         <Image size="tiny" src="/images/about/about.png" />
                     </Menu.Item>
-    
+                    <Menu.Item>
+
+                    </Menu.Item>
+                    <Menu.Item>
+                        
+                    </Menu.Item>
                     <Menu.Item position="right" onClick={() => navigate("/")} as="a">
                         Home
                     </Menu.Item>
@@ -87,7 +92,6 @@ const Headers = () => {
                             Register
                         </Button>
                     </Menu.Item>
-            </Container>
     </Menu>    
                                    
         )
@@ -99,17 +103,21 @@ const Headers = () => {
             secondary
             style={{
                         fontFamily: 'Poppins', 
-                        fontSize: '20px',
+                        fontSize: '18px',
                         fontWeight: 'normal',
                         color:'#000000',
                     }}
             
             >
-            <Container>
                     <Menu.Item  position="center" as="a">
                         <Image size="tiny" src="/images/about/about.png" />
                     </Menu.Item>
-    
+                    <Menu.Item>
+
+                    </Menu.Item>
+                    <Menu.Item>
+                        
+                    </Menu.Item>
                     <Menu.Item onClick={() => navigate("/")} as="a">
                         Home
                     </Menu.Item>
@@ -161,7 +169,6 @@ const Headers = () => {
                             </Dropdown> 
                       
                     </Menu.Item>
-            </Container>
     </Menu>    
                                    
         )

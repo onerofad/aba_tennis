@@ -1,11 +1,35 @@
+import { useEffect, useState } from "react"
 import { Container, Divider, Dropdown, Grid, Header, Segment, Menu, Search, Table, Tab, Select, Input } from "semantic-ui-react"
+import { getRanking } from "../services/API"
 
 const PlayerTable = () => {
     const options = [
-        { key: 1, text: 'Choice 1', value: 1 },
-        { key: 2, text: 'Choice 2', value: 2 },
-        { key: 3, text: 'Choice 3', value: 3 },
-      ]
+        { key: 1, text: 'Premier League', value:  'Premier League' },
+        { key: 2, text: 'Governor\'s cup', value: 'Governors Cup' },
+        { key: 3, text: 'Chairman\'s cup', value: 'Chairmans Cup' },
+    ]
+
+    const [tab, setab] = useState([])
+    const [loader, setloader] = useState(false)
+    let id = 0
+      
+    const selectrank = (rank) => {
+        setab([])
+        setloader(true)
+        setTimeout(() => {
+            if(rank === "Premier League"){
+                getRanking().get("/")
+                .then((res) => setab(res.data))
+                setloader(false)
+
+            }else{
+                alert("No Entry")
+                setloader(false)
+            }
+        }, 5000)
+      
+       
+    }
     return(
                 <Grid>
                     <Grid.Row>
@@ -23,52 +47,31 @@ const PlayerTable = () => {
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
-                        <Grid.Column width={4}>
+                    <Grid.Column width={4}>
                             <Select 
                                     options={options} 
                                     placeholder="Premier League" 
+                                    onChange={(e, {value}) => selectrank(value.toString())}
                                     style={{
                                         color: '#000000',
                                         fontFamily: 'Poppins',
                                         fontSize: '16px',
                                         fontWeight: 'normal',
                                     }}
-                            />
-                        </Grid.Column>
-                        <Grid.Column width={4}>
-                            <Select 
-                                    options={options} 
-                                    placeholder="Top 5 Players" 
-                                    style={{
-                                        color: '#000000',
-                                        fontFamily: 'Poppins',
-                                        fontSize: '16px',
-                                        fontWeight: 'normal',
-                                    }}
-                            />
-                       </Grid.Column>
-                        <Grid.Column width={8} textAlign="right">
-                            <Input placeholder="search"
-                                      style={{
-                                        color: '#000000',
-                                        fontFamily: 'Poppins',
-                                        fontSize: '16px',
-                                        fontWeight: 'normal',
-                                    }}
-                            
+                                   loading = {loader} 
                             />
                         </Grid.Column>
                     </Grid.Row>
                     <Divider />
                     <Grid.Row>
                         <Grid.Column>
-                            <Table celled size="huge">
+                        <Table celled size="large" basic="very" unstackable >
                                 <Table.Header
                                     style={{
                                         color: '#000000',
                                         fontFamily: 'Poppins',
                                         fontSize: '16px',
-                                        fontWeight: 'bold',
+                                        fontWeight: 'normal',
                                     }}
                                 
                                 >
@@ -84,43 +87,26 @@ const PlayerTable = () => {
                                         fontSize: '16px',
                                         fontWeight: 'bold',
                                     }}
-                                
+                                    
                                 >
-                                    <Table.Row>
-                                        <Table.Cell>1</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
+                                  {
+                                    tab.map((rank) => {
+                                        ++id
+                                        return(
+                                        <Table.Row>
+                                                <Table.Cell>{id}</Table.Cell>
+                                                <Table.Cell>...</Table.Cell>
+                                                <Table.Cell>{rank.firstname}</Table.Cell>
+                                                <Table.Cell>{rank.points}</Table.Cell>
+        
+                                        </Table.Row>
+                                        )
+                                    })
+                                  }
+                                            
 
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>2</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>3</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>4</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>5</Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-                                        <Table.Cell></Table.Cell>
-
-                                    </Table.Row>
+                                   
+                                   
                                 </Table.Body>
                             </Table>
                         </Grid.Column>

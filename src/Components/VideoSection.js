@@ -4,8 +4,7 @@ import Footer from "./Footer"
 
 const VideoSection = () => {
     return(
-        <Segment vertical style={{backgroundColor: '#F6F6F6'}}>
-            <Container>
+        <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '0em 6em'}}>
                 <Grid>
                     <Grid.Row>
                         <Grid.Column>
@@ -441,8 +440,6 @@ const VideoSection = () => {
 
                     </Grid.Row>
                 </Grid>
-            </Container>
-
         </Segment>
     )
 }

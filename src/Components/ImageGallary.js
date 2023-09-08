@@ -5,8 +5,7 @@ import Headers from './Headers'
 const ImageGallary = () => {
 
     return(
-        <Segment vertical style={{backgroundColor: '#F6F6F6'}}>
-        <Container>
+        <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '0em 6em'}}>
             <Grid>
                 <Grid.Row>
                     <Grid.Column>
@@ -126,7 +125,6 @@ const ImageGallary = () => {
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
-        </Container>
 
     </Segment>
 

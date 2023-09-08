@@ -12,8 +12,7 @@ const MatchResults = () => {
 
       ]
     return(
-        <Segment vertical style={{backgroundColor: '#F6F6F6'}}>
-            <Container>
+        <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '0em 6em'}}>
                 <Grid>
                     <Grid.Row>
                         <Grid.Column>
@@ -49,12 +48,10 @@ const MatchResults = () => {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-            </Container>
             <Segment vertical style={{backgroundColor: '#193275', padding: '4em', margin: '2em 0em'}}>
                 <Grid>                     
                     <Grid.Row>
                         <Grid.Column textAlign="center"> 
-                            <Container>
                                 <Segment 
                                     style={{
                                         backgroundColor: '#FFFFFF', 
@@ -391,7 +388,6 @@ const MatchResults = () => {
                                     </Grid>
 
                                 </Segment>
-                            </Container>
                                 
                         </Grid.Column>
                     </Grid.Row>
@@ -399,7 +395,6 @@ const MatchResults = () => {
 
             </Segment>
             
-            <Container>
                 <Grid>
             
                     <Grid.Row style={{padding: '2em 6em'}}>
@@ -408,7 +403,6 @@ const MatchResults = () => {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-            </Container>
 
         </Segment>
     )

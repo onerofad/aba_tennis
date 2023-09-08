@@ -21,45 +21,24 @@ const AccessRanking = () => {
                         </Grid.Column>               
                     </Grid.Row>
                     <Grid.Row>
-                        <Grid.Column width={4}>
-                            <Grid>
-                                <Grid.Row>
-                                    <Grid.Column>
-                                        <p style={{
-                                            color: '#FFFFFF',
-                                            fontWeight: 'Regular',
-                                            fontFamily: 'Poppins',
-                                            fontSize: '15px'
-                                            }}
-                                        >
-                                              - valid for ranking match only
-                                        </p>
-                                        <p
-                                            style={{
-                                                color: '#FFFFFF',
-                                                fontWeight: 'Regular',
-                                                fontFamily: 'Poppins',
-                                                fontSize: '15px'
-                                           }}
-                                        >
-                                                - 50 limited tickets
-
-                                        </p>
-                                        <p
-                                            style={{
-                                                color: '#FFFFFF',
-                                                fontWeight: 'Regular',
-                                                fontFamily: 'Poppins',
-                                                fontSize: '15px'
-                                           }}
-                                        >
-                                            - Expires 2nd october after which<br/><br/>
-                                        Game tickets cost 500Naira only</p>
-                                    </Grid.Column>
-                                </Grid.Row>
-                                <Grid.Row>
-                                    <Grid.Column verticalAlign="middle">
-                                    <Popup
+                    <Grid.Column verticalAlign="middle" width={8}>
+                                       <Segment style={{padding: '2em 0em'}}>
+                                        <Grid>
+                                            <Grid.Row>
+                                                <Grid.Column textAlign="center">
+                                                    <Header
+                                                     content="Ranking week 1"
+                                                     style={{fontFamily: 'Poppins', fontWeight: 'normal', fontStretch: 'expanded'}}
+                                                     />
+                                                     <Header
+                                                     style={{
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: '35px',
+                                                        fontWeight: 'bold'
+                                                     }}
+                                                     content="Free Ticket"
+                                                     />
+                                                      <Popup
                                                             content={
                                                             <>
                                                                Coming Soon!
@@ -69,26 +48,62 @@ const AccessRanking = () => {
                                                             positionFixed
                                                             trigger={
                                                             <Button
-                                                            style={{
-                                                                color: '#193275',
-                                                                fontWeight: 'Regular',
-                                                                fontFamily: 'Poppins',
-                                                                fontSize: '15px',
-                                                                backgroundColor: '#FFFFFF'
-                                                            }}
+                                                                style={{
+                                                                    color: '#FFFFFF',
+                                                                    backgroundColor: '#193275'
+                                                                    
+                                                                }}
                                                             >
-                                                                Get free pass
+                                                                Buy Now
                                                             
                                                             </Button>}
                                                         />
-                                        
+
+                                                </Grid.Column>
+                                            </Grid.Row>
+                                        </Grid>
+
+                                       </Segment>
+                            
+                    </Grid.Column>
+                    <Grid.Column width={8} verticalAlign="middle" >
+                        <Grid>
+                            <Grid.Row>
+                                <Grid.Column>
+                                    <p style={{
+                                            color: '#FFFFFF',
+                                            fontWeight: 'Regular',
+                                            fontFamily: 'Poppins',
+                                            fontSize: '15px'
+                                            }}
+                                    >
+                                             - valid for ranking match only
+                                    </p>
+                                    <p
+                                        style={{
+                                                color: '#FFFFFF',
+                                                fontWeight: 'Regular',
+                                                fontFamily: 'Poppins',
+                                                fontSize: '15px'
+                                        }}
+                                    >
+                                                - 50 limited tickets
+
+                                    </p>
+                                    <p
+                                        style={{
+                                                color: '#FFFFFF',
+                                                fontWeight: 'Regular',
+                                                fontFamily: 'Poppins',
+                                                fontSize: '15px'
+                                    }}
+                                    >
+                                            - Expires 2nd october after which Game tickets cost 500 Naira only.</p>
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>
                         </Grid.Column>
-                        <Grid.Column width={12}>
-                            <Image src="/images/banner.png" />
-                        </Grid.Column>
+                     
                     </Grid.Row>
                 </Grid>
             </Container>

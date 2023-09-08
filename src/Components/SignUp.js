@@ -237,20 +237,24 @@ const SignUp = () => {
                                                     </Button>
                                                 </Form.Field>
                                                 <Form.Field>
-                                                    <span style={{
-                                                        color: '#FFFFFF',
-                                                        fontSize: '14px',
-                                                        fontWeight:'normal',
-                                                        fontFamily: 'Poppins'
-                                                        }}
+                                                    <span 
                                                     >
-                                                        <Link to="/login">Have an account? Login</Link>
+                                                        <Link to="/login"
+                                                        style={{
+                                                            color: '#FFFFFF',
+                                                            fontSize: '16px',
+                                                            fontWeight:'normal',
+                                                            fontFamily: 'Poppins'
+                                                            }}
+                                                        >
+                                                            Have an account? Login
+                                                        </Link>
                                                     </span>
                                                 </Form.Field>
                                                 <Form.Field 
                                                 style={{
                                                     color: '#FFFFFF',
-                                                    fontSize: '10px',
+                                                    fontSize: '14px',
                                                     fontWeight:'normal',
                                                     fontFamily: 'Poppins',
                                                     textAlign: 'right',

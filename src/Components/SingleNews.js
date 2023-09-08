@@ -38,10 +38,8 @@ const SingleNews = () => {
                               
                             </Grid.Row>
                             <Grid.Row>
-                                <Grid.Column key={news.id}>
-                                    <Placeholder fluid style={{height: 400}}>
-                                    <Image src={news.image}  />
-                                    </Placeholder>
+                                <Grid.Column key={news.id} textAlign="center">
+                                    <Image centered src={news.image} style={{width: 400, height: 400}}  />
                                     <p
                                          style={{
                                             fontFamily: "Poppins",

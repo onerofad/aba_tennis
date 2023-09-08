@@ -22,12 +22,15 @@ const AllNews = () => {
                             fontFamily: "dharma-gothic-e",
                             color: '#000000',
                             fontWeight: 'bold',
-                            fontSize: '35px'
+                            fontSize: '35px',
+                            paddingTop:'1em'
                         }}
                     />
                 </Grid.Column>
               
             </Grid.Row>
+            <Grid.Row>
+
             
                 {
                     getNews().map((news) => {
@@ -36,8 +39,7 @@ const AllNews = () => {
                         let firstItemId = lastItemId - 3
                         if(news.id >= firstItemId && news.id <= lastItemId){
                                                    return(
-                                <Grid.Row>
-                                <Grid.Column key={news.id}>
+                                <Grid.Column key={news.id} width={4}>
                                     <Placeholder fluid style={{height: 180}}>
                                     <Image src={news.image} />
                                     </Placeholder>
@@ -54,7 +56,6 @@ const AllNews = () => {
                                         onClick = {() => navigate("/newspage/" + news.id)}
                                     />
                                 </Grid.Column>
-                                </Grid.Row>
                             )
                             
                         }
@@ -62,7 +63,7 @@ const AllNews = () => {
                     })
                    
                 }
-            
+            </Grid.Row>
             <Grid.Row>
                 <Grid.Column textAlign="center">
                     <PaginationComponent />

@@ -52,7 +52,7 @@ const LatestNews = () => {
                             return(
                                 <Grid.Column width={4} key={news.id}>
                                     <Placeholder fluid style={{ height: 150, width: 250 }}>
-                                        <Image src={news.image} />
+                                        <Image fluid centered src={news.image} />
                                     </Placeholder>
                                     <Header
                                         content = {news.title}

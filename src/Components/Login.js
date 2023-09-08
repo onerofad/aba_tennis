@@ -182,18 +182,27 @@ const Login = () => {
                                                 <Form.Field>
                                                     <span style={{
                                                         color: '#FFFFFF',
-                                                        fontSize: '14px',
+                                                        fontSize: '16px',
                                                         fontWeight:'normal',
                                                         fontFamily: 'Poppins'
                                                         }}
                                                     >
-                                                        <Link to="/signup">Don't have an account? Sign up</Link>
+                                                        <Link to="/signup"
+                                                        style={{
+                                                            color: '#FFFFFF',
+                                                            fontSize: '16px',
+                                                            fontWeight:'normal',
+                                                            fontFamily: 'Poppins'
+                                                            }}
+                                                        >
+                                                            Don't have an account? Sign up
+                                                        </Link>
                                                     </span>
                                                 </Form.Field>
                                                 <Form.Field 
                                                 style={{
                                                     color: '#FFFFFF',
-                                                    fontSize: '10px',
+                                                    fontSize: '14px',
                                                     fontWeight:'normal',
                                                     fontFamily: 'Poppins',
                                                     textAlign: 'right',

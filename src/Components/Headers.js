@@ -52,6 +52,7 @@ const Headers = () => {
                                 />
                                 <Dropdown.Item 
                                     text="Results" 
+                                    onClick={() => navigate("/results")}
                                 />
                                 <Dropdown.Item disabled
                                     text="PL Stories" 
@@ -130,6 +131,7 @@ const Headers = () => {
                                 />
                                 <Dropdown.Item 
                                     text="Results" 
+                                    onClick={() => navigate("/results")}
                                 />
                                 <Dropdown.Item disabled
                                     text="PL Stories" 

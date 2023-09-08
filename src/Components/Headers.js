@@ -31,7 +31,7 @@ const Headers = () => {
             
             >
                   
-                    <Menu.Item  position="center" onClick={() => navigate("/")}>
+                    <Menu.Item onClick={() => navigate("/")}>
                         <Image size="tiny" src="/images/about/about.png" />
                     </Menu.Item>
                     <Menu.Item>
@@ -53,7 +53,7 @@ const Headers = () => {
                                 <Dropdown.Item 
                                     text="Results" 
                                 />
-                                <Dropdown.Item 
+                                <Dropdown.Item disabled
                                     text="PL Stories" 
                                 />
                             </Dropdown.Menu>
@@ -64,10 +64,10 @@ const Headers = () => {
                         
                         <Dropdown  text="Competitions" floating>
                             <Dropdown.Menu pointing="bottom">
-                                <Dropdown.Item 
+                                <Dropdown.Item disabled
                                     text="Covernor's cup"             
                                 />
-                                <Dropdown.Item 
+                                <Dropdown.Item disabled
                                     text="Chairman's cup" 
                                 />
                             </Dropdown.Menu>
@@ -109,7 +109,7 @@ const Headers = () => {
                     }}
             
             >
-                    <Menu.Item  position="center" as="a">
+                    <Menu.Item onClick={() => navigate("/")}>
                         <Image size="tiny" src="/images/about/about.png" />
                     </Menu.Item>
                     <Menu.Item>
@@ -131,7 +131,7 @@ const Headers = () => {
                                 <Dropdown.Item 
                                     text="Results" 
                                 />
-                                <Dropdown.Item 
+                                <Dropdown.Item disabled
                                     text="PL Stories" 
                                 />
                             </Dropdown.Menu>
@@ -142,10 +142,10 @@ const Headers = () => {
                         
                         <Dropdown  text="Competitions" floating>
                             <Dropdown.Menu pointing="bottom">
-                                <Dropdown.Item 
+                                <Dropdown.Item disabled
                                     text="Covernor's cup"             
                                 />
-                                <Dropdown.Item 
+                                <Dropdown.Item disabled
                                     text="Chairman's cup" 
                                 />
                             </Dropdown.Menu>

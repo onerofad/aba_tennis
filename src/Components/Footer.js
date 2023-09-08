@@ -7,7 +7,7 @@ const Footer = () => {
         <Grid textAlign="center">
             <Grid.Row style={{fontWeight: 'normal', paddingBottom: '4em'}}>
                 <Grid.Column width={4} >
-                   <Image centered size="tiny" src="/images/logo/logo.jpg" />
+                   <Image centered size="mini" src="/images/about/about.png" />
                     <List link relaxed
                         style={{
                             fontSize: '14px', 
@@ -100,25 +100,23 @@ const Footer = () => {
                                     <Grid.Row>
                                         <Grid.Column width={4}>
                                         <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
-                                            <Icon size="large" name="facebook f" style={{color: "#FFFFFF"}}/>
+                                        <Link to="https://web.facebook.com/profile.php?id=61551260060823"><Icon size="large" name="facebook f" style={{color: "#FFFFFF"}}/></Link> 
                                         </Segment>
                                         </Grid.Column>
                                         <Grid.Column width={4}>
                                         <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
-                                            <Icon size="large" name="instagram" style={{color: "#FFFFFF"}}/>
+                                        <Link to="https://instagram.com/abapltt?igshid=MWZjMTM2ODFkZg=="><Icon size="large" name="instagram" style={{color: "#FFFFFF"}}/></Link>
                                         </Segment>
                                         </Grid.Column>
                                         <Grid.Column width={4}>
                                         <Segment circular style={{backgroundColor: '#405092', width: '10px', height: '10px'}}>
-                                            <Icon size="large" name="youtube" style={{color: "#FFFFFF"}}/>
+                                        <Link to="https://youtube.com/@AbaPremierLeaugeTableTennis?si=UXra4njATRJK5rxx"><Icon size="large" name="youtube" style={{color: "#FFFFFF"}}/></Link>
                                         </Segment>
                                         </Grid.Column>
-                                        <Grid.Column width={2} verticalAlign="middle">
-                                            Privacy
+                                        <Grid.Column width={4} verticalAlign="middle">
+                                            Privacy Term
                                         </Grid.Column>
-                                        <Grid.Column width={2} verticalAlign="middle">
-                                            Terms
-                                        </Grid.Column>
+                                       
                                     </Grid.Row>
                                 </Grid>
 

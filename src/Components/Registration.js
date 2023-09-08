@@ -3,9 +3,8 @@ import Footer from "./Footer"
 import Headers from "./Headers"
 const Registration = () => {
     return(
-        <Segment vertical style={{backgroundColor: '#F6F6F6'}}>         
+        <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '0em 6em'}}>         
         <Grid>
-        <Container>
             <Grid.Row>
                 <Grid.Column>
                     <Headers />
@@ -97,7 +96,6 @@ const Registration = () => {
                     <Footer />
                 </Grid.Column>
             </Grid.Row>
-        </Container> 
         </Grid>
 
     </Segment>

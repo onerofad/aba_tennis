@@ -18,8 +18,8 @@ const Contact = () => {
                         </Header>
                         <span 
                             style={{
-                                fontSize: '20px',
-                                fontFamily: 'helvetical',
+                                fontSize: '18px',
+                                fontFamily: 'Poppins',
                                 fontWeight: 'normal'
 
                             }}
@@ -34,7 +34,7 @@ const Contact = () => {
                         <Input placeholder="Email"  
                             style={{
                                 fontFamily: 'Poppins',
-                                fontSize: '20px',
+                                fontSize: '18px',
                                 fontWeight: 'normal',
                                 width: '500px',
                                 marginRight: '1em'
@@ -44,7 +44,7 @@ const Contact = () => {
                               style={{
                                 backgroundColor: '#405092',
                                 fontFamily: 'Poppins',
-                                fontSize: '20px',
+                                fontSize: '18px',
                                 fontWeight: 'normal',
                                 color: '#ffffff'
                               }}

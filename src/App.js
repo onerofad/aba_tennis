@@ -38,6 +38,7 @@ import SingleNews from './Components/SingleNews';
 import AllNews from './Components/AllNews';
 import { Checkbox } from 'semantic-ui-react';
 import Checkout from './Components/Checkout';
+import ViewProfile from './Components/ViewProfile';
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints:{
@@ -82,6 +83,8 @@ const App = () => {
           <Route path='register' element={<Registration />} />
           <Route path='successregister' element={<SuccessfullRegistration />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="view/profile/:id" element={<ViewProfile />} />
+
           <Route path="ranking" element={<PlayerRankingTable />} />
           <Route path="videos" element={<VideoSection />} />
           <Route path="search/profile" element={<SearchProfile />} />

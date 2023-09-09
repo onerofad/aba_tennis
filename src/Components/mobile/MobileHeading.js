@@ -58,7 +58,7 @@ const MobileHeading = () => {
                                         fontWeight: 'normal',
                                         fontFamily: 'Poppins',      
                                     }}
-                                    onClick={() => navigate("/register")}
+                                    onClick={() => openregister()}
                                     >
                                         Register
                                     </Button>

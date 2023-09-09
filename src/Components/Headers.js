@@ -127,7 +127,7 @@ const Headers = () => {
                     <Menu.Item>
                         
                     </Menu.Item>
-                    <Menu.Item onClick={() => navigate("/")} as="a">
+                    <Menu.Item position="right" onClick={() => navigate("/")} as="a">
                         Home
                     </Menu.Item>
                     <Menu.Item as="a">

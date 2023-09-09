@@ -6,6 +6,14 @@ import {useNavigate} from 'react-router-dom'
 const Headers = () => {
 
     const navigate = useNavigate()
+
+    const openregister = () => {
+        if(sessionStorage.getItem("em") === null){
+            navigate("/signup")
+        }else{
+            navigate("/register")
+        }
+    }
     
     const logout = () => {
             sessionStorage.removeItem("em")
@@ -48,7 +56,7 @@ const Headers = () => {
                             <Dropdown.Menu pointing="bottom">
                                 <Dropdown.Item 
                                     text="Registration" 
-                                    onClick={() => navigate("/signup") }          
+                                    onClick={() => openregister() }          
                                 />
                                 <Dropdown.Item 
                                     text="Results" 
@@ -127,7 +135,7 @@ const Headers = () => {
                             <Dropdown.Menu pointing="bottom">
                                 <Dropdown.Item 
                                     text="Registration" 
-                                    onClick={() => navigate("/signup") }          
+                                    onClick={() => openregister() }          
                                 />
                                 <Dropdown.Item 
                                     text="Results" 

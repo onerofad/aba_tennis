@@ -6,7 +6,7 @@ import Footer from "./Footer"
 
 const PlayerRankingTable = () => {
     return(
-        <Segment vertical style={{backgroundColor: '#F6F6F6'}}>
+        <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '0em 6em'}}>
             <Container>
                 <Grid>
                     <Grid.Row>

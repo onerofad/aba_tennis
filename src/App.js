@@ -36,6 +36,8 @@ import MobileSinglePageNews from './Components/mobile/MobileSinglePageNews';
 import MobilePrivacyPolicy from './Components/mobile/MobilePrivacyPolicy';
 import SingleNews from './Components/SingleNews';
 import AllNews from './Components/AllNews';
+import { Checkbox } from 'semantic-ui-react';
+import Checkout from './Components/Checkout';
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints:{
@@ -83,7 +85,7 @@ const App = () => {
           <Route path="ranking" element={<PlayerRankingTable />} />
           <Route path="videos" element={<VideoSection />} />
           <Route path="search/profile" element={<SearchProfile />} />
-          <Route path="search/profile/result" element={<SearchProfileResult />} />
+          <Route path="search/profile/result/:id" element={<SearchProfileResult />} />
           <Route path="gallary" element={<ImageGallary />} />
           <Route path="search/personal/profile" element={<SearchPersonalProfile />} />
           <Route path="signup" element={<SignUp />} />
@@ -92,6 +94,8 @@ const App = () => {
           <Route path='logout' element={<LogOut />} />
           <Route path='newspage/:pageno' element={<SingleNews />} />
           <Route path='news/:pageno' element={<AllNews />} />
+          <Route path='checkout' element={<Checkout />} />
+
 
         </Routes>
      </BrowserRouter>

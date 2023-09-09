@@ -92,15 +92,17 @@ const PlayerTable = () => {
                                   {
                                     tab.map((rank) => {
                                         ++id
-                                        return(
-                                        <Table.Row>
-                                                <Table.Cell>{id}</Table.Cell>
-                                                <Table.Cell>...</Table.Cell>
-                                                <Table.Cell>{rank.firstname}</Table.Cell>
-                                                <Table.Cell>{rank.points}</Table.Cell>
-        
-                                        </Table.Row>
-                                        )
+                                        if(id <= 5){
+                                            return(
+                                            <Table.Row>
+                                                    <Table.Cell>{id}</Table.Cell>
+                                                    <Table.Cell>...</Table.Cell>
+                                                    <Table.Cell>{rank.firstname}</Table.Cell>
+                                                    <Table.Cell>{rank.points}</Table.Cell>
+            
+                                            </Table.Row>
+                                            )
+                                        }
                                     })
                                   }
                                             

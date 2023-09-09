@@ -1,7 +1,31 @@
 import { Segment, Grid, Container, Header, Button, Image } from "semantic-ui-react"
 import Footer from "./Footer"
 import Headers from "./Headers"
+import { PaystackButton } from "react-paystack"
+import { useState } from "react"
+import '../main.css'
+
 const Registration = () => {
+
+    const publicKey = "pk_test_deda09cd68357ea7089f53fdd413eb1b4e8ca4ce"
+    const amount = 10000
+    const email = sessionStorage.getItem("em")
+    const name = sessionStorage.getItem("fn")
+    const [phone, setPhone] = useState("")
+  
+    const componentProps = {
+      email,
+      amount,
+      metadata: {
+        name,
+      },
+      publicKey,
+      text: "Pay Now",
+      onSuccess: () =>
+        alert("Thanks for doing business with us! Come back soon!!"),
+      onClose: () => alert("Wait! Don't leave :("),
+    }
+  
     return(
         <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '0em 6em'}}>         
         <Grid>
@@ -67,7 +91,9 @@ const Registration = () => {
                                         </Grid.Row>
                                         <Grid.Row>
                                             <Grid.Column>
-                                                <Button
+                                                {
+                                                    /*
+                                                        <Button
                                                         style={{
                                                             fontFamily: "Poppins",
                                                             color: '#FFFFFF',
@@ -79,6 +105,22 @@ const Registration = () => {
                                                 >
                                                     Pay now
                                                 </Button>
+                                                    */
+                                                }
+                                                
+                                                <PaystackButton 
+                                                    className="paystack-button"
+                                                    style={{
+                                                        fontFamily: "Poppins",
+                                                        color: '#FFFFFF',
+                                                        fontWeight: 'normal',
+                                                        fontSize: '16px',
+                                                        backgroundColor: '#193275'
+                                                      
+                                                    }}
+                                                    {...componentProps} 
+                                                />
+
                                             </Grid.Column>
                                         </Grid.Row>
                                     </Grid>

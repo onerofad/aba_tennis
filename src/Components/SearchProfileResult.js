@@ -5,7 +5,7 @@ import Headers from './Headers'
 const SearchProfileResult = () => {
 
     return(
-        <Segment vertical style={{backgroundColor: '#F6F6F6'}}>
+        <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '0em 6em'}}>
         <Container>
             <Grid>
                 <Grid.Row>
@@ -27,11 +27,17 @@ const SearchProfileResult = () => {
                     <Divider />
                     </Grid.Column>
                 </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column>
-                        <Input placeholder="Search for player" />
-                    </Grid.Column>
-                </Grid.Row>
+                {
+                    /*
+                         <Grid.Row>
+                            <Grid.Column>
+                                <Input placeholder="Search for player" />
+                            </Grid.Column>
+                         </Grid.Row>
+
+                    */
+                }
+               
                 <Grid.Row style={{paddingBottom: '1em'}}>
                     <Grid.Column textAlign="center">                     
                     <Segment textAlign='left' vertical style={{padding: '1em', fontFamily: 'Poppins', fontSize: '18px', backgroundColor: '#000000', color: '#FAFAFA'}}>

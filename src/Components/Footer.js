@@ -1,22 +1,30 @@
 import { Segment, List, Grid, Container, Header, Divider, Icon, Image } from "semantic-ui-react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 const Footer = () => {
+    const navigate = useNavigate()
+    const openregister = () => {
+        if(sessionStorage.getItem("em") === null){
+            navigate("/signup")
+        }else{
+            navigate("/register")
+
+        }
+    }
 
     return(
-        
         <Grid textAlign="center">
             <Grid.Row style={{fontWeight: 'normal', paddingBottom: '4em'}}>
                 <Grid.Column width={4} >
                    <Image centered size="mini" src="/images/about/about.png" />
                     <List link relaxed
                         style={{
-                            fontSize: '14px', 
+                            fontSize: '16px', 
                             fontWeight: 'normal', 
                             fontFamily: 'Poppins',
                         }}
                     >
-                        <List.Item style={{color: '#000000'}}>Player profiles</List.Item>
-                        <List.Item style={{color: '#000000'}}>FAQ</List.Item>
+                        <List.Item style={{color: '#000000'}} onClick={() => navigate("/search/profile") } as="a">Player profiles</List.Item>
+                        <List.Item disabled style={{color: '#000000'}}>FAQ</List.Item>
                     </List>
                    
                 </Grid.Column>
@@ -32,15 +40,15 @@ const Footer = () => {
                     
                     />
                     <List link relaxed style={{
-                        fontSize: '14px', 
+                        fontSize: '16px', 
                         fontWeight: 'normal', 
                         fontFamily: 'Poppins',
                     }}
                     >
-                        <List.Item style={{color: '#000000'}} as='a'>Registration</List.Item>
-                        <List.Item style={{color: '#000000'}} as='a'>League Rankings</List.Item>
-                        <List.Item style={{color: '#000000'}} as='a'>Results</List.Item>
-                        <List.Item style={{color: '#000000'}} as='a'>Archives</List.Item>
+                        <List.Item style={{color: '#000000'}} onClick={() => openregister()} as='a'>Registration</List.Item>
+                        <List.Item style={{color: '#000000'}} onClick={() => navigate("/ranking")} as='a'>League Rankings</List.Item>
+                        <List.Item style={{color: '#000000'}} onClick={() => navigate("/results")} as='a'>Results</List.Item>
+                        <List.Item disabled style={{color: '#000000'}} as='a'>Archives</List.Item>
                     </List>
 
                 </Grid.Column>
@@ -56,16 +64,13 @@ const Footer = () => {
                     />
                     <List link relaxed
                         style={{
-                            fontSize: '14px', 
+                            fontSize: '16px', 
                             fontWeight: 'normal', 
                             fontFamily: 'Poppins',
                         }}
                     >
-                        <List.Item style={{color: '#000000'}} as='a'>Tournaments</List.Item>
-                        <List.Item style={{color: '#000000'}} as='a'>League Rankings</List.Item>
-                        <List.Item style={{color: '#000000'}} as='a'>Results</List.Item>
-                        <List.Item style={{color: '#000000'}} as='a'>Archives</List.Item>                
-                    </List>
+                        <List.Item disabled style={{color: '#000000'}} as='a'>Tournaments</List.Item>
+                         </List>
                 </Grid.Column>
                 <Grid.Column width={4}>
                     <Header
@@ -79,7 +84,7 @@ const Footer = () => {
                     />
                     <List relaxed 
                     style={{
-                            fontSize: '14px', 
+                            fontSize: '16px', 
                             fontWeight: 'normal', 
                             fontFamily: 'Poppins',
                     }}

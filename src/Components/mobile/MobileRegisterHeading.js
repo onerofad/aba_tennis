@@ -1,9 +1,30 @@
 import { useNavigate } from "react-router-dom"
 import { Segment, Grid, Header, Button, Image } from "semantic-ui-react"
 import './style.css'
+import { PaystackButton } from "react-paystack"
+import { useState } from "react"
+import '../../main.css'
 
 const MobileRegisterHeading = () => {
     const navigate = useNavigate()
+    const publicKey = "pk_test_deda09cd68357ea7089f53fdd413eb1b4e8ca4ce"
+    const amount = 10000
+    const email = sessionStorage.getItem("em")
+    const name = sessionStorage.getItem("fn")
+    const [phone, setPhone] = useState("")
+  
+    const componentProps = {
+      email,
+      amount,
+      metadata: {
+        name,
+      },
+      publicKey,
+      text: "Pay Now",
+      onSuccess: () =>
+        alert("Thanks for doing business with us! Come back soon!!"),
+      onClose: () => alert("Wait! Don't leave :("),
+    }
 
     return(
         <Segment vertical style={{border: 0, margin: 0, backgroundColor: '#F6F6F6', padding: '6em 0em'}}>
@@ -70,18 +91,18 @@ const MobileRegisterHeading = () => {
                                         </Grid.Row>
                                         <Grid.Row>
                                             <Grid.Column width={8}>
-                                                <Button
-                                                        style={{
-                                                            fontFamily: "Poppins",
-                                                            color: '#FFFFFF',
-                                                            fontWeight: 'normal',
-                                                            fontSize: '16px',
-                                                            backgroundColor: '#193275'
-                                                          
-                                                        }}
-                                                >
-                                                    Pay now
-                                                </Button>
+                                            <PaystackButton 
+                                                    className="paystack-button"
+                                                    style={{
+                                                        fontFamily: "Poppins",
+                                                        color: '#FFFFFF',
+                                                        fontWeight: 'normal',
+                                                        fontSize: '16px',
+                                                        backgroundColor: '#193275'
+                                                      
+                                                    }}
+                                                    {...componentProps} 
+                                                />
                                             </Grid.Column>
                                             <Grid.Column width={8}>
                                                 <Image  verticalAlign="top" size="large" src="/images/patandball.svg" />

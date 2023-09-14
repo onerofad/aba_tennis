@@ -86,7 +86,15 @@ const MobileProfile = () => {
                 <Grid.Row>
                     <Grid.Column>
                     <Placeholder fluid style={{margin: '0em 1em', height: 350 }}>
-                            <Placeholder.Image />
+                    {
+                             details.map((detail) => {
+                                if(detail.email  === sessionStorage.getItem("em")){
+                                    return(
+                                        <Image src={detail.imageurl} />
+                                    )
+                                }
+                             })
+                           }
                         </Placeholder>   
                     </Grid.Column>
                 </Grid.Row>

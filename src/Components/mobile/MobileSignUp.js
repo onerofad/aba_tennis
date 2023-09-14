@@ -234,6 +234,14 @@ const MobileSignUp = () => {
                                                     />
                                                 </Form.Field>
                                                 <Form.Field>
+                                                    <Form.Input   
+                                                        type="file" 
+                                                        name="file"
+                                                        id="file"
+                                                        onChange={(e => {setSelectedImage(e.target.files[0])})}
+                                                    />
+                                                </Form.Field>
+                                                <Form.Field>
                                                     <Button style={{
                                                             color: '#FFFFFF',
                                                             fontFamily: 'Poppins',

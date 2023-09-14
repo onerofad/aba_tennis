@@ -16,7 +16,7 @@ const SignUp = () => {
     const navigate = useNavigate()
 
     const [selectedImage, setSelectedImage] = useState([])
-    const [imageUrl, setImageUrl] = useState("")
+    const [imageUrl, setImageUrl] = useState()
 
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")
@@ -88,12 +88,12 @@ const SignUp = () => {
                     formData)
                 console.log(response)
                 setImageUrl(response.data)
+                alert(imageUrl.url)
             }catch(error){
                 console.error(error)
             }
         }
         postImage()
-
     }
 
     const signup = () => {
@@ -131,7 +131,7 @@ const SignUp = () => {
             uploadImage()
             setloader(true)
             setTimeout(() => {
-               let imageurl = imageUrl.url
+               let imageurl = `${imageUrl.url}`
                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                getsignupDetails().post("/", item)
                .catch(console.error)

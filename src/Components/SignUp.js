@@ -126,8 +126,7 @@ const SignUp = () => {
             esetnationality({ content:'Please enter your Country', pointing: 'below'})           
 
           }
-          else{
-           
+          else{        
             setloader(true)
             setTimeout(() => {
                uploadImage()
@@ -135,8 +134,8 @@ const SignUp = () => {
                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                getsignupDetails().post("/", item)
                .catch(console.error)
-               dispatch({type: 'open', size: 'mini'})
                setloader(false)
+               dispatch({type: 'open', size: 'mini'})          
             }, 5000)
         }
     }

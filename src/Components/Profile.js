@@ -1,4 +1,4 @@
-import {Image, Form, Modal, Dropdown, Segment, Grid, Menu, Container, Image, Button, Header, Divider, Placeholder } from "semantic-ui-react"
+import {Form, Modal, Dropdown, Segment, Grid, Menu, Container, Image, Button, Header, Divider, Placeholder } from "semantic-ui-react"
 import { Link } from "react-router-dom"
 import Footer from "./Footer"
 import { useNavigate } from "react-router-dom"

@@ -1,4 +1,4 @@
-import {Form, Modal, Dropdown, Segment, Grid, Menu, Container, Image, Button, Header, Divider, Placeholder } from "semantic-ui-react"
+import {Image, Form, Modal, Dropdown, Segment, Grid, Menu, Container, Image, Button, Header, Divider, Placeholder } from "semantic-ui-react"
 import { Link } from "react-router-dom"
 import Footer from "./Footer"
 import { useNavigate } from "react-router-dom"
@@ -12,10 +12,14 @@ const Profile = () => {
     const [handbat, sethandbat] = useState(sessionStorage.getItem("handbat"))
     const [loader, setLoader] = useState(false)
 
+    const [imageurl, setImage] = useState()
+
+
 
 
     useEffect(() => {
         getdetails()
+        getImage()
     }, [])
 
     const getdetails = () => {
@@ -24,6 +28,10 @@ const Profile = () => {
         .catch(console.error)
     }
 
+    const getImage = () => {
+        let detail = details.filter(e => e.email === sessionStorage.getItem("em"))[0]
+        setImage(detail.imageurl)
+    }
     const options = [
         { key: 1, text: 'Left', value: "Left" },
         { key: 2, text: 'Right', value: "Right" },
@@ -203,7 +211,7 @@ const Profile = () => {
                     </Grid.Column>
                     <Grid.Column width={6}>
                         <Placeholder fluid style={{ height: 350, width: 400 }}>
-                            <Placeholder.Image />
+                           <Image src={imageurl} />
                         </Placeholder>                   
                     </Grid.Column>
                     <Grid.Column width={5} textAlign="right" style= {{fontFamily: 'Poppins', fontSize: '16px', fontWeight: 'noemal'}}>

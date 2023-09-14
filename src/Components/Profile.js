@@ -19,18 +19,12 @@ const Profile = () => {
 
     useEffect(() => {
         getdetails()
-        getImage()
     }, [])
 
     const getdetails = () => {
         getsignupDetails().get("/")
         .then((res) => setdetails(res.data))
         .catch(console.error)
-    }
-
-    const getImage = () => {
-        let detail = details.filter(e => e.email === sessionStorage.getItem("em"))[0]
-        setImage(detail.imageurl)
     }
     const options = [
         { key: 1, text: 'Left', value: "Left" },
@@ -211,7 +205,15 @@ const Profile = () => {
                     </Grid.Column>
                     <Grid.Column width={6}>
                         <Placeholder fluid style={{ height: 350, width: 400 }}>
-                           <Image src={imageurl} />
+                           {
+                             details.map((detail) => {
+                                if(detail.email  === sessionStorage.getItem("em")){
+                                    return(
+                                        <Image src={detail.imageurl} />
+                                    )
+                                }
+                             })
+                           }
                         </Placeholder>                   
                     </Grid.Column>
                     <Grid.Column width={5} textAlign="right" style= {{fontFamily: 'Poppins', fontSize: '16px', fontWeight: 'noemal'}}>

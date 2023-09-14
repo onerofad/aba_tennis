@@ -4,6 +4,9 @@ import getsignupDetails from '../services/API'
 import { Link, useNavigate } from 'react-router-dom'
 import EmailValidator from 'email-validator'
 
+//import { Image } from 'cloudinary-react'
+import axios from 'axios'
+
 const SignUp = () => {
 
     const options = [
@@ -11,6 +14,9 @@ const SignUp = () => {
     ]
 
     const navigate = useNavigate()
+
+    const [selectedImage, setSelectedImage] = useState([])
+    const [imageUrl, setImageUrl] = useState("")
 
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")
@@ -71,6 +77,25 @@ const SignUp = () => {
         esetnationality(false)
     }
 
+    const uploadImage = () => {
+        const formData = new FormData()
+        formData.append("file", selectedImage)
+        formData.append("upload_preset", "slakw5ml")
+
+        const postImage = async () => {
+            try{
+                const response = await axios.post("https://api.cloudinary.com/v1_1/du3ck2joa/upload",
+                    formData)
+                console.log(response)
+                setImageUrl(response.data)
+            }catch(error){
+                console.error(error)
+            }
+        }
+        postImage()
+
+    }
+
     const signup = () => {
         details.map((user) => {
             if(user.email === email){
@@ -103,20 +128,18 @@ const SignUp = () => {
 
           }
           else{
+            uploadImage()
             setloader(true)
             setTimeout(() => {
-               let item = {fname, lname, dob, email, password, nationality, handbat}
+               let imageurl=`https://res.cloudinary.com/du3ck2joa/image/upload/v1694604580/${imageUrl.public_id}`
+               let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                getsignupDetails().post("/", item)
                .catch(console.error)
                dispatch({type: 'open', size: 'mini'})
-
                setloader(false)
             }, 5000)
         }
     }
-
-
-
     return(
     
         <Segment vertical style={{backgroundColor: '#F6F6F6'}}>
@@ -220,6 +243,14 @@ const SignUp = () => {
                                                         error={enationality}
                                                         onFocus={() => clearError()}
 
+                                                    />
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <Form.Input   
+                                                        type="file" 
+                                                        name="file"
+                                                        id="file"
+                                                        onChange={(e => {setSelectedImage(e.target.files[0])})}
                                                     />
                                                 </Form.Field>
                                                 <Form.Field>

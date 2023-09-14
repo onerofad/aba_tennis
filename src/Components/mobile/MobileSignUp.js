@@ -12,6 +12,9 @@ const MobileSignUp = () => {
 
     const navigate = useNavigate()
 
+    const [selectedImage, setSelectedImage] = useState([])
+    const [imageUrl, setImageUrl] = useState()
+
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")
     const [dob, setdob] = useState("")
@@ -71,6 +74,26 @@ const MobileSignUp = () => {
         esetnationality(false)
     }
 
+    const uploadImage = () => {
+        const formData = new FormData()
+        formData.append("file", selectedImage)
+        formData.append("upload_preset", "slakw5ml")
+
+        const postImage = async () => {
+            try{
+                const response = await axios.post("https://api.cloudinary.com/v1_1/du3ck2joa/upload",
+                    formData)
+                console.log(response)
+                setImageUrl(response.data)
+                alert(imageUrl.url)
+            }catch(error){
+                console.error(error)
+            }
+        }
+        postImage()
+    }
+
+
     const signup = () => {
         details.map((user) => {
             if(user.email === email){
@@ -103,13 +126,14 @@ const MobileSignUp = () => {
 
           }
           else{
+            uploadImage()
             setloader(true)
             setTimeout(() => {
-               let item = {fname, lname, dob, email, password, nationality, handbat}
-               getsignupDetails().post("/", item)
+                let imageurl = `${imageUrl.url}`
+                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
+                getsignupDetails().post("/", item)
                .catch(console.error)
                dispatch({type: 'open', size: 'mini'})
-
                setloader(false)
             }, 5000)
         }

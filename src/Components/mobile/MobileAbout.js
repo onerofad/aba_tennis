@@ -49,7 +49,7 @@ const MobileAbout = () => {
                                     fontFamily: "Poppins",
                                     color: '#ffffff',
                                     fontWeight: 'normal',
-                                    fontSize: '16px',
+                                    fontSize: '14px',
                                     backgroundColor: '#193275',
                                 }}
                                 onClick={() => openregister()}
@@ -66,7 +66,7 @@ const MobileAbout = () => {
                                     fontFamily: "Poppins",
                                     color: '#193275',
                                     fontWeight: 'normal',
-                                    fontSize: '16px',
+                                    fontSize: '14px',
                                     backgroundColor: '#ffffff',
                                     border: '1px solid #193275'
                                     

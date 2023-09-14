@@ -170,7 +170,7 @@ const MobileLogin = () => {
                                                         fontFamily: 'Poppins'
                                                         }}
                                                     >
-                                                        <Link to="/register" style={{color: '#FFFFFF'}}>Don't have an account? register here</Link>
+                                                        <Link to="/signup" style={{color: '#FFFFFF'}}>Don't have an account? register here</Link>
                                                     </span>
                                                 </Form.Field>
 

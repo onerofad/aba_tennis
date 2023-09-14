@@ -74,7 +74,7 @@ const MobileAbout = () => {
                             
                             >
                             <a href = {pdfFile} target = "_blank">
-                                Download Prospectus                            
+                                Prospectus                            
                             </a>
 
                             </Button>

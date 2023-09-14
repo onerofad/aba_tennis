@@ -88,7 +88,6 @@ const SignUp = () => {
                     formData)
                 console.log(response)
                 setImageUrl(response.data)
-                alert(imageUrl.url)
             }catch(error){
                 console.error(error)
             }

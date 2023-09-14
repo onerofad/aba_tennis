@@ -44,6 +44,7 @@ return(
                     <Grid.Row>
                         <Grid.Column width={6}>
                         <Button 
+                            size="massive"
                             style={{
                                 fontFamily: "Poppins",
                                 color: '#ffffff',
@@ -59,7 +60,7 @@ return(
                         </Grid.Column>
                         <Grid.Column width={7}>
                         <Button 
-                            size="huge"
+                            size="massive"
                             style={{
                                 fontFamily: "Poppins",
                                 color: '#193275',

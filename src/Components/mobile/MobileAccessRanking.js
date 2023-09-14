@@ -1,4 +1,4 @@
-import { Select, Popup, Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List, Message} from "semantic-ui-react"
+import { Select, Popup, Table, Input, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List, Message} from "semantic-ui-react"
 
 const MobileAccessRanking = () => {
     const options = [

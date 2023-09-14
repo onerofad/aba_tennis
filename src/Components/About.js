@@ -71,7 +71,7 @@ return(
                         
                         >
                              <a href = {pdfFile} target = "_blank">
-                             Check Prospectus                            
+                             Download Prospectus                            
                             </a>
                         </Button>
                         </Grid.Column>

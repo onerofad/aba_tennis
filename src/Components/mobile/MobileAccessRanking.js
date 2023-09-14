@@ -1,6 +1,14 @@
-import { Popup, Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List, Message} from "semantic-ui-react"
+import { Select, Popup, Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List, Message} from "semantic-ui-react"
 
 const MobileAccessRanking = () => {
+    const options = [
+        { key: 1, text: 'Ranking week 1', value: 1 },
+        { key: 2, text: 'League week 2', value: 2 },
+        { key: 3, text: 'League week 3', value: 3 },
+        { key: 4, text: 'League week 4', value: 4 },
+        { key: 5, text: 'Super 4', value: 5 },
+
+      ]
     return(
         <Segment style={{margin: 0, border: 0, padding: '4em 0em', backgroundColor: '#030303'}}>
             <Container>
@@ -14,8 +22,7 @@ const MobileAccessRanking = () => {
                               fontWeight: 'bold',
                           }}
                       >
-                          GET FREE ACCESS<br/>
-                          FOR THE RANKING WEEK
+                            BUY TICKET HERE
 
                       </Header>                                       
                         </Grid.Column>               
@@ -29,10 +36,21 @@ const MobileAccessRanking = () => {
                                         <Grid>
                                             <Grid.Row>
                                                 <Grid.Column textAlign="center">
-                                                    <Header
+                                                <Select 
+                                                        options={options} 
+                                                        placeholder="Select Week"
+                                                        style={{
+                                                            color: '#000000',
+                                                            fontFamily: 'Poppins',
+                                                            fontSize: '16px',
+                                                            fontWeight: 'normal',
+                                                        }}
+                                                />
+                                                   { /*<Header
                                                      content="Ranking week 1"
                                                      style={{fontFamily: 'Poppins', fontWeight: 'normal', fontStretch: 'expanded'}}
                                                      />
+                                                    
                                                      <Header
                                                      style={{
                                                         fontFamily: 'Poppins',
@@ -41,6 +59,7 @@ const MobileAccessRanking = () => {
                                                      }}
                                                      content="Free Ticket"
                                                      />
+                                                    */}
                                                       <Popup
                                                             content={
                                                             <>
@@ -56,6 +75,7 @@ const MobileAccessRanking = () => {
                                                                     backgroundColor: '#193275'
                                                                     
                                                                 }}
+                                                                disabled
                                                             >
                                                                 Buy Now
                                                             
@@ -78,9 +98,9 @@ const MobileAccessRanking = () => {
                                             fontSize: '12px'
                                             }}
                                         >
-                                              - valid for ranking match only
+                                              - Buy your match tickets here
                                         </p>
-                                        <p
+                                        {/*<p
                                             style={{
                                                 color: '#FFFFFF',
                                                 fontWeight: 'Regular',
@@ -100,7 +120,9 @@ const MobileAccessRanking = () => {
                                            }}
                                         >
                                             - Expires 2nd october after which
-                                        Game tickets cost 500Naira only</p>
+                                        Game tickets cost 500Naira only
+                                        </p>
+                                        */}
                                     </Grid.Column>
                                 </Grid.Row>
                                

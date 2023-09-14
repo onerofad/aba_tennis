@@ -8,7 +8,7 @@ const MobileYoutube = () => {
                     <Grid.Row>
                         <Grid.Column>
                             <Header
-                                content="Get involved with the game....."
+                                content="Watch the game....."
                                 style={{
                                     fontFamily: "dharma-gothic-e",
                                     color: '#000000',

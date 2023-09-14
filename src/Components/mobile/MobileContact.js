@@ -24,7 +24,8 @@ const MobileContact = () => {
 
                             }}
                             >
-                                Up to date with today's top stories
+                            Sign up for our newsletter
+
                         </span>
 
                     </Grid.Column>

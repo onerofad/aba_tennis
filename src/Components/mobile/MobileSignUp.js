@@ -3,6 +3,8 @@ import { useEffect, useState, useReducer } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import getsignupDetails from '../../services/API'
 import EmailValidator from 'email-validator'
+import axios from 'axios'
+
 
 const MobileSignUp = () => {
 

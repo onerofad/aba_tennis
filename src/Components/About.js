@@ -44,7 +44,6 @@ return(
                     <Grid.Row>
                         <Grid.Column width={6}>
                         <Button 
-                            size="massive"
                             style={{
                                 fontFamily: "Poppins",
                                 color: '#ffffff',
@@ -58,9 +57,9 @@ return(
                             Register Now
                         </Button>
                         </Grid.Column>
-                        <Grid.Column width={7}>
+                        <Grid.Column width={10}>
                         <Button 
-                            size="massive"
+                            size="huge"
                             style={{
                                 fontFamily: "Poppins",
                                 color: '#193275',

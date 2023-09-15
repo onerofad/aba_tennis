@@ -128,10 +128,25 @@ const SignUp = () => {
 
           }
           else{  
-            uploadImage()      
             setloader(true)
             setTimeout(() => { 
-               let imageurl = imageUrl.url
+                const formData = new FormData()
+                formData.append("file", selectedImage)
+                formData.append("upload_preset", "slakw5ml")
+    
+                const postImage = async () => {
+                    try{
+                        const response = await axios.post("https://api.cloudinary.com/v1_1/du3ck2joa/upload",
+                            formData)
+                        console.log(response)
+                        setImageUrl(response.data)
+                    }catch(error){
+                        console.error(error)
+                    }
+        
+                }
+                postImage()
+                let imageurl = imageUrl.url   
                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                getsignupDetails().post("/", item)
                .catch(console.error)

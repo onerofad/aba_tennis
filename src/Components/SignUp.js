@@ -16,7 +16,7 @@ const SignUp = () => {
     const navigate = useNavigate()
 
     const [selectedImage, setSelectedImage] = useState([])
-    const [imageUrl, setImageUrl] = useState([])
+    const [imageUrl, setImageUrl] = useState("")
 
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")
@@ -86,7 +86,7 @@ const SignUp = () => {
             try{
                 const response = await axios.post("https://api.cloudinary.com/v1_1/du3ck2joa/upload",
                     formData)
-                console.log(response.data)
+                console.log(response)
                 setImageUrl(response.data)
             }catch(error){
                 console.error(error)
@@ -250,7 +250,7 @@ const SignUp = () => {
                                                         type="file" 
                                                         name="file"
                                                         id="file"
-                                                        onChange={(e => {setSelectedImage(e.target.files[0])})}
+                                                        onChange={(e) => setSelectedImage(e.target.files[0])}
                                                     />
                                                 </Form.Field>
                                                 <Form.Field>
@@ -262,7 +262,7 @@ const SignUp = () => {
                                                             fontSize: '16px'
                                                         }}
                                                         loading={loader}
-                                                        onClick={() => signup()}
+                                                        onClick={signup}
                                                     >
                                                         Register
                                                     </Button>

@@ -17,7 +17,7 @@ const SignUp = () => {
 
     const [profileImage, setProfileImage] = useState("")
     const [imagePreview, setImagePreview] = useState(null)
-    const [isLoading, setIsLoading] = useState(false)
+    const [imageurl, setImageUrl] = useState("")
 
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")
@@ -85,6 +85,36 @@ const SignUp = () => {
 
     const uploadImage = async (e) => {
         e.preventDefault()
+        try{
+            let imageURL;
+            if(
+                profileImage && (
+                    profileImage.type === "image/png" ||
+                    profileImage.type === "image/jpg" ||
+                    profileImage.type === "image/jpeg" 
+                )
+            ){
+                const image = new FormData()
+                image.append("file", profileImage)
+                image.append("cloud_name", "du3ck2joa")
+                image.append("upload_preset", "puw7tbqc")
+
+                const response = await fetch(
+                    "https://api.cloudinary.com/v1_1/du3ck2joa/image/upload",
+                    {
+                        method: "post",
+                        body: image
+                    }
+                )
+                const imageData = await response.json()
+                imageURL = imageData.url.toString()
+                setImagePreview(null)
+            }
+            setImageUrl(imageURL)
+            alert(imageURL)
+        }catch(error){
+            console.log(error)
+        }
     }
     
     const signup = () => {
@@ -119,6 +149,7 @@ const SignUp = () => {
 
           }
           else{  
+            uploadImage()
             setloader(true)
             setTimeout(() => { 
                 

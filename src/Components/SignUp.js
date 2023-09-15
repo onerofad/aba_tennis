@@ -84,7 +84,6 @@ const SignUp = () => {
     }
 
     const uploadImage = async (e) => {
-        e.preventDefault()
         try{
             let imageURL;
             if(

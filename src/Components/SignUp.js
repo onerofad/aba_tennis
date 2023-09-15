@@ -91,6 +91,7 @@ const SignUp = () => {
             }catch(error){
                 console.error(error)
             }
+
         }
         postImage()
     }
@@ -127,11 +128,11 @@ const SignUp = () => {
 
           }
           else{  
-            uploadImage()   
-            let imageurl = `${imageUrl.url}`
-   
+            uploadImage()      
             setloader(true)
-            setTimeout(() => {            
+            setTimeout(() => { 
+               let imageurl = ""
+               alert(imageUrl)           
                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                getsignupDetails().post("/", item)
                .catch(console.error)

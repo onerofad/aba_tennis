@@ -131,7 +131,7 @@ const SignUp = () => {
             uploadImage()      
             setloader(true)
             setTimeout(() => { 
-               let imageurl = `https://res.cloudinary.com/du3ck2joa/image/upload/v${imageUrl.version}/${imageUrl.public_id}`
+               let imageurl = "https://res.cloudinary.com/du3ck2joa/image/upload/v" + imageUrl.version + "/" + imageUrl.public_id
                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                getsignupDetails().post("/", item)
                .catch(console.error)

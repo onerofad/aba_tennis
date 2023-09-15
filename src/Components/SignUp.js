@@ -88,7 +88,6 @@ const SignUp = () => {
                     formData)
                 console.log(response)
                 setImageUrl(response.data)
-                alert(imageUrl)
             }catch(error){
                 console.error(error)
             }
@@ -131,7 +130,7 @@ const SignUp = () => {
             uploadImage()      
             setloader(true)
             setTimeout(() => {            
-               let imageurl = imageUrl
+               let imageurl = `/${imageUrl.url}/`
                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                getsignupDetails().post("/", item)
                .catch(console.error)

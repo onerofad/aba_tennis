@@ -16,7 +16,7 @@ const SignUp = () => {
     const navigate = useNavigate()
 
     const [selectedImage, setSelectedImage] = useState([])
-    const [imageUrl, setImageUrl] = useState("")
+    const [imageurl, setImageUrl] = useState("")
 
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")
@@ -84,7 +84,8 @@ const SignUp = () => {
 
         const postImage = async () => {
             try{
-                const response = await axios.post("https://api.cloudinary.com/v1_1/du3ck2joa/upload",
+                const response = await axios.post(
+                    "https://api.cloudinary.com/v1_1/du3ck2joa/upload",
                     formData)
                 console.log(response)
                 setImageUrl(response.data)
@@ -146,7 +147,7 @@ const SignUp = () => {
         
                 }
                 postImage()
-                let imageurl = imageUrl.url   
+                let imageurl = `${imageurl.url}`   
                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                getsignupDetails().post("/", item)
                .catch(console.error)

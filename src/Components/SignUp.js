@@ -16,7 +16,7 @@ const SignUp = () => {
     const navigate = useNavigate()
 
     const [selectedImage, setSelectedImage] = useState([])
-    const [imageUrl, setImageUrl] = useState()
+    const [imageUrl, setImageUrl] = useState([])
 
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")

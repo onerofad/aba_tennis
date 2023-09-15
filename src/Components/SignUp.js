@@ -127,10 +127,11 @@ const SignUp = () => {
 
           }
           else{  
-            uploadImage()      
+            uploadImage()   
+            let imageurl = `${imageUrl.url}`
+   
             setloader(true)
             setTimeout(() => {            
-               let imageurl = `${imageUrl.url}`
                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                getsignupDetails().post("/", item)
                .catch(console.error)

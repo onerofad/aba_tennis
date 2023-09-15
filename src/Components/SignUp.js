@@ -15,8 +15,9 @@ const SignUp = () => {
 
     const navigate = useNavigate()
 
-    const [selectedImage, setSelectedImage] = useState([])
-    const [imageUrl, setImageUrl] = useState("")
+    const [profileImage, setProfileImage] = useState("")
+    const [imagePreview, setImagePreview] = useState(null)
+    const [isLoading, setIsLoading] = useState(false)
 
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")
@@ -77,6 +78,14 @@ const SignUp = () => {
         esetnationality(false)
     }
 
+    const handleImageChange = (e) => {
+        setProfileImage(e.target.files[0])
+        setImagePreview(URL.createObjectURL(e.target.files[0]))
+    }
+
+    const uploadImage = async (e) => {
+        e.preventDefault()
+    }
     
     const signup = () => {
         details.map((user) => {
@@ -112,14 +121,7 @@ const SignUp = () => {
           else{  
             setloader(true)
             setTimeout(() => { 
-                const formData = new FormData()
-                formData.append("file", selectedImage)
-                formData.append("upload_preset", "puw7tbqc")
-    
-                Axios.post("https://api.cloudinary.com/v1_1/du3ck2joa/image/upload",
-                formData
-                ).then((response) => {setImageUrl(response.data)})
-                let imageurl = imageUrl.url
+                
                 let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                 getsignupDetails().post("/", item)
                 .catch(console.error)
@@ -236,9 +238,9 @@ const SignUp = () => {
                                                 <Form.Field>
                                                     <Form.Input   
                                                         type="file" 
-                                                        name="file"
-                                                        id="file"
-                                                        onChange={(e) => {setSelectedImage(e.target.files[0])}}
+                                                        name="image"
+                                                        accept="image/png, image/jpg, image/jpeg"
+                                                        onChange={handleImageChange}
                                                     />
                                                 </Form.Field>
                                                 <Form.Field>
@@ -288,6 +290,12 @@ const SignUp = () => {
 
 
                                             </Form>
+                                            {
+                                                imagePreview && (
+                                                    <img src={imagePreview && imagePreview} />
+
+                                                )
+                                            }
 
                                         </Grid.Column>
                                     </Grid.Row>

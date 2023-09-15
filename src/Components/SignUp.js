@@ -87,7 +87,7 @@ const SignUp = () => {
                 const response = await axios.post("https://api.cloudinary.com/v1_1/du3ck2joa/upload",
                     formData)
                 console.log(response)
-                setImageUrl(response.data)
+                setImageUrl(response.data.url)
             }catch(error){
                 console.error(error)
             }
@@ -130,7 +130,7 @@ const SignUp = () => {
             uploadImage()      
             setloader(true)
             setTimeout(() => {            
-               let imageurl = imageUrl.url
+               let imageurl = imageUrl
                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                getsignupDetails().post("/", item)
                .catch(console.error)

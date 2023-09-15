@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import EmailValidator from 'email-validator'
 
 //import { Image } from 'cloudinary-react'
-import axios from 'axios'
+import Axios from 'axios'
 
 const SignUp = () => {
 
@@ -77,26 +77,7 @@ const SignUp = () => {
         esetnationality(false)
     }
 
-    const uploadImage = () => {
-        const formData = new FormData()
-        formData.append("file", selectedImage)
-        formData.append("upload_preset", "slakw5ml")
-
-        const postImage = async () => {
-            try{
-                const response = await axios.post(
-                    "https://api.cloudinary.com/v1_1/du3ck2joa/upload",
-                    formData)
-                console.log(response)
-                setImageUrl(response.data)
-            }catch(error){
-                console.error(error)
-            }
-
-        }
-        postImage()
-    }
-
+    
     const signup = () => {
         details.map((user) => {
             if(user.email === email){
@@ -133,27 +114,17 @@ const SignUp = () => {
             setTimeout(() => { 
                 const formData = new FormData()
                 formData.append("file", selectedImage)
-                formData.append("upload_preset", "slakw5ml")
+                formData.append("upload_preset", "puw7tbqc")
     
-                const postImage = async () => {
-                    try{
-                        const response = await axios.post("https://api.cloudinary.com/v1_1/du3ck2joa/upload",
-                            formData)
-                        console.log(response)
-                        setImageUrl(response.data)
-                        alert(response.data)
-                    }catch(error){
-                        console.error(error)
-                    }
-        
-                }
-                postImage()
-                let imageurl = imageurl.url  
-               let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
-               getsignupDetails().post("/", item)
-               .catch(console.error)
-               setloader(false)
-               dispatch({type: 'open', size: 'mini'})          
+                Axios.post("https://api.cloudinary.com/v1_1/du3ck2joa/image/upload",
+                formData
+                ).then((response) => {setImageUrl(response.data)})
+                let imageurl = imageurl.url
+                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
+                getsignupDetails().post("/", item)
+                .catch(console.error)
+                setloader(false)
+                dispatch({type: 'open', size: 'mini'})          
             }, 5000)
         }
     }
@@ -267,7 +238,7 @@ const SignUp = () => {
                                                         type="file" 
                                                         name="file"
                                                         id="file"
-                                                        onChange={(e) => setSelectedImage(e.target.files[0])}
+                                                        onChange={(e) => {setSelectedImage(e.target.files[0])}}
                                                     />
                                                 </Form.Field>
                                                 <Form.Field>

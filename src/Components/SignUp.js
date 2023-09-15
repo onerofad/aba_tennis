@@ -141,13 +141,14 @@ const SignUp = () => {
                             formData)
                         console.log(response)
                         setImageUrl(response.data)
+                        alert(response.data)
                     }catch(error){
                         console.error(error)
                     }
         
                 }
                 postImage()
-                let imageurl = `${imageurl.url}`   
+                let imageurl = imageurl.url  
                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                getsignupDetails().post("/", item)
                .catch(console.error)

@@ -19,6 +19,7 @@ const SignUp = () => {
     const [profileImage, setProfileImage] = useState("")
     const [imagePreview, setImagePreview] = useState(null)
     let imageurl;
+    let msg = ""
 
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")
@@ -112,7 +113,7 @@ const SignUp = () => {
                 setImagePreview(null)
             }else{
                 alert("Please upload a valid format - (JPG, PNG, JPEG)")
-                
+                msg += "no image"
             }
         }catch(error){
             console.log(error)
@@ -152,7 +153,7 @@ const SignUp = () => {
           }
           else{  
             uploadImage()
-            if(imageurl !== ""){
+            if(msg === ""){
                 setloader(true)
                 setTimeout(() => { 
                     let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}

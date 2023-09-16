@@ -110,8 +110,9 @@ const SignUp = () => {
                 imageURL = imageData.url.toString()
                 imageurl = imageURL
                 setImagePreview(null)
+            }else{
+                alert("please upload a valid format (JPG, PNG, JPEG")
             }
-            alert(imageurl)
         }catch(error){
             console.log(error)
         }

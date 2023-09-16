@@ -4,6 +4,7 @@ import getsignupDetails from '../services/API'
 import { Link, useNavigate } from 'react-router-dom'
 import EmailValidator from 'email-validator'
 
+
 //import { Image } from 'cloudinary-react'
 import axios from 'axios'
 
@@ -17,7 +18,7 @@ const SignUp = () => {
 
     const [profileImage, setProfileImage] = useState("")
     const [imagePreview, setImagePreview] = useState(null)
-    const [imageUrl, setImageUrl] = useState("")
+    let imageurl;
 
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")
@@ -107,10 +108,10 @@ const SignUp = () => {
                 )
                 const imageData = await response.json()
                 imageURL = imageData.url.toString()
+                imageurl = imageURL
                 setImagePreview(null)
             }
-            setImageUrl(imageURL)
-            alert(imageURL)
+            alert(imageurl)
         }catch(error){
             console.log(error)
         }
@@ -148,49 +149,15 @@ const SignUp = () => {
 
           }
           else{  
-            try{
-                let imageURL;
-                if(
-                    profileImage && (
-                        profileImage.type === "image/png" ||
-                        profileImage.type === "image/jpg" ||
-                        profileImage.type === "image/jpeg" 
-                    )
-                ){
-                    const image = new FormData()
-                    image.append("file", profileImage)
-                    image.append("cloud_name", "du3ck2joa")
-                    image.append("upload_preset", "puw7tbqc")
-    
-                    const response = fetch(
-                        "https://api.cloudinary.com/v1_1/du3ck2joa/image/upload",
-                        {
-                            method: "post",
-                            body: image
-                        }
-                    )
-                    const imageData = response.json()
-                    imageURL = imageData.url.toString()
-                    setImagePreview(null)
-                }
-                setImageUrl(imageURL)
-                alert(imageURL)
-                let imageurl = imageURL
-                setloader(true)
-                setTimeout(() => { 
-                   
-                    let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
-                    getsignupDetails().post("/", item)
-                    .catch(console.error)
-                    setloader(false)
-                    dispatch({type: 'open', size: 'mini'})          
-                }, 5000)
-            }catch(error){
-                console.log(error)
-            }
-
-
-          
+            uploadImage()
+            setloader(true)
+            setTimeout(() => { 
+                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
+                getsignupDetails().post("/", item)
+                .catch(console.error)
+                setloader(false)
+                dispatch({type: 'open', size: 'mini'})          
+            }, 5000)
         }
     }
     return(

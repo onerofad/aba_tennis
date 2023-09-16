@@ -149,7 +149,7 @@ const SignUp = () => {
           }
           else{  
             uploadImage()
-            if(imageurl === ""){
+            if(imageurl === null){
                 alert("Please upload a valid format - (JPG, PNG, JPEG)")
             }else{
             setloader(true)

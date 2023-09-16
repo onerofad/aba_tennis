@@ -112,6 +112,7 @@ const SignUp = () => {
                 setImagePreview(null)
             }else{
                 alert("please upload a valid format (JPG, PNG, JPEG")
+                throw error
             }
         }catch(error){
             console.log(error)

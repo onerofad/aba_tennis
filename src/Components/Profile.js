@@ -209,7 +209,7 @@ const Profile = () => {
                              details.map((detail) => {
                                 if(detail.email  === sessionStorage.getItem("em")){
                                     return(
-                                        <Image src={detail.imageurl} />
+                                        <Image fluid src={detail.imageurl} />
                                     )
                                 }
                              })

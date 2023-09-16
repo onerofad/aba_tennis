@@ -12,10 +12,18 @@ const MobileSignUp = () => {
         { key: 1, text: 'Nigerian', value: 'Nigerian' },
     ]
 
+    const options1 = [
+        { key: 1, text: 'Left', value: 'Left' },
+        { key: 2, text: 'Right', value: 'Right' },
+
+    ]
+
     const navigate = useNavigate()
 
-    const [selectedImage, setSelectedImage] = useState([])
-    const [imageUrl, setImageUrl] = useState()
+    const [profileImage, setProfileImage] = useState("")
+    const [imagePreview, setImagePreview] = useState(null)
+    let imageurl;
+    let msg = ""
 
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")
@@ -23,7 +31,12 @@ const MobileSignUp = () => {
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
     const [nationality, setnationality] = useState("")
-    const [handbat, sethandbat] = useState("No Entry")
+    const [handbat, sethandbat] = useState("")
+    const [currenteam, setcurrenteam] = useState("...")
+    const [lastchamp, setlastchamp] = useState("...")
+    const [datelastchamp, setdatelastchamp] = useState("2023-01-01")
+    const [locatelastchamp, setlocatelastchamp] = useState("...")
+    const [favoriteplayer, setfavoriteplayer] = useState("")
 
 
     const [loader, setloader] = useState(false)
@@ -37,8 +50,8 @@ const MobileSignUp = () => {
     const [eemail, esetemail] = useState(false)
     const [epassword, esetpassword] = useState(false)
     const [enationality, esetnationality] = useState(false)
-
-
+    const [ehandbat, esethandbat] = useState(false)
+    const [efavoriteplayer, esetfavoriteplayer] = useState(false)
 
     function reducer(state, action){
         switch(action.type){
@@ -74,27 +87,51 @@ const MobileSignUp = () => {
         esetemail(false)
         esetpassword(false)
         esetnationality(false)
+        esethandbat(false)
+        esetfavoriteplayer(false)
+
     }
 
-    const uploadImage = () => {
-        const formData = new FormData()
-        formData.append("file", selectedImage)
-        formData.append("upload_preset", "slakw5ml")
+    const handleImageChange = (e) => {
+        setProfileImage(e.target.files[0])
+        setImagePreview(URL.createObjectURL(e.target.files[0]))
+    }
 
-        const postImage = async () => {
-            try{
-                const response = await axios.post("https://api.cloudinary.com/v1_1/du3ck2joa/upload",
-                    formData)
-                console.log(response)
-                setImageUrl(response.data)
-            }catch(error){
-                console.error(error)
+    const uploadImage = async (e) => {
+        try{
+            let imageURL;
+            if(
+                profileImage && (
+                    profileImage.type === "image/png" ||
+                    profileImage.type === "image/jpg" ||
+                    profileImage.type === "image/jpeg" 
+                )
+            ){
+                const image = new FormData()
+                image.append("file", profileImage)
+                image.append("cloud_name", "du3ck2joa")
+                image.append("upload_preset", "puw7tbqc")
+
+                const response = await fetch(
+                    "https://api.cloudinary.com/v1_1/du3ck2joa/image/upload",
+                    {
+                        method: "post",
+                        body: image
+                    }
+                )
+                const imageData = await response.json()
+                imageURL = imageData.url.toString()
+                imageurl = imageURL
+                setImagePreview(null)
+            }else{
+                alert("Please upload a valid format - (JPG, PNG, JPEG)")
+                msg += "no image"
             }
+        }catch(error){
+            console.log(error)
         }
-        postImage()
     }
-
-
+    
     const signup = () => {
         details.map((user) => {
             if(user.email === email){
@@ -125,19 +162,26 @@ const MobileSignUp = () => {
          }else if(nationality === ""){
             esetnationality({ content:'Please enter your Country', pointing: 'below'})           
 
+          }else if(handbat === ""){
+            esethandbat({ content:'Please enter your Hand Bat', pointing: 'below'})           
+
+          }else if(favoriteplayer === ""){
+            esetfavoriteplayer({ content:'Please enter your Favorite Player', pointing: 'below'})           
+
           }
-          else{
-           
-            setloader(true)
-            setTimeout(() => {
-                uploadImage()
-                let imageurl = `${imageUrl.url}`
-                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
-                getsignupDetails().post("/", item)
-               .catch(console.error)
-               dispatch({type: 'open', size: 'mini'})
-               setloader(false)
-            }, 5000)
+          else{  
+            uploadImage()
+            if(msg === ""){
+                setloader(true)
+                setTimeout(() => { 
+                    let item = {fname, lname, dob, email, password, nationality, handbat, imageurl, currenteam, lastchamp, datelastchamp, locatelastchamp, favoriteplayer}
+                    getsignupDetails().post("/", item)
+                    .catch(console.error)
+                    setloader(false)
+                    dispatch({type: 'open', size: 'mini'})          
+                }, 5000)
+            }
+            
         }
     }
 
@@ -176,70 +220,123 @@ const MobileSignUp = () => {
                     <Grid.Column style={{backgroundColor: '#000000', padding: '2em'}} textAlign='center'>
                                             <Form style={{fontFamily: 'Poppins', fontWeight: 'normal', fontSize: '20px', }}>
                                                
-                                                <Form.Field>
+                                            <Form.Field>
                                                     <Form.Input 
-                                                        placeholder="First Name"
+                                                        placeholder="*First Name"
                                                         onChange={(e) => setfname(e.target.value)}
                                                         error={efname}
-                                                        onFocus={() => clearError()}
-                                                            
-                                                    />
-                                                </Form.Field>
-                                                <Form.Field>
-                                                    <Form.Input 
-                                                        placeholder="Last Name" 
-                                                        onChange={(e) => setlname(e.target.value)}
-                                                        error={elname}
-                                                        onFocus={() => clearError()}
-                                                       
-                                                    />
-                                                </Form.Field>
-                                                <Form.Field>
-                                                    <Form.Input
-                                                        type='date' 
-                                                        placeholder="Date of Birth" 
-                                                        onChange={(e) => setdob(e.target.value)}
-                                                        error={edob}
                                                         onFocus={() => clearError()}
                                                         
                                                     />
                                                 </Form.Field>
                                                 <Form.Field>
                                                     <Form.Input 
-                                                        placeholder="Email" 
-                                                        onChange={(e) => setemail(e.target.value)}
-                                                        error={eemail}
+                                                        placeholder="*Last Name" 
+                                                        onChange={(e) => setlname(e.target.value)}
+                                                        error={elname}
                                                         onFocus={() => clearError()}
-                                                      
+
+                                                    />
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <Form.Input
+                                                        type='date' 
+                                                        placeholder="*Date of Birth" 
+                                                        onChange={(e) => setdob(e.target.value)}
+                                                        error={edob}
+                                                        onFocus={() => clearError()}
+
                                                     />
                                                 </Form.Field>
                                                 <Form.Field>
                                                     <Form.Input 
-                                                        placeholder="Password" 
+                                                        placeholder="*Email" 
+                                                        onChange={(e) => setemail(e.target.value)}
+                                                        error={eemail}
+                                                        onFocus={() => clearError()}
+
+                                                    />
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <Form.Input 
+                                                        placeholder="*Password" 
                                                         type='password'
                                                         onChange={(e) => setpassword(e.target.value)}
                                                         error={epassword}
                                                         onFocus={() => clearError()}
-                                                       
+
                                                     />
                                                 </Form.Field>
                                                 <Form.Field>
                                                     <Form.Select 
-                                                        placeholder="Select Country" 
+                                                        placeholder="*Select Country" 
                                                         options={options}
                                                         onChange={(e, {value}) => setnationality(value.toString())}
                                                         error={enationality}
                                                         onFocus={() => clearError()}
-                                                       
+
                                                     />
                                                 </Form.Field>
                                                 <Form.Field>
                                                     <Form.Input   
                                                         type="file" 
-                                                        name="file"
-                                                        id="file"
-                                                        onChange={(e => {setSelectedImage(e.target.files[0])})}
+                                                        name="image"
+                                                        placeholder="*Upload Photo"
+                                                        accept="image/png, image/jpg, image/jpeg"
+                                                        onChange={handleImageChange}
                                                     />
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <Form.Select
+                                                        options={options1}
+                                                        placeholder="*Left Hand Bat or Right Hand Bat"
+                                                        onChange={(e, {value}) => sethandbat(value.toString())}
+                                                        error={ehandbat}
+                                                        onFocus={() => clearError()}
+                                                    />
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <Form.Input 
+                                                        placeholder="Current Team"
+                                                        onChange={(e) => setcurrenteam(e.target.value)}
+                                                    />
+
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <Form.Input 
+                                                        type="text"
+                                                       placeholder="Last Championship Won"
+                                                       onChange={(e) => setlastchamp(e.target.value)}
+                                                    />
+
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <Form.Input 
+                                                        type="date"
+                                                        
+                                                        placeholder="Date of Last Championship Won"
+                                                        onChange={(e) => setdatelastchamp(e.target.value)}
+                                                
+                                                    />
+
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <Form.Input 
+                                                        type="text"
+                                                        placeholder="Location of Last championship Won"
+                                                        onChange={(e) => setlocatelastchamp(e.target.value)}
+                                                    />
+
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <Form.Input 
+                                                        type="text"
+                                                        placeholder="*Favorite Player"
+                                                        onChange={(e) => setfavoriteplayer(e.target.value)}
+                                                        error={efavoriteplayer}
+                                                        onFocus={() => clearError()}
+                                                    />
+
                                                 </Form.Field>
                                                 <Form.Field>
                                                     <Button style={{
@@ -250,11 +347,12 @@ const MobileSignUp = () => {
                                                             fontSize: '16px'
                                                         }}
                                                         loading={loader}
-                                                        onClick={() => signup()}
-                                                        >
+                                                        onClick={signup}
+                                                    >
                                                         Register
                                                     </Button>
                                                 </Form.Field>
+                                               
                                                 <Form.Field>
                                                     <span style={{
                                                         color: '#FFFFFF',

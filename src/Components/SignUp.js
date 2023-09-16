@@ -112,7 +112,6 @@ const SignUp = () => {
                 setImagePreview(null)
             }else{
                 alert("Please upload a valid format - (JPG, PNG, JPEG)")
-                window.stop
                 
             }
         }catch(error){
@@ -153,14 +152,16 @@ const SignUp = () => {
           }
           else{  
             uploadImage()
-            setloader(true)
-            setTimeout(() => { 
-                let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
-                getsignupDetails().post("/", item)
-                .catch(console.error)
-                setloader(false)
-                dispatch({type: 'open', size: 'mini'})          
-            }, 5000)
+            if(imageurl !== ""){
+                setloader(true)
+                setTimeout(() => { 
+                    let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
+                    getsignupDetails().post("/", item)
+                    .catch(console.error)
+                    setloader(false)
+                    dispatch({type: 'open', size: 'mini'})          
+                }, 5000)
+            }
             
         }
     }

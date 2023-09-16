@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import EmailValidator from 'email-validator'
 
 //import { Image } from 'cloudinary-react'
-import Axios from 'axios'
+import axios from 'axios'
 
 const SignUp = () => {
 

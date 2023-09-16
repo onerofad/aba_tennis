@@ -125,9 +125,6 @@ const SignUp = () => {
                 imageURL = imageData.url.toString()
                 imageurl = imageURL
                 setImagePreview(null)
-            }else{
-                alert("Please upload a valid format - (JPG, PNG, JPEG)")
-                msg += "no image"
             }
         }catch(error){
             console.log(error)
@@ -173,7 +170,6 @@ const SignUp = () => {
           }
           else{  
             uploadImage()
-            if(msg === ""){
                 setloader(true)
                 setTimeout(() => { 
                     let item = {fname, lname, dob, email, password, nationality, handbat, imageurl, currenteam, lastchamp, datelastchamp, locatelastchamp, favoriteplayer}
@@ -182,7 +178,6 @@ const SignUp = () => {
                     setloader(false)
                     dispatch({type: 'open', size: 'mini'})          
                 }, 5000)
-            }
             
         }
     }

@@ -17,7 +17,7 @@ const SignUp = () => {
 
     const [profileImage, setProfileImage] = useState("")
     const [imagePreview, setImagePreview] = useState(null)
-    const [imageurl, setImageUrl] = useState("")
+    const [imageUrl, setImageUrl] = useState("")
 
     const [fname, setfname] = useState("")
     const [lname, setlname] = useState("")
@@ -149,9 +149,10 @@ const SignUp = () => {
           }
           else{  
             uploadImage()
+            let imageurl = imageUrl
             setloader(true)
             setTimeout(() => { 
-                
+               
                 let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
                 getsignupDetails().post("/", item)
                 .catch(console.error)

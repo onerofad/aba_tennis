@@ -110,6 +110,9 @@ const SignUp = () => {
                 imageURL = imageData.url.toString()
                 imageurl = imageURL
                 setImagePreview(null)
+            }else{
+                alert("Please upload a valid format - (JPG, PNG, JPEG)")
+                return false
             }
         }catch(error){
             console.log(error)
@@ -149,9 +152,6 @@ const SignUp = () => {
           }
           else{  
             uploadImage()
-            if(imageurl === null){
-                alert("Please upload a valid format - (JPG, PNG, JPEG)")
-            }else{
             setloader(true)
             setTimeout(() => { 
                 let item = {fname, lname, dob, email, password, nationality, handbat, imageurl}
@@ -160,7 +160,7 @@ const SignUp = () => {
                 setloader(false)
                 dispatch({type: 'open', size: 'mini'})          
             }, 5000)
-            }
+            
         }
     }
     return(

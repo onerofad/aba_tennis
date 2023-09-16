@@ -293,6 +293,7 @@ const SignUp = () => {
                                                         placeholder="*Upload Photo"
                                                         accept="image/png, image/jpg, image/jpeg"
                                                         onChange={handleImageChange}
+                                                        required
                                                     />
                                                 </Form.Field>
                                                 <Form.Field>

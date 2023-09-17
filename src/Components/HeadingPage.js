@@ -3,6 +3,7 @@ import '../AGRESSIVE.otf'
 import '../style.css'
 import {useNavigate} from 'react-router-dom'
 import DemoCarousel from "./DemoCarousel"
+import CarouselComponent from "./DemoCarousel"
 
 const HeadingPage = () => {
     const navigate = useNavigate()
@@ -62,10 +63,8 @@ const HeadingPage = () => {
                                 </Grid.Row>
                                 <Grid.Row>
                                     <Grid.Column style={{margin: '0em 2em'}}>                                    
-                                          <DemoCarousel />  
-                                          {
-                                            document.querySelector('.demo-carousel')
-                                          }                                              
+                                          <CarouselComponent />  
+                                                                                  
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>

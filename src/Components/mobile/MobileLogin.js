@@ -92,6 +92,7 @@ const MobileLogin = () => {
             sessionStorage.setItem("datelastchamp", info.datelastchamp)
             sessionStorage.setItem("locatelastchamp", info.locatelastchamp)
             sessionStorage.setItem("favoriteplayer", info.favoriteplayer)
+            sessionStorage.setItem("points", info.points)
 
 
             setTimeout(() => {

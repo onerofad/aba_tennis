@@ -279,6 +279,17 @@ const Profile = () => {
                                     {sessionStorage.getItem("favoriteplayer")}
 
                                     </p>
+                        Points:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    
+                                    >
+                                    {sessionStorage.getItem("points")}
+
+                                    </p>
                     </Grid.Column>
                  
                    

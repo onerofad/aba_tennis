@@ -26,7 +26,7 @@ export default function getNews() {
             id: '4',
             title: 'LYSI PRODUCES ABA PREMIER LEAGUE TABLE TENNIS CLOTHING MERCHANDISE AND WEBSITE',
             description: 'Leading digital marketing and graphic design firm Lysi, had been contracted to deliver the clothing merchandise and website for the Aba Premier League Table Tennis. As part of this delivery, Lysi will also be responsible for managing the League’s YouTube channel and nominated social media handles. In a statement, Lysi expressed their joy at having been awarded the contract and promised to ensure flow of creativity and efficiency across all the league’s brand assets entrusted to them. Part of their statement reads, “this is a unique opportunity for us to help establish a young sporting business franchise and we are pleased to be a key part of this project.” ',
-            image: '../../images/news/news4.jpg'
+            image: '../../images/news/news6.png'
 
         },
         {

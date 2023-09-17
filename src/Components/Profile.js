@@ -173,7 +173,7 @@ const Profile = () => {
                                     >
                                         {sessionStorage.getItem("fn")}
                                     </p>
-                                    Date of birth:
+                    Date of birth:
                                     <p style={{
                                             fontWeight: 'bold',
                                             fontSize: '25px',
@@ -183,7 +183,7 @@ const Profile = () => {
                                     >
                                         {dob}
                                     </p>
-                                    Nationality:
+                    Nationality:
                                     <p style={{
                                             fontWeight: 'bold',
                                             fontSize: '25px',
@@ -193,7 +193,7 @@ const Profile = () => {
                                     >
                                         {sessionStorage.getItem("country")}
                                     </p>
-                                    Contact Email:
+                    Contact Email:
                                     <p  style={{
                                             fontWeight: 'bold',
                                             fontSize: '25px',
@@ -201,6 +201,15 @@ const Profile = () => {
                                         }}
                                     >
                                         {sessionStorage.getItem("em")}
+                                    </p>
+                    Left/Right Hand Bat:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    >
+                                        {handbat}
                                     </p>
                     </Grid.Column>
                     <Grid.Column width={6}>
@@ -217,16 +226,16 @@ const Profile = () => {
                         </Placeholder>                   
                     </Grid.Column>
                     <Grid.Column width={5} textAlign="right" style= {{fontFamily: 'Poppins', fontSize: '16px', fontWeight: 'noemal'}}>
-                    Left/Right Hand Bat:
+                    Current Team:
                                     <p style={{
                                             fontWeight: 'bold',
                                             fontSize: '25px',
                                             fontFamily: "dharma-gothic-e",
                                         }}
                                     >
-                                        {handbat}
+                                        {sessionStorage.getItem("currenteam")}
                                     </p>
-                                    Current Ranking:
+                    Last Championship Won:
                                     <p style={{
                                             fontWeight: 'bold',
                                             fontSize: '25px',
@@ -234,9 +243,10 @@ const Profile = () => {
                                         }}
                                     
                                     >
-                                        3
+                                       {sessionStorage.getItem("lastchamp")}
+
                                     </p>
-                                    Points:
+                    Date of Last Championship Won:
                                     <p style={{
                                             fontWeight: 'bold',
                                             fontSize: '25px',
@@ -244,7 +254,30 @@ const Profile = () => {
                                         }}
                                     
                                     >
-                                        47
+                                    {sessionStorage.getItem("datelastchamp")}
+
+                                    </p>
+                    Location of Last Championship Won:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    
+                                    >
+                                    {sessionStorage.getItem("locatelastchamp")}
+
+                                    </p>
+                    Favorite Player:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    
+                                    >
+                                    {sessionStorage.getItem("favoriteplayer")}
+
                                     </p>
                     </Grid.Column>
                  

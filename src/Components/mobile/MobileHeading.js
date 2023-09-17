@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { Segment, Grid, Header, Button } from "semantic-ui-react"
+import MobileDemoCarousel from "./MobileDemoCarousel"
 
 const MobileHeading = () => {
     const navigate = useNavigate()
@@ -27,45 +28,7 @@ const MobileHeading = () => {
                                 color: '#000000',
                               }}
                     />
-                    <Segment id="bgSegment"  
-                              style={{
-                                minHeight: 200,
-                                padding: '4em 0em',
-                                margin: '0em 2em' 
-                            }}          
-                    >
-                        <Grid verticalAlign="middle">
-                            <Grid.Row>
-                                <Grid.Column>
-                                    <Header
-                                        content="2nd October to 5th November 2023"
-                                        style={{
-                                            fontFamily: "dharma-gothic-e",
-                                            color: '#ffffff',
-                                            fontWeight: 'normal',
-                                            fontSize: '30px',
-                                          
-                                        }}
-                                    />
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row >
-                                <Grid.Column>
-                                    <Button 
-                                    style={{
-                                        color: '#193275', 
-                                        fontSize: '16px',
-                                        fontWeight: 'normal',
-                                        fontFamily: 'Poppins',      
-                                    }}
-                                    onClick={() => openregister()}
-                                    >
-                                        Register
-                                    </Button>
-                                </Grid.Column>
-                            </Grid.Row>
-                        </Grid>
-                    </Segment>
+                    <MobileDemoCarousel />
                 </Grid.Column>
 
             </Grid.Row>

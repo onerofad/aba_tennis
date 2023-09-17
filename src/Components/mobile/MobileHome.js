@@ -25,6 +25,12 @@ const MobileHome = () => {
         sessionStorage.removeItem("f")
         sessionStorage.removeItem("handbat")
         sessionStorage.removeItem("country")
+
+        sessionStorage.removeItem("currenteam")
+            sessionStorage.removeItem("lastchamp")
+            sessionStorage.removeItem("datelastchamp")
+            sessionStorage.removeItem("locatelastchamp")
+            sessionStorage.removeItem("favoriteplayer")
         navigate("/")
     }
 

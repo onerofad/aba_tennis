@@ -2,6 +2,7 @@ import { Button, Container, Grid, Header, List, Segment, Image } from "semantic-
 import '../AGRESSIVE.otf'
 import '../style.css'
 import {useNavigate} from 'react-router-dom'
+import DemoCarousel from "./DemoCarousel"
 
 const HeadingPage = () => {
     const navigate = useNavigate()
@@ -60,53 +61,8 @@ const HeadingPage = () => {
                                     </Grid.Column>
                                 </Grid.Row>
                                 <Grid.Row>
-                                    <Grid.Column>
-                                    <Segment id="bgSegment"  
-                                        style={{
-                                            maxHeight: 430,
-                                            padding: '2em 0em' 
-                                        }}          
-                                    >
-                                        
-                                        <Grid verticalAlign="middle">
-                                                <Grid.Row>
-                                                    <Grid.Column style={{paddingTop: '2em'}} textAlign="center">
-                                                        <Header
-                                                            content="2nd October to 5th November 2023"
-                                                            style={{
-                                                            	fontFamily: "dharma-gothic-e",
-                                                                color: '#ffffff',
-                                                                fontWeight: 'normal',
-                                                                fontSize: '45px',
-                                                              
-                                                            }}
-                                                        />
-                                                    </Grid.Column>
-                                                </Grid.Row>
-                                                <Grid.Row >
-                                                    <Grid.Column textAlign="center">
-                                                        <Button 
-                                                        style={{
-                                                            color: '#193275', 
-                                                            fontSize: '18px',
-                                                            fontWeight: 'normal',
-                                                            fontFamily: 'Poppins',      
-                                                        }}
-                                                        onClick={() => openregister()}
-                                                        >
-                                                            Register
-                                                        </Button>
-                                                    </Grid.Column>
-                                                </Grid.Row>
-                                                <Grid.Row>
-                                                    <Grid.Column>
-                                                        <Image verticalAlign="top" style={{paddingLeft: '0em', marginTop: '0em'}} size="medium" src="/images/tennispat.svg" />
-                                                    </Grid.Column>
-                                                </Grid.Row>
-                                        </Grid>
-                                        
-                                    </Segment>
-
+                                    <Grid.Column style={{margin: '0em 2em'}}>                                    
+                                          <DemoCarousel />                                                
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>

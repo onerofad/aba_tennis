@@ -88,6 +88,16 @@ const Login = () => {
             sessionStorage.setItem("country", info.nationality)
             sessionStorage.setItem("handbat", info.handbat)
 
+            sessionStorage.setItem("currenteam", info.currenteam)
+            sessionStorage.setItem("lastchamp", info.lastchamp)
+            sessionStorage.setItem("datelastchamp", info.datelastchamp)
+            sessionStorage.setItem("locatelastchamp", info.locatelastchamp)
+            sessionStorage.setItem("favoriteplayer", info.favoriteplayer)
+
+
+
+
+
 
 
 

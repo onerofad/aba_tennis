@@ -29,6 +29,9 @@ const MobileHeading = () => {
                               }}
                     />
                     <MobileDemoCarousel />
+                    {
+                        document.querySelector('.demo-carousel')
+                    } 
                 </Grid.Column>
 
             </Grid.Row>

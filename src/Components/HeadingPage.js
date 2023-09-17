@@ -62,7 +62,10 @@ const HeadingPage = () => {
                                 </Grid.Row>
                                 <Grid.Row>
                                     <Grid.Column style={{margin: '0em 2em'}}>                                    
-                                          <DemoCarousel />                                                
+                                          <DemoCarousel />  
+                                          {
+                                            document.querySelector('.demo-carousel')
+                                          }                                              
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>

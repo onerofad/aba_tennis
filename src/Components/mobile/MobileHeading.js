@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { Segment, Grid, Header, Button } from "semantic-ui-react"
 import MobileDemoCarousel from "./MobileDemoCarousel"
+import MobileCarouselComponent from "./MobileDemoCarousel"
 
 const MobileHeading = () => {
     const navigate = useNavigate()
@@ -28,10 +29,7 @@ const MobileHeading = () => {
                                 color: '#000000',
                               }}
                     />
-                    <MobileDemoCarousel />
-                    {
-                        document.querySelector('.demo-carousel')
-                    } 
+                    <MobileCarouselComponent /> 
                 </Grid.Column>
 
             </Grid.Row>

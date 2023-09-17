@@ -1,32 +1,29 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import React from 'react'
+import Carousel from 'better-react-carousel'
+import { useNavigate } from 'react-router-dom'
 
-export default class MobileDemoCarousel extends Component {
-    render() {
-        return (
-            <Carousel>
-                <div>
-                    <img src="/images/carousel/mobile1.png" />
-                </div>
-                <div>
-                    <img src="/images/carousel/mobile2.png" />
-                </div>
-                <div>
-                    <img src="/images/carousel/mobile3.png" />
-                </div>
-            </Carousel>
-        );
+const MobileCarouselComponent = () => {
+
+    const navigate = useNavigate()
+    const openregister = () => {
+        if(sessionStorage.getItem("em") === null){
+            navigate("/signup")
+        }else{
+            navigate("/register")
+        }
     }
+  return (
+    <Carousel mobileBreakpoint={767} cols={3} rows={1} gap={10} loop={true} autoplay={2000}>
+      <Carousel.Item>
+        <img style={{cursor: 'pointer'}} onClick={() => openregister()} width="100%" src="/images/carousel/mobile1.png" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img style={{cursor: 'pointer'}} onClick={() => openregister()} width="100%" src="/images/carousel/mobile2.png" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img style={{cursor: 'pointer'}} onClick={() => openregister()} width="100%" src="/images/carousel/mobile3.png" />
+      </Carousel.Item>
+    </Carousel>
+  )
 }
-
-//ReactDOM.render(<DemoCarousel />, document.querySelector('.demo-carousel'));
-
-// Don't forget to include the css in your page
-
-// Using webpack or parcel with a style loader
-// import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
-
-// Using html tag:
-// <link rel="stylesheet" href="<NODE_MODULES_FOLDER>/react-responsive-carousel/lib/styles/carousel.min.css"/>
+export default MobileCarouselComponent

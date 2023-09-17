@@ -15,6 +15,8 @@ const Login = () => {
     const [dob, setdob] = useState("") 
     const [nationality, setnationality] = useState("") 
     const [handbat, sethandbat] = useState("") 
+    const [points, setpoints] = useState() 
+
 
 
 
@@ -78,6 +80,7 @@ const Login = () => {
             setdob(info.dob)
             setnationality(info.nationality)
             sethandbat(info.handbat)
+            setpoints(info.points)
 
             console.log(info.fname)
 
@@ -93,13 +96,7 @@ const Login = () => {
             sessionStorage.setItem("datelastchamp", info.datelastchamp)
             sessionStorage.setItem("locatelastchamp", info.locatelastchamp)
             sessionStorage.setItem("favoriteplayer", info.favoriteplayer)
-            sessionStorage.setItem("points", info.points)
-
-
-
-
-
-
+            sessionStorage.setItem("points", points)
 
 
             setTimeout(() => {

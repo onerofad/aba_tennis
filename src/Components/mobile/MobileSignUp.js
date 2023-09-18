@@ -37,6 +37,8 @@ const MobileSignUp = () => {
     const [datelastchamp, setdatelastchamp] = useState("2023-01-01")
     const [locatelastchamp, setlocatelastchamp] = useState("...")
     const [favoriteplayer, setfavoriteplayer] = useState("")
+    const [points, setpoints] = useState(0)
+
 
 
     const [loader, setloader] = useState(false)
@@ -52,6 +54,7 @@ const MobileSignUp = () => {
     const [enationality, esetnationality] = useState(false)
     const [ehandbat, esethandbat] = useState(false)
     const [efavoriteplayer, esetfavoriteplayer] = useState(false)
+    const [eimagepreview, esetimagepreview] = useState(false)
 
     function reducer(state, action){
         switch(action.type){
@@ -89,6 +92,8 @@ const MobileSignUp = () => {
         esetnationality(false)
         esethandbat(false)
         esetfavoriteplayer(false)
+        esetimagepreview(false)
+
 
     }
 
@@ -159,6 +164,9 @@ const MobileSignUp = () => {
          }else if(nationality === ""){
             esetnationality({ content:'Please enter your Country', pointing: 'below'})           
 
+          }else if(imagePreview === null){
+            esetimagepreview({ content:'Please upload your photo', pointing: 'below'})           
+
           }else if(handbat === ""){
             esethandbat({ content:'Please enter your Hand Bat', pointing: 'below'})           
 
@@ -170,7 +178,7 @@ const MobileSignUp = () => {
             uploadImage()
                 setloader(true)
                 setTimeout(() => { 
-                    let item = {fname, lname, dob, email, password, nationality, handbat, imageurl, currenteam, lastchamp, datelastchamp, locatelastchamp, favoriteplayer}
+                    let item = {fname, lname, dob, email, password, nationality, handbat, imageurl, currenteam, lastchamp, datelastchamp, locatelastchamp, favoriteplayer, points}
                     getsignupDetails().post("/", item)
                     .catch(console.error)
                     setloader(false)
@@ -279,6 +287,8 @@ const MobileSignUp = () => {
                                                         placeholder="*Upload Photo"
                                                         accept="image/png, image/jpg, image/jpeg"
                                                         onChange={handleImageChange}
+                                                        error={eimagepreview}
+                                                        onFocus={() => clearError()}
                                                     />
                                                 </Form.Field>
                                                 <Form.Field>

@@ -23,6 +23,8 @@ const MobilePlayerProfile = () => {
             sessionStorage.removeItem("datelastchamp")
             sessionStorage.removeItem("locatelastchamp")
             sessionStorage.removeItem("favoriteplayer")
+            sessionStorage.removeItem("points")
+
         navigate("/")
     }
 

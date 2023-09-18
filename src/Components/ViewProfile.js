@@ -43,23 +43,18 @@ const ViewProfile = () => {
     }
 
     const showProfile = () => {
-            details.map((detail) => {
-                if(detail.id == params.id){
-                    setdob(detail.dob)
-                    sethandbat(detail.handbat)
-                    setfname(detail.fname)
-                    setlname(detail.lname)
-                    setemail(detail.email)
-                    setnationality(detail.nationality)
-
-
-                }
-            })
-          
+         details.map((detail) => {
+            if(detail.id === params.id){
+                setdob(detail.dob)
+                sethandbat(detail.handbat)
+                setfname(detail.fname)
+                setlname(detail.lname)
+                setemail(detail.email)
+                setnationality(detail.nationality)
+            }
+         }) 
+                     
     }
-
-
-
     const navigate = useNavigate()
 
     return(
@@ -160,7 +155,7 @@ const ViewProfile = () => {
                                     >
                                         {fname + " " + lname}
                                     </p>
-                                    Date of birth:
+                    Date of birth:
                                     <p style={{
                                             fontWeight: 'bold',
                                             fontSize: '25px',
@@ -170,7 +165,7 @@ const ViewProfile = () => {
                                     >
                                         {dob}
                                     </p>
-                                    Nationality:
+                        Nationality:
                                     <p style={{
                                             fontWeight: 'bold',
                                             fontSize: '25px',
@@ -180,7 +175,7 @@ const ViewProfile = () => {
                                     >
                                         {nationality}
                                     </p>
-                                    Contact Email:
+                        Contact Email:
                                     <p  style={{
                                             fontWeight: 'bold',
                                             fontSize: '25px',
@@ -205,26 +200,7 @@ const ViewProfile = () => {
                                     >
                                         {handbat}
                                     </p>
-                                    Current Ranking:
-                                    <p style={{
-                                            fontWeight: 'bold',
-                                            fontSize: '25px',
-                                            fontFamily: "dharma-gothic-e",
-                                        }}
-                                    
-                                    >
-                                        3
-                                    </p>
-                                    Points:
-                                    <p style={{
-                                            fontWeight: 'bold',
-                                            fontSize: '25px',
-                                            fontFamily: "dharma-gothic-e",
-                                        }}
-                                    
-                                    >
-                                        47
-                                    </p>
+                                  
                     </Grid.Column>
                  
                    

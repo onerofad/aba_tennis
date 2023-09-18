@@ -14,6 +14,8 @@ const MobileLogin = () => {
     const [dob, setdob] = useState("") 
     const [nationality, setnationality] = useState("") 
     const [handbat, sethandbat] = useState("") 
+    const [points, setpoints] = useState() 
+
 
 
 
@@ -77,6 +79,8 @@ const MobileLogin = () => {
             setdob(info.dob)
             setnationality(info.nationality)
             sethandbat(info.handbat)
+            setpoints(info.points)
+
 
             console.log(info.fname)
 

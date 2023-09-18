@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { Container, Divider, Dropdown, Grid, Header, Segment, Menu, Search, Table, Tab, Select, Input } from "semantic-ui-react"
-import { getRanking } from "../services/API"
+import { Container, Divider, Dropdown, Grid, Header,Image, Segment, Menu, Search, Table, Tab, Select, Input } from "semantic-ui-react"
+import getsignupDetails from "../services/API"
 
 const PlayerTable = () => {
     const options = [
@@ -18,7 +18,7 @@ const PlayerTable = () => {
         setloader(true)
         setTimeout(() => {
             if(rank === "Premier League"){
-                getRanking().get("/")
+                getsignupDetails().get("/")
                 .then((res) => setab(res.data))
                 setloader(false)
 
@@ -96,8 +96,8 @@ const PlayerTable = () => {
                                             return(
                                             <Table.Row>
                                                     <Table.Cell>{id}</Table.Cell>
-                                                    <Table.Cell>...</Table.Cell>
-                                                    <Table.Cell>{rank.firstname}</Table.Cell>
+                                                    <Table.Cell><Image className="ui avatar image" src={rank.imageurl} /></Table.Cell>
+                                                    <Table.Cell>{rank.fname + " " + rank.lname}</Table.Cell>
                                                     <Table.Cell>{rank.points}</Table.Cell>
             
                                             </Table.Row>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Table, Input, Select, Sidebar, Menu, Container, Button, Segment, Icon, Image , Grid, Header, Divider, Placeholder, List} from "semantic-ui-react"
-import { getRanking } from "../../services/API"
+import getsignupDetails from "../../services/API"
 
 const MobilePlayerTable = () => {
     const options = [
@@ -18,7 +18,7 @@ const MobilePlayerTable = () => {
         setloader(true)
         setTimeout(() => {
             if(rank === "Premier League"){
-                getRanking().get("/")
+                getsignupDetails().get("/")
                 .then((res) => setab(res.data))
                 setloader(false)
 
@@ -102,10 +102,10 @@ const MobilePlayerTable = () => {
                                         ++id
                                         return(
                                         <Table.Row>
-                                                <Table.Cell>{id}</Table.Cell>
-                                                <Table.Cell>...</Table.Cell>
-                                                <Table.Cell>{rank.firstname}</Table.Cell>
-                                                <Table.Cell>{rank.points}</Table.Cell>
+                                                    <Table.Cell>{id}</Table.Cell>
+                                                    <Table.Cell><Image className="ui avatar image" src={rank.imageurl} /></Table.Cell>
+                                                    <Table.Cell>{rank.fname + " " + rank.lname}</Table.Cell>
+                                                    <Table.Cell>{rank.points}</Table.Cell>
         
                                         </Table.Row>
                                         )

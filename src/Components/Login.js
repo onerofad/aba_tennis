@@ -74,7 +74,7 @@ const Login = () => {
             esetpassword({ content:'Invalid password', pointing: 'below'})           
         }else if(count1 > 0){
             setloader(true)
-            const info = details.filter(e => e.email === email)[0]
+            let info = details.filter(e => e.email === email)[0]
             setfname(info.fname)
             setlname(info.lname)
             setdob(info.dob)
@@ -96,7 +96,7 @@ const Login = () => {
             sessionStorage.setItem("datelastchamp", info.datelastchamp)
             sessionStorage.setItem("locatelastchamp", info.locatelastchamp)
             sessionStorage.setItem("favoriteplayer", info.favoriteplayer)
-            sessionStorage.setItem("points", points)
+            sessionStorage.setItem("points", info.points)
 
 
             setTimeout(() => {

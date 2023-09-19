@@ -1,6 +1,20 @@
-import {Segment, Grid, Container, Header, Divider, Placeholder} from 'semantic-ui-react'
+import {Image, Segment, Grid, Container, Header, Divider, Placeholder} from 'semantic-ui-react'
+import { useEffect, useState } from 'react'
+import { getUploadedImages } from '../../services/API'
 
 const MobileGallary = () => {
+
+    const [uploadimages, setuploadimages] = useState([])
+
+    useEffect(() => {
+        getuploadImages()
+    }, [])
+
+    const getuploadImages = () => {
+        getUploadedImages().get("/")
+        .then((res) => setuploadimages(res.data))
+        .catch(console.error)
+    }
 
     return(
         <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '6em 0em'}}>
@@ -21,50 +35,24 @@ const MobileGallary = () => {
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
-                    <Grid.Column width={8}>
-                       
-                                    <Placeholder fluid style={{ height: 200}}>
-                                        <Placeholder.Image />
+                {
+                        
+                        uploadimages.map((image) => {
+                            return(
+                                <Grid.Column width={8}>
+                                    <Placeholder fluid style={{ height: 240, width: 200 }}>
+                                        <Image style={{ height: 240, width: 200 }}  src={"https://res.cloudinary.com/du3ck2joa/" + image.imageurl} />
                                     </Placeholder>
-                              
-                    </Grid.Column>
-                    <Grid.Column width={8}>
-            
-                                    <Placeholder fluid style={{ height: 200 }}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                    </Grid.Column>
+                                    <br/>
+                                </Grid.Column>
+
+                            )
+                        })
+                    
+                
+                }
                 </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column width={8}>
-                       
-                                    <Placeholder fluid style={{ height: 200}}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                              
-                    </Grid.Column>
-                    <Grid.Column width={8}>
-            
-                                    <Placeholder fluid style={{ height: 200 }}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column width={8}>
-                       
-                                    <Placeholder fluid style={{ height: 200}}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                              
-                    </Grid.Column>
-                    <Grid.Column width={8}>
-            
-                                    <Placeholder fluid style={{ height: 200 }}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                    </Grid.Column>
-                </Grid.Row>
+              
                 <Divider />
             </Grid>
         </Container>

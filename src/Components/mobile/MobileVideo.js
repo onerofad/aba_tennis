@@ -1,6 +1,36 @@
 import { Container, Divider, Grid, Header, Segment, Image, Icon, Placeholder } from "semantic-ui-react"
+import { useState, useEffect } from "react"
+import { getTournamentUploadedVideos, getHighlightUploadedVideos, getTeamUploadedVideos } from "../../services/API"
 
 const MobileVideo = () => {
+
+    const [uploadtournamentvideo, settournamentuploadvideos] = useState([])
+    const [uploadhighlightvideo, sethighlightuploadvideos] = useState([])
+    const [uploadteamvideo, setteamuploadvideos] = useState([])
+
+    
+    useEffect(() => {
+        getuploadTournament()
+        getuploadHighlight()
+        getuploadTeam()
+
+    }, [])
+
+    const getuploadTournament = () => {
+        getTournamentUploadedVideos().get("/")
+        .then((res) => settournamentuploadvideos(res.data))
+        .catch(console.error)
+    }
+    const getuploadHighlight = () => {
+        getHighlightUploadedVideos().get("/")
+        .then((res) => sethighlightuploadvideos(res.data))
+        .catch(console.error)
+    }
+    const getuploadTeam = () => {
+        getTeamUploadedVideos().get("/")
+        .then((res) => setteamuploadvideos(res.data))
+        .catch(console.error)
+    }
     return(
         <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '6em 0em'}}>
             <Container>
@@ -56,43 +86,32 @@ const MobileVideo = () => {
                                     <Grid.Row>
                                         <Grid.Column>
                                             <Grid>
-                                                <Grid.Row>
-                                                    <Grid.Column>
-                                                    <Placeholder fluid style={{ height: 150 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>
-                                                        <p style={{
-                                                                fontFamily: "Poppins",
-                                                                color: '#000000',
-                                                                fontSize: '16px',
-                                                                fontWeight: 'normal',
-                                                                padding: '1em 0em'
-                                                            }}
-                                                        
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column >
-                                                 </Grid.Row>
-                                                 <Grid.Row>
-                                                    <Grid.Column>
-                                                    <Placeholder fluid style={{ height: 150 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>
-                                                        <p style={{
-                                                               fontFamily: "Poppins",
-                                                               color: '#000000',
-                                                               fontSize: '16px',
-                                                               fontWeight: 'normal',
-                                                               padding: '1em 0em'
-
-                                                            }}
-                                                        
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column >
-                                                 </Grid.Row>
+                                            {
+                                                uploadtournamentvideo.map((video) => {
+                                                    return(
+                                                        <Grid.Row>
+                                                        <Grid.Column>
+                                                        <Placeholder fluid style={{ height: 150 }}>
+                                                        <iframe  style={{height: 150, width: "100%"}}  src={video.videourl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+                                                        </Placeholder>
+                                                            <p style={{
+                                                                    fontFamily: "Poppins",
+                                                                    color: '#000000',
+                                                                    fontSize: '16px',
+                                                                    fontWeight: 'normal',
+                                                                    padding: '1em 0em'
+                                                                }}
+                                                            
+                                                            >
+                                                                {video.description}
+                                                            </p>
+                                                        </Grid.Column >
+                                                     </Grid.Row>
+                                                    )
+                                                } )
+                          
+                                            }
                                             </Grid>
                                         </Grid.Column>
                                     </Grid.Row>
@@ -141,42 +160,33 @@ const MobileVideo = () => {
                                     <Grid.Row>
                                         <Grid.Column>
                                             <Grid>
-                                                <Grid.Row>
-                                                    <Grid.Column>
-                                                    <Placeholder fluid style={{ height: 150 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p style={{
-                                                               fontFamily: "Poppins",
-                                                               color: '#000000',
-                                                               fontSize: '16px',
-                                                               fontWeight: 'normal',
-                                                               padding: '1em 0em'
-
-                                                            }}
-                                                        
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column >  
-                                                </Grid.Row>
-                                                <Grid.Row>
-                                                    <Grid.Column>
-                                                    <Placeholder fluid style={{ height: 150 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p style={{
-                                                                fontFamily: "Poppins",
-                                                                color: '#000000',
-                                                                fontSize: '16px',
-                                                                fontWeight: 'normal',
-                                                                padding: '1em 0em'
-
-                                                            }}
-                                                        
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column >  
-                                                </Grid.Row>
+                                            {
+                                                uploadhighlightvideo.map((video) => {
+                                                    return(
+                                                        <Grid.Row>
+                                                        <Grid.Column>
+                                                        <Placeholder fluid style={{ height: 150 }}>
+                                                        <iframe  style={{height: 150, width: "100%"}}  src={video.videourl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+                                                        </Placeholder>
+                                                            <p style={{
+                                                                    fontFamily: "Poppins",
+                                                                    color: '#000000',
+                                                                    fontSize: '16px',
+                                                                    fontWeight: 'normal',
+                                                                    padding: '1em 0em'
+                                                                }}
+                                                            
+                                                            >
+                                                                {video.description}
+                                                            </p>
+                                                        </Grid.Column >
+                                                     </Grid.Row>
+                                                    )
+                                                } )
+                          
+                                            }
+                
                                             </Grid>
                                         </Grid.Column>
                                     </Grid.Row>
@@ -226,42 +236,32 @@ const MobileVideo = () => {
                                     <Grid.Row>
                                         <Grid.Column>
                                             <Grid>
-                                                <Grid.Row>
-                                                    <Grid.Column>
-                                                    <Placeholder fluid style={{ height: 150 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p style={{
-                                                               fontFamily: "Poppins",
-                                                               color: '#000000',
-                                                               fontSize: '16px',
-                                                               fontWeight: 'normal',
-                                                               padding: '1em 0em'
-
-                                                            }}
-                                                        
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column >
-                                                </Grid.Row>
-                                                <Grid.Row>
-                                                    <Grid.Column>
-                                                    <Placeholder fluid style={{ height: 150 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p style={{
-                                                               fontFamily: "Poppins",
-                                                               color: '#000000',
-                                                               fontSize: '16px',
-                                                               fontWeight: 'normal',
-                                                               padding: '1em 0em'
-
-                                                            }}
-                                                        
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column >
-                                                </Grid.Row>
+                                            {
+                                                uploadteamvideo.map((video) => {
+                                                    return(
+                                                        <Grid.Row>
+                                                        <Grid.Column>
+                                                        <Placeholder fluid style={{ height: 150 }}>
+                                                        <iframe style={{height: 150, width: "100%"}}  src={video.videourl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+                                                        </Placeholder>
+                                                            <p style={{
+                                                                    fontFamily: "Poppins",
+                                                                    color: '#000000',
+                                                                    fontSize: '16px',
+                                                                    fontWeight: 'normal',
+                                                                    padding: '1em 0em'
+                                                                }}
+                                                            
+                                                            >
+                                                                {video.description}
+                                                            </p>
+                                                        </Grid.Column >
+                                                     </Grid.Row>
+                                                    )
+                                                } )
+                          
+                                            }
                                             </Grid>
                                         </Grid.Column>
                                     </Grid.Row>

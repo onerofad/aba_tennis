@@ -1,8 +1,22 @@
-import {Segment, Grid, Container, Header, Divider, Placeholder} from 'semantic-ui-react'
+import {Segment, Grid, Container, Header, Divider, Placeholder, Image} from 'semantic-ui-react'
 import Footer from './Footer'
 import Headers from './Headers'
+import { getUploadedImages } from '../services/API'
+import { useEffect, useState } from 'react'
 
 const ImageGallary = () => {
+
+    const [uploadimages, setuploadimages] = useState([])
+
+    useEffect(() => {
+        getuploadImages()
+    }, [])
+
+    const getuploadImages = () => {
+        getUploadedImages().get("/")
+        .then((res) => setuploadimages(res.data))
+        .catch(console.error)
+    }
 
     return(
         <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '0em 6em'}}>
@@ -27,97 +41,24 @@ const ImageGallary = () => {
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
-                    <Grid.Column width={4}>
-                        <Grid>
-                            <Grid.Row>
-                                <Grid.Column>
-                                    <Placeholder fluid style={{ height: 240, width: 200 }}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row>
-                                <Grid.Column>
-                                    <Placeholder fluid style={{height: 240, width: 200}}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                                </Grid.Column>
-                            </Grid.Row>
-                        </Grid>
-                    </Grid.Column>
-                    <Grid.Column width={4}>
-                        <Grid>
-                    <Grid.Row>
-                                <Grid.Column>
-                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row>
-                                <Grid.Column>
-                                    <Placeholder fluid style={{height: 150, width: 200}}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row>
-                                <Grid.Column>
-                                    <Placeholder fluid style={{height: 150, width: 200}}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                                </Grid.Column>
-                            </Grid.Row>
-                            </Grid>
-                    </Grid.Column>
-                    <Grid.Column width={4}>
-                    <Grid>
-                    <Grid.Row>
-                                <Grid.Column>
-                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row>
-                                <Grid.Column>
-                                    <Placeholder fluid style={{height: 150, width: 200}}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row>
-                                <Grid.Column>
-                                    <Placeholder fluid style={{height: 150, width: 200}}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                                </Grid.Column>
-                            </Grid.Row>
-                            </Grid>
+                    {
+                        
+                            uploadimages.map((image) => {
+                                return(
+                                    <Grid.Column width={4}>
+                                        <Placeholder fluid style={{ height: 240, width: 200 }}>
+                                            <Image style={{ height: 240, width: 200 }}  src={"https://res.cloudinary.com/du3ck2joa/" + image.imageurl} />
+                                        </Placeholder>
+                                        <br/>
+                                    </Grid.Column>
+                                   
 
-                    </Grid.Column>
-                    <Grid.Column width={4}>
-                    <Grid>
-                            <Grid.Row>
-                                <Grid.Column>
-                                    <Placeholder fluid style={{ height: 240, width: 200 }}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row>
-                                <Grid.Column>
-                                    <Placeholder fluid style={{height: 240, width: 200}}>
-                                        <Placeholder.Image />
-                                    </Placeholder>
-                                </Grid.Column>
-                            </Grid.Row>
-                        </Grid>
-
-                    </Grid.Column>
-
+                                )
+                            })
+                        
+                    
+                    }
                 </Grid.Row>
-                
                 
                 <Grid.Row style={{padding: '6em 6em 2em'}}>
                     <Grid.Column>

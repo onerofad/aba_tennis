@@ -1,8 +1,38 @@
 import { Container, Divider, Grid, Header, Segment, Image, Icon, Placeholder } from "semantic-ui-react"
 import Headers from "./Headers"
 import Footer from "./Footer"
+import { useState, useEffect } from "react"
+import { getTournamentUploadedVideos, getHighlightUploadedVideos, getTeamUploadedVideos } from "../services/API"
 
 const VideoSection = () => {
+
+    const [uploadtournamentvideo, settournamentuploadvideos] = useState([])
+    const [uploadhighlightvideo, sethighlightuploadvideos] = useState([])
+    const [uploadteamvideo, setteamuploadvideos] = useState([])
+
+    
+    useEffect(() => {
+        getuploadTournament()
+        getuploadHighlight()
+        getuploadTeam()
+
+    }, [])
+
+    const getuploadTournament = () => {
+        getTournamentUploadedVideos().get("/")
+        .then((res) => settournamentuploadvideos(res.data))
+        .catch(console.error)
+    }
+    const getuploadHighlight = () => {
+        getHighlightUploadedVideos().get("/")
+        .then((res) => sethighlightuploadvideos(res.data))
+        .catch(console.error)
+    }
+    const getuploadTeam = () => {
+        getTeamUploadedVideos().get("/")
+        .then((res) => setteamuploadvideos(res.data))
+        .catch(console.error)
+    }
     return(
         <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '0em 6em'}}>
                 <Grid>
@@ -63,87 +93,32 @@ const VideoSection = () => {
                                         <Grid.Column>
                                             <Grid>
                                                 <Grid.Row>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>
-                                                        <p style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column >
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>
-                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>
-                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>
-                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>
-                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
+                                                    {
+                                                        uploadtournamentvideo.map((video) => {
+                                                            return(
+                                                                <Grid.Column width={3}>
+                                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
+                                                                    <iframe width="200" height="150" src={video.videourl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                                    </Placeholder>
+                                                                    <p style={{
+                                                                            fontFamily: "dharma-gothic-e",
+                                                                            color: '#000000',
+                                                                            fontSize: '20px',
+                                                                            fontWeight: 'normal',
+                                                                            characterSpacing: 20,
+                                                                            lineSpacing: 100
+                                                                        }}
+                                                                    
+                                                                    >
+                                                                        {video.videodescription}
+                                                                    </p>
+                                                                </Grid.Column >
+                                                            )
+
+                                                        } )
+                                                    }
+                                                   
+                                                    
                                                 </Grid.Row>
                                             </Grid>
                                         </Grid.Column>
@@ -194,82 +169,31 @@ const VideoSection = () => {
                                         <Grid.Column>
                                             <Grid>
                                                 <Grid.Row>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
+                                                {
+                                                        uploadhighlightvideo.map((video) => {
+                                                            return(
+                                                                <Grid.Column width={3}>
+                                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
+                                                                    <iframe width="200" height="150" src={video.videourl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                                    </Placeholder>
+                                                                    <p style={{
+                                                                            fontFamily: "dharma-gothic-e",
+                                                                            color: '#000000',
+                                                                            fontSize: '20px',
+                                                                            fontWeight: 'normal',
+                                                                            characterSpacing: 20,
+                                                                            lineSpacing: 100
+                                                                        }}
+                                                                    
+                                                                    >
+                                                                        {video.videodescription}
+                                                                    </p>
+                                                                </Grid.Column >
+                                                            )
+
+                                                        } )
+                                                    }
                                                         
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column >
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
                                                 </Grid.Row>
                                             </Grid>
                                         </Grid.Column>
@@ -321,82 +245,31 @@ const VideoSection = () => {
                                         <Grid.Column>
                                             <Grid>
                                                 <Grid.Row>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column >
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
-                                                    <Grid.Column width={3}>
-                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
-                                                        <Placeholder.Image />
-                                                    </Placeholder>                                                        <p  style={{
-                                                                fontFamily: "dharma-gothic-e",
-                                                                color: '#000000',
-                                                                fontSize: '20px',
-                                                                fontWeight: 'normal',
-                                                                characterSpacing: 20,
-                                                                lineSpacing: 100
-                                                            }}
-                                                        >
-                                                            Premier League table tennis set to launch in Abia
-                                                        </p>
-                                                    </Grid.Column>
+                                                {
+                                                        uploadteamvideo.map((video) => {
+                                                            return(
+                                                                <Grid.Column width={3}>
+                                                                    <Placeholder fluid style={{ height: 150, width: 200 }}>
+                                                                    <iframe width="200" height="150" src={video.videourl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                                    </Placeholder>
+                                                                    <p style={{
+                                                                            fontFamily: "dharma-gothic-e",
+                                                                            color: '#000000',
+                                                                            fontSize: '20px',
+                                                                            fontWeight: 'normal',
+                                                                            characterSpacing: 20,
+                                                                            lineSpacing: 100
+                                                                        }}
+                                                                    
+                                                                    >
+                                                                        {video.videodescription}
+                                                                    </p>
+                                                                </Grid.Column >
+                                                            )
+
+                                                        } )
+                                                    }
+                                                    
                                                 </Grid.Row>
                                             </Grid>
                                         </Grid.Column>

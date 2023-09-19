@@ -100,6 +100,8 @@ const MobilePlayerTable = () => {
                                   {
                                     tab.map((rank) => {
                                         ++id
+                                        if(id <= 5){
+
                                         return(
                                         <Table.Row>
                                                     <Table.Cell>{id}</Table.Cell>
@@ -109,6 +111,7 @@ const MobilePlayerTable = () => {
         
                                         </Table.Row>
                                         )
+                                        }
                                     })
                                   }
                                             

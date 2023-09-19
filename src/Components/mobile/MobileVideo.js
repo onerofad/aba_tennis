@@ -67,7 +67,7 @@ const MobileVideo = () => {
                                             />
                                         </Grid.Column>
                                         <Grid.Column width={8} textAlign="right">
-                                            <span
+                                             {/*<span
                                                 style={{
                                                     fontFamily: 'Poppins',
                                                     fontSize: '14px',
@@ -78,7 +78,7 @@ const MobileVideo = () => {
                                             >
                                             View All
                                             <Icon name="right angle" />
-                                            </span>
+                                            </span>*/}
 
                                         </Grid.Column>
                                     </Grid.Row>
@@ -141,7 +141,7 @@ const MobileVideo = () => {
                                             />
                                         </Grid.Column>
                                         <Grid.Column width={8} textAlign="right">
-                                            <span
+                                            {/*<span
                                                 style={{
                                                     fontFamily: 'Poppins',
                                                     fontSize: '14px',
@@ -152,7 +152,7 @@ const MobileVideo = () => {
                                             >
                                             View All
                                             <Icon name="right angle" />
-                                            </span>
+                                            </span>*/}
 
                                         </Grid.Column>
                                     </Grid.Row>
@@ -217,7 +217,7 @@ const MobileVideo = () => {
                                             />
                                         </Grid.Column>
                                         <Grid.Column width={8} textAlign="right">
-                                            <span
+                                            {/*<span
                                                 style={{
                                                     fontFamily: 'Poppins',
                                                     fontSize: '14px',
@@ -228,7 +228,7 @@ const MobileVideo = () => {
                                             >
                                             View All
                                             <Icon name="right angle" />
-                                            </span>
+                                            </span>*/}
 
                                         </Grid.Column>
                                     </Grid.Row>

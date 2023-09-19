@@ -73,7 +73,7 @@ const VideoSection = () => {
                                             />
                                         </Grid.Column>
                                         <Grid.Column width={8} textAlign="right">
-                                            <span
+                                            {/*<span
                                                 style={{
                                                     fontFamily: 'Poppins',
                                                     fontSize: '14px',
@@ -84,7 +84,7 @@ const VideoSection = () => {
                                             >
                                             View All
                                             <Icon name="right angle" />
-                                            </span>
+                                            </span>*/}
 
                                         </Grid.Column>
                                     </Grid.Row>
@@ -149,7 +149,7 @@ const VideoSection = () => {
                                             />
                                         </Grid.Column>
                                         <Grid.Column width={8} textAlign="right">
-                                            <span
+                                            {/*<span
                                                 style={{
                                                     fontFamily: 'Poppins',
                                                     fontSize: '14px',
@@ -160,7 +160,7 @@ const VideoSection = () => {
                                             >
                                             View All
                                             <Icon name="right angle" />
-                                            </span>
+                                            </span>*/}
 
                                         </Grid.Column>
                                     </Grid.Row>
@@ -225,7 +225,7 @@ const VideoSection = () => {
                                             />
                                         </Grid.Column>
                                         <Grid.Column width={8} textAlign="right">
-                                            <span
+                      {/*<span
                                                 style={{
                                                     fontFamily: 'Poppins',
                                                     fontSize: '14px',
@@ -236,7 +236,7 @@ const VideoSection = () => {
                                             >
                                             View All
                                             <Icon name="right angle" />
-                                            </span>
+                                            </span>*/}
 
                                         </Grid.Column>
                                     </Grid.Row>

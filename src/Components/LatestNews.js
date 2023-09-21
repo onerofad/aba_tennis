@@ -1,12 +1,24 @@
 import { Image, Container, Divider, Grid, Header, Icon, Segment, Placeholder } from "semantic-ui-react"
 import PaginationComponent from "./PaginationComponent"
 import { useParams } from "react-router-dom"
-import getNews from "./Db"
+import { getLatestNews } from "../services/API"
 import '../style.css'
 import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
 
 const LatestNews = () => {
 
+    const [latestnews, setlatestnews] = useState([])
+    let id = 0
+    useEffect(() => {
+        getNews()
+    }, [])
+
+    const getNews = () => {
+        getLatestNews().get("/")
+        .then((res) => setlatestnews(res.data))
+        .catch(console.error)
+    }
     const navigate = useNavigate()
     const openallnews = () => {
         navigate("/news/1")
@@ -46,13 +58,14 @@ const LatestNews = () => {
             <Divider style={{marginTop: '0em'}} />
             <Grid.Row>
                 {
-                    getNews().map((news) => {
-                    
-                        if(news.id >= 1 && news.id <= 4){      
+                   
+                    latestnews.map((news) => {
+                        ++id
+                        if(id <= 4){      
                             return(
                                 <Grid.Column width={4} key={news.id}>
                                     <Placeholder fluid style={{ height: 150, width: 250 }}>
-                                        <Image fluid centered src={news.image} />
+                                        <Image fluid centered src={"https://res.cloudinary.com/du3ck2joa/" + news.image} />
                                     </Placeholder>
                                     <Header
                                         content = {news.title}
@@ -67,8 +80,10 @@ const LatestNews = () => {
 
                                     />
                                 </Grid.Column>
+                                
                             )
                         }
+                        
                        
                     })
                    

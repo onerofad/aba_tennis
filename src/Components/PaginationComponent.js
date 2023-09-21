@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import { Grid, Pagination } from "semantic-ui-react"
-import getProducts from "./Db"
 import { useNavigate, useParams } from "react-router-dom"
-import getNews from "./Db"
+import { getLatestNews } from "../services/API"
 import '../style.css'
 
 const PaginationComponent = () => {
@@ -12,17 +11,25 @@ const PaginationComponent = () => {
     const params = useParams()
     let count = 0
 
+    const [latestnews, setlatestnews] = useState([])
     useEffect(() => {
+        getNews()
         setactivePage(params.pageno)
         getTotalPages()
-    }, [])
+    })
+
+    const getNews = () => {
+        getLatestNews().get("/")
+        .then((res) => setlatestnews(res.data))
+        .catch(console.error)
+    }
 
     const handlePaginationChange = (activePage) => {
         setactivePage(activePage)
         navigate("/news/" + activePage)
     }
     const getTotalPages = () => {
-        getNews().map((news) => {
+        latestnews.map((news) => {
           ++count
         })
         let item = Math.ceil(count/4)

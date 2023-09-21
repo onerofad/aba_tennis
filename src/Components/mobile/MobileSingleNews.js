@@ -1,9 +1,22 @@
 import {Image, Segment, Grid, Header, Button, Divider, Icon, Placeholder, Container } from "semantic-ui-react"
-import getNews from "./Db"
 import { useNavigate, useParams } from "react-router-dom"
 import PaginationComponent from "../PaginationComponent"
+import { getLatestNews } from "../../services/API"
+import { useState, useEffect } from "react"
 
 const MobileSingleNews = () => {
+
+    const [latestnews, setlatestnews] = useState([])
+
+    useEffect(() => {
+        getNews()
+    }, [])
+
+    const getNews = () => {
+        getLatestNews().get("/")
+        .then((res) => setlatestnews(res.data))
+        .catch(console.error)
+    }
 
     const navigate = useNavigate()
     const params = useParams()
@@ -13,7 +26,7 @@ const MobileSingleNews = () => {
             <Container>
         <Grid>
                 {
-                    getNews().map((news) => {
+                    latestnews.map((news) => {
                     
                        
                         if(news.id == params.pageno){
@@ -37,7 +50,7 @@ const MobileSingleNews = () => {
                             <Grid.Row>
                                 <Grid.Column key={news.id}>
                                     <Placeholder fluid style={{height: 180}}>
-                                    <Image src={news.image}  />
+                                    <Image src={"https://res.cloudinary.com/du3ck2joa/" + news.image}  />
                                     </Placeholder>
                                     <p
                                          style={{

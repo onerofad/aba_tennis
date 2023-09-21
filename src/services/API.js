@@ -78,4 +78,17 @@ export function getTeamUploadedVideos(){
     )
 }
 
+export function getLatestNews(){
+    return(
+    axios.create({
+        baseURL: "https://tennis-backend.vercel.app/api/latestnews/",
+        headers: {
+            "Accept": 'application/json',
+            "Content-Type": 'application/json'
+        }
+        
+    })
+    )
+}
+
 

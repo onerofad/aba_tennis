@@ -1,10 +1,23 @@
 import { Container, Divider, Grid, Header, Icon, Segment, Placeholder } from "semantic-ui-react"
 import PaginationComponent from "./PaginationComponent"
 import { useParams } from "react-router-dom"
-import getNews from "./Db"
+import { getLatestNews } from "../services/API"
+import { useState, useEffect } from "react"
 import '../style.css'
 
 const LatestNewsPagination = () => {
+
+    const [latestnews, setlatestnews] = useState([])
+
+    useEffect(() => {
+        getNews()
+    }, [])
+
+    const getNews = () => {
+        getLatestNews().get("/")
+        .then((res) => setlatestnews(res.data))
+        .catch(console.error)
+    }
     const params = useParams()
     return(
         <Segment>
@@ -38,7 +51,7 @@ const LatestNewsPagination = () => {
             <Divider style={{marginTop: '0em'}} />
             <Grid.Row>
                 {
-                    getNews().map((news) => {
+                    latestnews.map((news) => {
                         let lastItemId = params.pageno * 4
                         let firstItemId = lastItemId - 3
                         if(news.id >= firstItemId && news.id <= lastItemId){      

@@ -1,11 +1,23 @@
 import {Image, Segment, Grid, Header, Button, Divider, Icon, Placeholder, Container } from "semantic-ui-react"
-import getNews from "./Db"
+import { getLatestNews } from "../services/API"
 import { useNavigate, useParams } from "react-router-dom"
 import Headers from "./Headers"
 import Footer from "./Footer"
+import { useState, useEffect } from "react"
 
 const SingleNews = () => {
 
+    const [latestnews, setlatestnews] = useState([])
+
+    useEffect(() => {
+        getNews()
+    }, [])
+
+    const getNews = () => {
+        getLatestNews().get("/")
+        .then((res) => setlatestnews(res.data))
+        .catch(console.error)
+    }
     const navigate = useNavigate()
     const params = useParams()
 
@@ -14,7 +26,7 @@ const SingleNews = () => {
         <Headers />
         <Grid>
                 {
-                    getNews().map((news) => {
+                    latestnews.map((news) => {
                     
                        
                         if(news.id == params.pageno){
@@ -39,7 +51,7 @@ const SingleNews = () => {
                             </Grid.Row>
                             <Grid.Row>
                                 <Grid.Column key={news.id} textAlign="center">
-                                    <Image centered src={news.image} style={{width: 400, height: 400}}  />
+                                    <Image centered src={"https://res.cloudinary.com/du3ck2joa/" + news.image} style={{width: 400, height: 400}}  />
                                     <p
                                          style={{
                                             fontFamily: "Poppins",

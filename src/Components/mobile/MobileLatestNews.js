@@ -1,8 +1,21 @@
 import {Image, Segment, Grid, Header, Button, Divider, Icon, Placeholder } from "semantic-ui-react"
-import getNews from "./Db"
+import { getLatestNews } from "../../services/API"
 import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
 
 const MobileLatestNews = () => {
+
+    const [latestnews, setlatestnews] = useState([])
+    let id = 0
+    useEffect(() => {
+        getNews()
+    }, [])
+
+    const getNews = () => {
+        getLatestNews().get("/")
+        .then((res) => setlatestnews(res.data))
+        .catch(console.error)
+    }
 
     const navigate = useNavigate()
     const openallnews = () => {
@@ -40,14 +53,14 @@ const MobileLatestNews = () => {
             </Grid.Row>
             
                 {
-                    getNews().map((news) => {
-                    
-                        if(news.id >= 1 && news.id <= 2){      
+                    latestnews.map((news) => {
+                        ++id
+                        if(id <= 2){      
                             return(
                                 <Grid.Row>
                                 <Grid.Column key={news.id}>
-                                    <Placeholder fluid style={{height: 180}}>
-                                        <Image src={news.image} />
+                                    <Placeholder fluid style={{height: 220}}>
+                                        <Image fluid style={{height: 220}} src={"https://res.cloudinary.com/du3ck2joa/" + news.image} />
                                     </Placeholder>
                                     <Header
                                         content = {news.title}

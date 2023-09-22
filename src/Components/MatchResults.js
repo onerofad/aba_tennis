@@ -1,8 +1,23 @@
 import { Container, Grid, Header, Segment, Divider, Select, Table } from "semantic-ui-react"
 import Footer from "./Footer"
 import Headers from "./Headers"
+import { getResults } from "../services/API"
+import { useEffect, useState } from "react"
 
 const MatchResults = () => {
+
+    const [results, setresults] = useState([])
+
+    useEffect(() => {
+        getResult()
+    }, [])
+
+    const getResult = () => {
+        getResults().get("/")
+        .then((res) => setresults(res.data))
+        .catch(console.error)
+    }
+
     const options = [
         { key: 1, text: 'Ranking (week 1)', value: 1 },
         { key: 2, text: 'Ranking (week 2)', value: 2 },
@@ -48,7 +63,7 @@ const MatchResults = () => {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-            <Segment vertical style={{backgroundColor: '#193275', padding: '4em', margin: '2em 0em'}}>
+            <Segment vertical style={{backgroundColor: '#193275', padding: '2em', margin: '2em 0em'}}>
                 <Grid>                     
                     <Grid.Row>
                         <Grid.Column textAlign="center"> 
@@ -57,7 +72,10 @@ const MatchResults = () => {
                                         backgroundColor: '#FFFFFF', 
                                         fontFamily: 'Poppins',
                                         fontSize: '16px',
-                                        fontWeight: 'normal'
+                                        fontWeight: 'normal',
+                                        padding: '2em',
+                                        maxHeight: 500,
+                                        overflowY: "scroll"
                                     
                                     }}>
                                     <Grid>
@@ -73,317 +91,46 @@ const MatchResults = () => {
                                                 October 2, 2023
                                             </Grid.Column>
                                         </Grid.Row>
-                                        <Grid.Row columns={3} divided>
-                                            <Grid.Column width={5}>
-                                                <Grid>
-                                                    <Grid.Row>
-                                                        <Grid.Column>
-                                                            <Table basic="very" >
-                                                                <Table.Header>
-                                                                    <Table.Row>
-                                                                        <Table.HeaderCell>Player</Table.HeaderCell>
-                                                                        <Table.HeaderCell>Slot 1</Table.HeaderCell>
-                                                                        <Table.HeaderCell>Slot 2</Table.HeaderCell>
-                                                                        <Table.HeaderCell>Slot 3</Table.HeaderCell>
-                                                                    </Table.Row>              
-                                                                </Table.Header>
-                                                                <Table.Body>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/><br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/><br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/><br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/><br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/><br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                </Table.Body>
-                                                            </Table>
-                                                        </Grid.Column>
-                                                    </Grid.Row>
-                                                </Grid>
+                                        <Grid.Row>
+                                                           
+                                                                    {
+                                                                        results.map((result) => {
+                                                                            return(
+                                                                            <Grid.Column width={5}>
+                                                                            <Table basic="very" >
+                                                                                <Table.Header>
+                                                                                    <Table.Row>
+                                                                                        <Table.HeaderCell width={4}>Player</Table.HeaderCell>
+                                                                                        <Table.HeaderCell width={4}>Set 1</Table.HeaderCell>
+                                                                                        <Table.HeaderCell width={4}>Set 2</Table.HeaderCell>
+                                                                                        <Table.HeaderCell width={4}>Set 3</Table.HeaderCell>
+                                                                                    </Table.Row>              
+                                                                                </Table.Header>
+                                                                            <Table.Body>
 
-                                            </Grid.Column>
+                                                                                <Table.Row>
+                                                                                    <Table.Cell>{result.player1}</Table.Cell>
+                                                                                    <Table.Cell>{result.player1_first_set_score}</Table.Cell>
+                                                                                    <Table.Cell>{result.player1_second_set_score}</Table.Cell>
+                                                                                    <Table.Cell>{result.player1_third_set_score}</Table.Cell>
+                                                                                </Table.Row>
+                                                                                
+                                                                                <Table.Row>
+                                                                                    <Table.Cell>{result.player2}</Table.Cell>
+                                                                                    <Table.Cell>{result.player2_first_set_score}</Table.Cell>
+                                                                                    <Table.Cell>{result.player2_second_set_score}</Table.Cell>
+                                                                                    <Table.Cell>{result.player2_third_set_score}</Table.Cell>
+                                                                                </Table.Row>
+                                                                                </Table.Body>
+                                                                        </Table>
+                                                                        <br/>
+                                                                        </Grid.Column>
+                                                                            )
 
-
-                                            <Grid.Column width={5}>
-                                                <Grid divided>
-                                                    <Grid.Row>
-                                                        <Grid.Column>
-                                                            <Table basic="very" >
-                                                                <Table.Header>
-                                                                    <Table.Row>
-                                                                        <Table.HeaderCell>Player</Table.HeaderCell>
-                                                                        <Table.HeaderCell>Slot 1</Table.HeaderCell>
-                                                                        <Table.HeaderCell>Slot 2</Table.HeaderCell>
-                                                                        <Table.HeaderCell>Slot 3</Table.HeaderCell>
-                                                                    </Table.Row>              
-                                                                </Table.Header>
-                                                                <Table.Body>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                </Table.Body>
-                                                            </Table>
-                                                        </Grid.Column>
-                                                    </Grid.Row>
-                                                </Grid>
-
-                                            </Grid.Column>
-
-                                            <Grid.Column width={5}>
-                                                <Grid>
-                                                    <Grid.Row>
-                                                        <Grid.Column>
-                                                            <Table basic="very" >
-                                                                <Table.Header>
-                                                                    <Table.Row>
-                                                                        <Table.HeaderCell>Player</Table.HeaderCell>
-                                                                        <Table.HeaderCell>Slot 1</Table.HeaderCell>
-                                                                        <Table.HeaderCell>Slot 2</Table.HeaderCell>
-                                                                        <Table.HeaderCell>Slot 3</Table.HeaderCell>
-                                                                    </Table.Row>              
-                                                                </Table.Header>
-                                                                <Table.Body>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/><br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/><br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/><br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/><br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <br/><br/>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>A. Chukwudi</Table.Cell>
-                                                                        <Table.Cell>7</Table.Cell>
-                                                                        <Table.Cell>4</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                    <Table.Row>
-                                                                        <Table.Cell>M. Onori</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                        <Table.Cell>10</Table.Cell>
-                                                                    </Table.Row>
-                                                                </Table.Body>
-                                                            </Table>
-                                                        </Grid.Column>
-                                                    </Grid.Row>
-                                                </Grid>
-
-                                            </Grid.Column>
-
-
+                                                                        })
+                                                                    }
 
                                         </Grid.Row>
-
-
-                                        
-
                                         
                                     </Grid>
 

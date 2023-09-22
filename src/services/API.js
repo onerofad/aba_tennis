@@ -91,4 +91,17 @@ export function getLatestNews(){
     )
 }
 
+export function getResults(){
+    return(
+    axios.create({
+        baseURL:  "https://tennis-backend.vercel.app/api/results/",
+        headers: {
+            "Accept": 'application/json',
+            "Content-Type": 'application/json'
+        }
+        
+    })
+    )
+}
+
 

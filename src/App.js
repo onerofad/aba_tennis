@@ -57,7 +57,7 @@ const App = () => {
           <Route index element={<MobileHome />} />
           <Route path="register" element={<MobileRegistration />} />
           <Route path="register/success" element={<MobileSuccessRegister />} />
-          <Route path="player/profile" element={<MobilePlayerProfile />} />
+          <Route path="player/profile/:id" element={<MobilePlayerProfile />} />
           <Route path="player/profile/edit" element={<MobilePlayerProfileEdit />} />
           <Route path="player/ranking" element={<MobilePlayerRanking />} />
           <Route path="search/player/ranking" element={<MobileSearchPlayerRanking />} />

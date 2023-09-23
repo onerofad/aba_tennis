@@ -89,7 +89,9 @@ const Footer = () => {
                             fontFamily: 'Poppins',
                     }}
                     >
-                        <List.Item as='a'><Link to="/">info@abaplt.com</Link></List.Item>
+                        <List.Item as='a'>
+                            <a href="mailto:info@abaplt.com">info@abaplt.com</a>
+                        </List.Item>
                     </List>
                 </Grid.Column>
             </Grid.Row>    

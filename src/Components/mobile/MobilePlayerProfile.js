@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { useEffect, useReducer, useState } from "react"
 import MobileFooter from "./MobileFooter"
-import MobileProfile from "./MobileProfile"
+import MobileViewProfile from "./MobileViewProfile"
 
 const MobilePlayerProfile = () => {
 
@@ -190,7 +190,7 @@ const MobilePlayerProfile = () => {
                         </Container>
                     </Menu>
                 </Segment>
-                <MobileProfile />
+                <MobileViewProfile />
              
             </Sidebar.Pusher>
                
@@ -350,7 +350,7 @@ const MobilePlayerProfile = () => {
                             </Container>
                         </Menu>
                     </Segment>
-                    <MobileProfile />
+                    <MobileViewProfile />
                  
                 </Sidebar.Pusher>
                    

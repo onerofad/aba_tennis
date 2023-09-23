@@ -63,14 +63,18 @@ const AccessRanking = () => {
                                                             }
                                                             on='click'
                                                             positionFixed
+                                                            size="big"
                                                             trigger={
+                
                                                             <Button
                                                                 style={{
                                                                     color: '#FFFFFF',
-                                                                    backgroundColor: '#193275'
+                                                                    backgroundColor: '#193275',
+                                                                    marginLeft: '1em'
                                                                     
                                                                 }}
                                                                 disabled
+                                                                size="large"
                                                             >
                                                                 Buy Now
                                                             

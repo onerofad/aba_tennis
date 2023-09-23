@@ -118,7 +118,7 @@ const Login = () => {
                                             <Grid>
                                                 <Grid.Row>
                                                     <Grid.Column>
-                                                        <Image size='tiny' src="/images/about/about.png" />
+                                                        <Image style={{cursor: 'pointer'}} onClick={() => navigate("/")} size='tiny' src="/images/about/about.png" />
                                                     </Grid.Column>
                                                 </Grid.Row>
                                                 <Grid.Row>

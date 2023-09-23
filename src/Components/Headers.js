@@ -85,7 +85,7 @@ const Headers = () => {
                         <Dropdown  text="Competitions" floating>
                             <Dropdown.Menu pointing="bottom">
                                 <Dropdown.Item disabled
-                                    text="Covernor's cup"             
+                                    text="Governor's cup"             
                                 />
                                 <Dropdown.Item disabled
                                     text="Chairman's cup" 
@@ -164,7 +164,7 @@ const Headers = () => {
                         <Dropdown  text="Competitions" floating>
                             <Dropdown.Menu pointing="bottom">
                                 <Dropdown.Item disabled
-                                    text="Covernor's cup"             
+                                    text="Governor's cup"             
                                 />
                                 <Dropdown.Item disabled
                                     text="Chairman's cup" 

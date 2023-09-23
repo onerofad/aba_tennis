@@ -5,8 +5,8 @@ import getsignupDetails from "../../services/API"
 const MobilePlayerTable = () => {
     const options = [
         { key: 1, text: 'Premier League', value:  'Premier League' },
-        { key: 2, text: 'Governor\'s cup', value: 'Governors Cup' },
-        { key: 3, text: 'Chairman\'s cup', value: 'Chairmans Cup' },
+        { key: 2, text: 'Governor\'s cup', value: 'Governors Cup', disabled: true },
+        { key: 3, text: 'Chairman\'s cup', value: 'Chairmans Cup', disabled: true },
     ]
    
     const [tab, setab] = useState([])

@@ -5,6 +5,9 @@ import { useEffect, useState } from "react"
 const MobileResult = () => {
 
     const [results, setresults] = useState([])
+    const [choice, setchoice] = useState()
+    const [loader, setloader] = useState(false)
+    let count = 0
 
     useEffect(() => {
         getResult()
@@ -16,12 +19,20 @@ const MobileResult = () => {
         .catch(console.error)
     }
 
+    const select_league = (value) => {
+        setloader(true)
+        setTimeout(() => {
+            setchoice(value)
+            setloader(false)
+        }, 5000)
+       
+    }
     const options = [
         { key: 1, text: 'Ranking (week 1)', value: 1 },
-        { key: 2, text: 'Ranking (week 2)', value: 2 },
-        { key: 3, text: 'Ranking (week 3)', value: 3 },
-        { key: 4, text: 'Ranking (week 4)', value: 4 },
-        { key: 5, text: 'Ranking (week 5)', value: 5 },
+        { key: 2, text: 'League (week 2)', value: 2 },
+        { key: 3, text: 'League (week 3)', value: 3 },
+        { key: 4, text: 'League (week 4)', value: 4 },
+        { key: 5, text: 'Super 4', value: 5 },
 
       ]
     return(
@@ -54,6 +65,9 @@ const MobileResult = () => {
                                         fontSize: '16px',
                                         fontWeight: 'normal',
                                     }}
+                                    loading={loader}
+                                    onChange={(e, {value}) => select_league(value.toString())}
+                      
                             />
                         </Grid.Column>
                     </Grid.Row>
@@ -92,6 +106,8 @@ const MobileResult = () => {
                                                                               
                                                                     {
                                                                         results.map((result) => {
+                                                                            ++count
+                                                                            if(result.result_type === choice){
                                                                             return(
                                                                             <Grid.Row>
                                                                             
@@ -124,6 +140,8 @@ const MobileResult = () => {
                                                                         <br/>
                                                                         </Grid.Row>
                                                                             )
+                                                                            }
+        
 
                                                                         })
                                                                     }

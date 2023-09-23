@@ -14,15 +14,13 @@ const ViewProfile = () => {
     const [lname, setlname] = useState("")
     const [nationality, setnationality] = useState("")
     const [email, setemail] = useState("")
+    let id = 0
 
 
     const [loader, setLoader] = useState(false)
 
-
-
     useEffect(() => {
         getdetails()
-        showProfile()
     }, [])
 
     const getdetails = () => {
@@ -43,16 +41,17 @@ const ViewProfile = () => {
     }
 
     const showProfile = () => {
-         details.map((detail) => {
-            if(detail.id === params.id){
-                setdob(detail.dob)
+         id = params.id
+         let detail = details.filter(d => d.id == id)[0]
+               // alert(params.id)
+               // alert(detail.fname)
+               setdob(detail.dob)
                 sethandbat(detail.handbat)
                 setfname(detail.fname)
                 setlname(detail.lname)
                 setemail(detail.email)
-                setnationality(detail.nationality)
-            }
-         }) 
+                setnationality(detail.nationality) 
+                
                      
     }
     const navigate = useNavigate()
@@ -144,16 +143,22 @@ const ViewProfile = () => {
                         <Divider />
                     </Grid.Column>
                 </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column width={5} style= {{fontFamily: 'Poppins', fontSize: '16px', fontWeight: 'noemal'}}>
-                    Name:
+               
+                   {
+
+                        details.map((detail) => {
+                            if(detail.id == params.id)
+                            return(
+                                <Grid.Row>
+                                <Grid.Column width={5} style= {{fontFamily: 'Poppins', fontSize: '16px', fontWeight: 'noemal'}}>
+                                   Name:
                                     <p style={{
                                             fontWeight: 'bold',
                                             fontSize: '25px',
                                             fontFamily: "dharma-gothic-e",
                                         }}
                                     >
-                                        {fname + " " + lname}
+                                        {detail.fname + " " + detail.lname}
                                     </p>
                     Date of birth:
                                     <p style={{
@@ -163,7 +168,7 @@ const ViewProfile = () => {
                                         }}
                                     
                                     >
-                                        {dob}
+                                        {detail.dob}
                                     </p>
                         Nationality:
                                     <p style={{
@@ -173,7 +178,7 @@ const ViewProfile = () => {
                                         }}
                                     
                                     >
-                                        {nationality}
+                                        {detail.nationality}
                                     </p>
                         Contact Email:
                                     <p  style={{
@@ -182,29 +187,98 @@ const ViewProfile = () => {
                                             fontFamily: "dharma-gothic-e",
                                         }}
                                     >
-                                        {email}
+                                        {detail.email}
                                     </p>
+                    Left/Right Hand Bat:
+                                <p style={{
+                                        fontWeight: 'bold',
+                                        fontSize: '25px',
+                                        fontFamily: "dharma-gothic-e",
+                                    }}
+                                >
+                                    {detail.handbat}
+                                </p>
                     </Grid.Column>
                     <Grid.Column width={6}>
-                        <Placeholder fluid style={{ height: 350, width: 400 }}>
-                            <Placeholder.Image />
-                        </Placeholder>                   
-                    </Grid.Column>
-                    <Grid.Column width={5} textAlign="right" style= {{fontFamily: 'Poppins', fontSize: '16px', fontWeight: 'noemal'}}>
-                    Left/Right Hand Bat:
+                    <Placeholder fluid style={{ height: 350, width: 400 }}>
+                    <Image style={{ height: 350, width: 400 }} fluid src={detail.imageurl} />
+
+                    </Placeholder>                   
+                </Grid.Column>
+                <Grid.Column width={5} textAlign="right" style= {{fontFamily: 'Poppins', fontSize: '16px', fontWeight: 'noemal'}}>
+                
+                 Current Team:
                                     <p style={{
                                             fontWeight: 'bold',
                                             fontSize: '25px',
                                             fontFamily: "dharma-gothic-e",
                                         }}
                                     >
-                                        {handbat}
+                                        {detail.currenteam}
                                     </p>
-                                  
-                    </Grid.Column>
+                    Last Championship Won:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    
+                                    >
+                                       {detail.lastchamp}
+
+                                    </p>
+                    Date of Last Championship Won:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    
+                                    >
+                                    {detail.datelastchamp}
+
+                                    </p>
+                    Location of Last Championship Won:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    
+                                    >
+                                    {detail.locatelastchamp}
+
+                                    </p>
+                    Favorite Player:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    
+                                    >
+                                    {detail.favoriteplayer}
+
+                                    </p>
+                        Points:
+                                    <p style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '25px',
+                                            fontFamily: "dharma-gothic-e",
+                                        }}
+                                    
+                                    >
+                                    {detail.points}
+
+                                    </p>
+                                </Grid.Column>
+                                   </Grid.Row> 
+
+                            )
+                        })
                  
-                   
-                </Grid.Row> 
+                    
+                    }                 
                     
             </Grid>
             </Container>

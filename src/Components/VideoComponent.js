@@ -4,6 +4,19 @@ const VideoComponent = () => {
     return(
         <Segment vertical style={{backgroundColor: '#F6F6F6', padding: '2em 0em'}}>
                 <Grid>
+                <Grid.Row>
+                        <Grid.Column>
+                        <Header
+                                content="Watch the game....."
+                                style={{
+                                    fontFamily: "dharma-gothic-e",
+                                    color: '#000000',
+                                    fontWeight: 'bold',
+                                    fontSize: '50px'
+                                }}
+                            />                                      
+                        </Grid.Column>               
+                    </Grid.Row>
                    
                     <Grid.Row>
                         <Grid.Column>

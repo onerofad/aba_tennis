@@ -35,7 +35,6 @@ const ViewProfile = () => {
             navigate("/signup")
         }else{
             navigate("/register")
-
         }
        
     }
@@ -76,7 +75,7 @@ const ViewProfile = () => {
                         >
                             <Container>
 
-                                    <Menu.Item position="" as="a">
+                                    <Menu.Item position="" onClick={() => navigate("/")}>
                                         <Image size="tiny" src="/images/about/about.png" />
                                     </Menu.Item>
                                     <Menu.Item>
@@ -89,39 +88,43 @@ const ViewProfile = () => {
                                         
                                     </Menu.Item>
                                     <Menu.Item position="" onClick={() => navigate("/")} as="a">
-                        Home
-                    </Menu.Item>
-                    <Menu.Item as="a">
-                        <Dropdown  text="Premier League" floating>
-                            <Dropdown.Menu pointing="bottom">
-                                <Dropdown.Item 
-                                    text="Registration" 
-                                    onClick={() => openregister() }          
-                                />
-                                <Dropdown.Item 
-                                    text="Results" 
-                                />
-                                <Dropdown.Item 
-                                    text="PL Stories" 
-                                />
-                            </Dropdown.Menu>
-    
-                        </Dropdown>                                    
-                    </Menu.Item>
-                    <Menu.Item as="a">
-                        
-                        <Dropdown  text="Competitions" floating>
-                            <Dropdown.Menu pointing="bottom">
-                                <Dropdown.Item 
-                                    text="Covernor's cup"             
-                                />
-                                <Dropdown.Item 
-                                    text="Chairman's cup" 
-                                />
-                            </Dropdown.Menu>
-    
-                        </Dropdown> 
-                    </Menu.Item>
+                                        Home
+                                    </Menu.Item>
+                                    <Menu.Item as="a">
+                                        <Dropdown  text="Premier League" floating>
+                                            <Dropdown.Menu pointing="bottom">
+                                                <Dropdown.Item 
+                                                    text="Registration" 
+                                                    onClick={() => openregister() }          
+                                                />
+                                                <Dropdown.Item 
+                                                    text="Results" 
+                                                    onClick={() => navigate("/results")}
+                                                />
+                                                <Dropdown.Item 
+                                                    text="PL Stories" 
+                                                    disabled
+                                                />
+                                            </Dropdown.Menu>
+                    
+                                        </Dropdown>                                    
+                                    </Menu.Item>
+                                    <Menu.Item as="a">
+                                        
+                                        <Dropdown  text="Competitions" floating>
+                                            <Dropdown.Menu pointing="bottom">
+                                                <Dropdown.Item 
+                                                    text="Governor's cup"   
+                                                    disabled          
+                                                />
+                                                <Dropdown.Item 
+                                                    text="Chairman's cup" 
+                                                    disabled
+                                                />
+                                            </Dropdown.Menu>
+                    
+                                        </Dropdown> 
+                                    </Menu.Item>
                             </Container>
                         </Menu>            
                     </Grid.Column>

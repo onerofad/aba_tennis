@@ -46,9 +46,16 @@ const Profile = () => {
        // alert(detail.id)
     }
 
-
-
     const navigate = useNavigate()
+
+    const openregister = () => {
+        if(sessionStorage.getItem("em") === null){
+            navigate("/signup")
+        }else{
+            navigate("/register")
+
+        }
+    }
 
     function reducer(state, action){
         switch(action.type){
@@ -88,10 +95,10 @@ const Profile = () => {
                         >
                             <Container>
 
-                                    <Menu.Item position="center" as="a">
-                                        <Image size="tiny" src="/images/about/about.png" />
-                                    </Menu.Item>
-                                    <Menu.Item position="right" onClick={() => navigate("/")} as="a">
+                    <Menu.Item position="center" onClick={() => navigate("/")}>
+                        <Image size="tiny" src="/images/about/about.png" />
+                    </Menu.Item>
+                    <Menu.Item position="right" onClick={() => navigate("/")} as="a">
                         Home
                     </Menu.Item>
                     <Menu.Item as="a">
@@ -99,13 +106,15 @@ const Profile = () => {
                             <Dropdown.Menu pointing="bottom">
                                 <Dropdown.Item 
                                     text="Registration" 
-                                    onClick={() => navigate("/signup") }          
+                                    onClick={() => openregister() }          
                                 />
                                 <Dropdown.Item 
-                                    text="Results" 
+                                    text="Results"
+                                    onClick={() => navigate("/results")} 
                                 />
                                 <Dropdown.Item 
                                     text="PL Stories" 
+                                    disabled
                                 />
                             </Dropdown.Menu>
     
@@ -116,10 +125,12 @@ const Profile = () => {
                         <Dropdown  text="Competitions" floating>
                             <Dropdown.Menu pointing="bottom">
                                 <Dropdown.Item 
-                                    text="Covernor's cup"             
+                                    text="Governor's cup"  
+                                    disabled           
                                 />
                                 <Dropdown.Item 
-                                    text="Chairman's cup" 
+                                    text="Chairman's cup"
+                                    disabled 
                                 />
                             </Dropdown.Menu>
     

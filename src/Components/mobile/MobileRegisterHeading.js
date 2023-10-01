@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { Segment, Grid, Header, Button, Image } from "semantic-ui-react"
 import './style.css'
 import { PaystackButton } from "react-paystack"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import '../../main.css'
 import getsignupDetails from "../../services/API"
 

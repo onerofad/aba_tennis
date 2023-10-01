@@ -24,7 +24,7 @@ const MobileRegisterHeading = () => {
       publicKey,
       text: "Pay Now",
       onSuccess: () =>
-        alert("Thanks for doing business with us! Come back soon!!"),
+        alert("Your payment was successfull !!"),
       onClose: () => alert("Wait! Don't leave :("),
     }
 

@@ -2,19 +2,38 @@ import { Segment, Grid, Container, Header, Button, Image } from "semantic-ui-rea
 import Footer from "./Footer"
 import Headers from "./Headers"
 import { PaystackButton } from "react-paystack"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import '../main.css'
+import getsignupDetails from "../services/API"
 
 const Registration = () => {
 
-   // const publicKey = "pk_test_deda09cd68357ea7089f53fdd413eb1b4e8ca4ce"
-    const publicKey = "pk_live_793ec47cb747298bc075cb0ca7e9d7ef3a33da25"
+    useEffect(() => {
+        getDetails()
+    }, [])
+
+    const publicKey = "pk_test_deda09cd68357ea7089f53fdd413eb1b4e8ca4ce"
+    //const publicKey = "pk_live_793ec47cb747298bc075cb0ca7e9d7ef3a33da25"
 
    
 const amount = 10000
+    const [details, setdetails] = useState([])
     const email = sessionStorage.getItem("em")
-    const name = sessionStorage.getItem("fn")
+    const name =  sessionStorage.getItem("fn")
     const [phone, setPhone] = useState("")
+
+    const getDetails = () => {
+        getsignupDetails().get("/")
+        .then(res => setdetails(res.data))
+        .catch(console.error)
+    }
+
+    const updatePayment = () => {
+        const detail = details.find(detail => detail.email === email)
+        if(detail){
+            detail.paid = "yes"
+        }
+    }
   
     const componentProps = {
       email,
@@ -25,7 +44,11 @@ const amount = 10000
       publicKey,
       text: "Pay Now",
       onSuccess: () =>
-        alert("Your payment was successfull !!"),
+        {   
+            alert("Your payment was successfull !!")
+            updatePayment()
+
+        },
       onClose: () => alert("Wait! Don't leave :("),
     }
   

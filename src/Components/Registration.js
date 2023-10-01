@@ -31,7 +31,11 @@ const amount = 10000
     const updatePayment = () => {
         const detail = details.find(detail => detail.email === email)
         if(detail){
-            detail.paid = "yes"
+            let id = detail.id
+            let paid = "yes"
+            let item = {paid}
+            getsignupDetails().patch(`/${id}/`, item)
+            .catch(console.error)
         }
     }
   

@@ -99,7 +99,6 @@ const MobilePlayerTable = () => {
                                 >
                                   {
                                     tab.map((rank) => {
-                                        ++id
                                         if(id <= 5 && rank.paid === "yes"){
                                             ++id
                                         return(

@@ -15,7 +15,7 @@ const MobileRegisterHeading = () => {
     //const publicKey = "pk_test_deda09cd68357ea7089f53fdd413eb1b4e8ca4ce"
     const publicKey = "pk_live_793ec47cb747298bc075cb0ca7e9d7ef3a33da25"
 
-    const amount = 10000
+    const amount = 100000
     const [details, setdetails] = useState([])
     const email = sessionStorage.getItem("em")
     const name = sessionStorage.getItem("fn")

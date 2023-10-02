@@ -51,7 +51,7 @@ const MobileRegisterHeading = () => {
         {   
             updatePayment()
         },
-      onClose: () => alert("Wait! Don't leave :("),
+      
     }
 
     return(

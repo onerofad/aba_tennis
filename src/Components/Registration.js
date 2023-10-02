@@ -51,7 +51,7 @@ const Registration = () => {
         {   
             updatePayment()
         },
-      onClose: () => alert("Wait! Don't leave :("),
+      
     }
   
     return(
